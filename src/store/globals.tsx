@@ -10,6 +10,6 @@ interface globalState {
 export const useGlobal = create<globalState>((set) => ({
   menu: false,
   setMenu: () => set((state) => ({ menu: !state.menu })),
-  loader: false,
+  loader: true,
   setLoader: () => set((state) => ({ loader: !state.loader })),
 }))

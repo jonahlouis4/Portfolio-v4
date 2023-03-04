@@ -1,15 +1,17 @@
+import { useGlobal } from "@/store/globals";
 import { motion, usePresence } from "framer-motion";
 import { useEffect } from 'react';
 
 export default function Loader() {
   const [isPresent, safeToRemove] = usePresence();
+  const setLoader = useGlobal(state => state.setLoader)
 
-  // Animate out after 2 seconds
+  // Animate for few seconds
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
     const timer = setTimeout(() => {
-      // setVisible(false);
+      setLoader()
       document.body.style.overflow = 'auto';
     }, 2500);
     return () => clearTimeout(timer);

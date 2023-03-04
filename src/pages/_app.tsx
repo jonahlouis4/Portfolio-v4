@@ -1,12 +1,15 @@
+import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
+import { useGlobal } from '@/store/globals';
 import '@/styles/globals.css';
 import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const isLoading = useGlobal((state) => state.loader);
+  const router = useRouter();
 
   return (
     <>
@@ -18,7 +21,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar />
       <AnimatePresence mode='wait'>
-        <Component {...pageProps} key={router.pathname} />
+        {isLoading ? (
+          <Loader key='loader' />
+        ) : (
+          <Component {...pageProps} key={router.pathname} />
+        )}
       </AnimatePresence>
     </>
   );
