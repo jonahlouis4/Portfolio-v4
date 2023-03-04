@@ -7,9 +7,9 @@ export default function Home() {
       // animate={{ opacity: 1, x : 0 }}
       // exit={{ opacity: 0, x: 100 }}
       // transition={{ duration: 0.5 }}
-      className=''
+      className='h-full bg-blue-50 pt-12'
     >
-      <motion.div className='bg-blue-50'>home</motion.div>
+      <motion.div className=''>home</motion.div>
     </motion.div>
   );
 }
