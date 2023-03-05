@@ -1,4 +1,3 @@
-import Layout from '@/components/Layout';
 import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
 import { useGlobal } from '@/store/globals';
