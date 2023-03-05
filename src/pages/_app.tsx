@@ -1,4 +1,5 @@
 import Loader from '@/components/Loader';
+import Menu from '@/components/Menu';
 import Navbar from '@/components/Navbar';
 import { useGlobal } from '@/store/globals';
 import '@/styles/globals.css';
@@ -9,6 +10,7 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
   const isLoading = useGlobal((state) => state.loader);
+  const isMenu = useGlobal((state) => state.menu);
   const router = useRouter();
 
   return (
@@ -23,6 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <AnimatePresence mode='wait'>
         {isLoading ? (
           <Loader key='loader' />
+        ) : isMenu ? (
+          <Menu key='menu' />
         ) : (
           <Component {...pageProps} key={router.pathname} />
         )}

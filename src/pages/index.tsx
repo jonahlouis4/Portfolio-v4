@@ -7,11 +7,19 @@ export default function Home() {
       opacity: 1,
       transition: {
         when: 'beforeChildren',
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
-    hidden: { opacity: 0 },
-    exit: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+        staggerChildren: 0.05,
+      },
+    },
   };
 
   const item = {
@@ -19,10 +27,20 @@ export default function Home() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.45,
+        type: 'spring',
+        bounce: 0.5,
+        duration: 1,
       },
     },
-    hidden: { opacity: 0, y: -25 },
+    hidden: { opacity: 0, y: -70 },
+    exit: {
+      opacity: 0,
+      y: -70,
+      transition: {
+        type: 'spring',
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -45,7 +63,10 @@ export default function Home() {
                   >
                     Hey, I'm Jonah.
                   </motion.h1>
-                  <motion.p variants={item} className='text-xl drop-shadow-lg mt-6'>
+                  <motion.p
+                    variants={item}
+                    className='text-xl drop-shadow-lg mt-6'
+                  >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Iste provident fugiat, excepturi magni fugit veritatis
                     eveniet nihil itaque minima harum.

@@ -7,13 +7,15 @@ import {
 } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useGlobal } from '@/store/globals';
 
 export default function Navbar() {
-  const [menu, setMenu] = useState<boolean>(false);
+  const menu = useGlobal(state => state.menu)
+  const setMenu = useGlobal(state => state.setMenu)
   const [mode, setMode] = useState<'dark' | 'light'>('light');
 
   const handleMenu = () => {
-    setMenu(!menu);
+    setMenu()
   };
 
   const handleMode = () => {
