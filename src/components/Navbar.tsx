@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
   return (
@@ -12,7 +12,7 @@ export default function Navbar() {
           J
         </Link>
         <button>
-          <Bars3Icon className='text-gray-700 w-12 h-12' />
+          <Bars3Icon className='text-gray-900 w-12 h-12' />
         </button>
       </div>
     </div>

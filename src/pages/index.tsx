@@ -23,11 +23,15 @@ export default function Home() {
                     eveniet nihil itaque minima harum.
                   </p>
                   <div className='flex gap-x-8 mt-10'>
-                    <button>my projects</button>
-                    <button>contact me</button>
+                    <button className='rounded bg-gray-900 text-white font-semibold py-2 px-3 shadow-md1 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'>
+                      Contact me
+                    </button>
+                    <button className='rounded text-gray-900 font-semibold py-2 px-3 shadow-md1 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'>
+                      My projects
+                    </button>
                   </div>
                 </div>
-                <div className='w-80 h-80 bg-gray-800 rounded-full' />
+                <div className='w-80 h-80 bg-gray-800 rounded-full shadow-xl' />
               </div>
             </>
           </Container>
