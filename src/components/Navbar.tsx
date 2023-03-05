@@ -52,36 +52,27 @@ export default function Navbar() {
         <div className='flex items-center gap-x-4'>
           <button onClick={handleMode}>
             <AnimatePresence mode='wait'>
-              <motion.div
-                className={
-                  'group p-2 rounded-full shadow-sm ring-1 ring-gray-100 drop-shadow-sm hover:scale-110 transition ease-in-out duration-300 ' +
-                  (mode === 'light'
-                    ? 'hover:ring-blue-200'
-                    : 'hover:ring-yellow-200')
-                }
-              >
-                {mode === 'light' ? (
-                  <motion.div
-                    key='darkMode'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg transition ease-in-out duration-300 ' />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key='lightMode'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <SunIcon className='h-5 w-5 text-gray-500 group-hover:text-yellow-500 drop-shadow-lg transition ease-in-out duration-300 ' />
-                  </motion.div>
-                )}
-              </motion.div>
+              {mode === 'light' ? (
+                <motion.div
+                  key='darkMode'
+                  variants={modeVariant}
+                  initial='hidden'
+                  animate='visible'
+                  exit='exit'
+                >
+                  <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg hover:scale-110 hover:text-blue-500 transition ease-in-out duration-300 ' />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key='lightMode'
+                  variants={modeVariant}
+                  initial='hidden'
+                  animate='visible'
+                  exit='exit'
+                >
+                  <SunIcon className='h-5 w-5 text-gray-500 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
+                </motion.div>
+              )}
             </AnimatePresence>
           </button>
           <button onClick={handleMenu}>
