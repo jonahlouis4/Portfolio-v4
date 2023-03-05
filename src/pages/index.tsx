@@ -1,5 +1,6 @@
 import Container from '@/components/Container';
 import { motion } from 'framer-motion';
+import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
 
 export default function Home() {
   const wrapper = {
@@ -22,30 +23,9 @@ export default function Home() {
     },
   };
 
-  const item = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        bounce: 0.5,
-        duration: 1,
-      },
-    },
-    hidden: { opacity: 0, y: -70 },
-    exit: {
-      opacity: 0,
-      y: -70,
-      transition: {
-        type: 'spring',
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <motion.div
-      variants={wrapper}
+      variants={DF_WRAPPER_VARIANT}
       initial='hidden'
       animate='visible'
       exit='exit'
@@ -58,20 +38,20 @@ export default function Home() {
               <div className='flex justify-between items-center'>
                 <div className='max-w-xl'>
                   <motion.h1
-                    variants={item}
+                    variants={DF_ITEM_VARIANT}
                     className='text-7xl font-extrabold drop-shadow-lg'
                   >
                     Hey, I'm Jonah.
                   </motion.h1>
                   <motion.p
-                    variants={item}
+                    variants={DF_ITEM_VARIANT}
                     className='text-xl drop-shadow-lg mt-6'
                   >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Iste provident fugiat, excepturi magni fugit veritatis
                     eveniet nihil itaque minima harum.
                   </motion.p>
-                  <motion.div variants={item} className='flex gap-x-8 mt-10'>
+                  <motion.div variants={DF_ITEM_VARIANT} className='flex gap-x-8 mt-10'>
                     {/* TODO: Make this primary button */}
                     <button className='rounded bg-gray-900 text-white drop-shadow-lg font-semibold py-2 px-3 shadow-sm transition duration-150 ease-in-out hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'>
                       Contact me
@@ -83,7 +63,7 @@ export default function Home() {
                   </motion.div>
                 </div>
                 <motion.div
-                  variants={item}
+                  variants={DF_ITEM_VARIANT}
                   className='w-80 h-80 bg-gray-800 rounded-full shadow-xl '
                 />
               </div>
