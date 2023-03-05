@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className='flex gap-x-4 justify-between'>
         <Link
           href='/'
-          className='bg-gray-100 px-4 py-2 rounded-lg shadow-sm font-extrabold text-2xl'
+          className='bg-gray-200 px-4 py-2 rounded-lg shadow-sm font-extrabold text-2xl'
         >
           <span className='drop-shadow-lg'>J</span>
         </Link>
