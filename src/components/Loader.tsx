@@ -22,15 +22,26 @@ export default function Loader() {
     !isPresent && setTimeout(safeToRemove, 100);
   }, [isPresent]);
 
+  const item = {
+    exit: {
+      opacity: 0,
+      y: -25,
+      transition: {
+        duration: 0.45,
+      },
+    },
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
-      transition={{ duration: 0.5 }}
-      className='bg-gray-50 absolute w-full h-screen z-40 shadow-2xl'
-    >
-      <div>Full page loader!</div>
-    </motion.div>
+    <div className='flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
+      <motion.h1
+        initial={false}
+        variants={item}
+        exit='exit'
+        className='text-lg font-extrabold'
+      >
+        Logo Animation
+      </motion.h1>
+    </div>
   );
 }
