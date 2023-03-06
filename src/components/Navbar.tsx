@@ -45,11 +45,11 @@ export default function Navbar() {
   };
 
   return (
-    <div className='z-10 absolute w-full py-14 px-28'>
+    <div className='z-10 absolute w-full py-14 px-28 dark:bg-gray-800'>
       <div className='flex gap-x-4 justify-between'>
         <Link
           href='/'
-          className='bg-gray-200 px-4 py-2 rounded-lg shadow-sm font-extrabold text-2xl'
+          className='dark:bg-gray-700 dark:text-gray-400 bg-gray-200 px-4 py-2 rounded-lg shadow-sm font-extrabold text-2xl'
         >
           <span className='drop-shadow-lg'>J</span>
         </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
                   animate='visible'
                   exit='exit'
                 >
-                  <SunIcon className='h-5 w-5 text-gray-500 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
+                  <SunIcon className='h-5 w-5 text-gray-400 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -89,7 +89,7 @@ export default function Navbar() {
                   animate='visible'
                   exit='exit'
                 >
-                  <Bars3Icon className='h-12 w-12 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+                  <Bars3Icon className='h-12 w-12 dark:text-gray-400 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
                 </motion.div>
               ) : (
                 <motion.div
