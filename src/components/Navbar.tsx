@@ -45,7 +45,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className='z-10 absolute w-full py-14 px-28 dark:bg-gray-800'>
+    <div className='z-10 absolute w-full py-14 px-28 dark:bg-gray-900'>
       <div className='flex gap-x-4 justify-between'>
         <Link
           href='/'

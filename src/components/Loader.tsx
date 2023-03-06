@@ -33,12 +33,12 @@ export default function Loader() {
   };
 
   return (
-    <div className='flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
+    <div className='dark:bg-gray-900 flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
       <motion.h1
         initial={false}
         variants={item}
         exit='exit'
-        className='text-lg font-extrabold'
+        className='dark:text-white text-lg font-extrabold'
       >
         Logo Animation
       </motion.h1>
