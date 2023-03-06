@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { DF_ITEM_VARIANT } from '@/constants';
 import Container from './Container';
 
@@ -61,9 +61,13 @@ export default function Menu() {
               </motion.div>
             ))}
           </div>
-          <div className='flex gap-12 mt-8'>
+          <motion.div variants={DF_ITEM_VARIANT} className='w-full border-2 border-gray-200 my-8' />
+          <div className='flex gap-12'>
             {socials.map((social, index) => (
-              <motion.button variants={DF_ITEM_VARIANT}>{social.name}</motion.button>
+              <motion.button variants={DF_ITEM_VARIANT} className='flex items-center gap-x-1 text-gray-400 text-lg font-medium'>
+                <span>{social.name}</span>
+                <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+              </motion.button>
             ))}
           </div>
         </Container>
