@@ -8,11 +8,13 @@ import {
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
+import { useGlobalsPersist } from '@/store/globalsPersist';
 
 export default function Navbar() {
+  const mode = useGlobalsPersist(state => state.mode);
+  const setMode = useGlobalsPersist(state => state.setMode);
   const menu = useGlobal(state => state.menu)
   const setMenu = useGlobal(state => state.setMenu)
-  const [mode, setMode] = useState<'dark' | 'light'>('light');
 
   const handleMenu = () => {
     setMenu()
