@@ -7,8 +7,8 @@ import Container from './Container';
 export default function Menu() {
   const navigation = [
     { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
     { name: 'Journey', href: '/journey' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const socials = [
