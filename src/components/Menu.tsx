@@ -47,7 +47,7 @@ export default function Menu() {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className='flex items-center justify-center w-full h-screen dark:bg-gray-900 bg-gray-100 shadow-2xl border-r-2 border-gray-500'
+      className='flex items-center justify-center w-full h-screen dark:bg-gray-800 bg-gray-100 shadow-2xl border-r-2 border-gray-500'
     >
       <div className='w-full'>
         <Container>
