@@ -1,8 +1,10 @@
 import Container from '@/components/Container';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
 
 export default function Home() {
+  const router = useRouter();
   const wrapper = {
     visible: {
       opacity: 1,
@@ -21,6 +23,10 @@ export default function Home() {
         staggerChildren: 0.05,
       },
     },
+  };
+
+  const handleActionBtn = (href: string) => {
+    router.push(href);
   };
 
   return (
@@ -51,13 +57,22 @@ export default function Home() {
                     Iste provident fugiat, excepturi magni fugit veritatis
                     eveniet nihil itaque minima harum.
                   </motion.p>
-                  <motion.div variants={DF_ITEM_VARIANT} className='flex gap-x-8 mt-10'>
+                  <motion.div
+                    variants={DF_ITEM_VARIANT}
+                    className='flex gap-x-8 mt-10'
+                  >
                     {/* TODO: Make this primary button */}
-                    <button className='rounded dark:bg-white bg-gray-900 dark:text-gray-900 text-white drop-shadow-lg font-semibold py-2 px-3 shadow-sm transition duration-150 ease-in-out dark:hover:bg-gray-300 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'>
-                      Contact me
+                    <button
+                      onClick={() => handleActionBtn('/journey')}
+                      className='rounded dark:bg-white bg-gray-900 dark:text-gray-900 text-white drop-shadow-lg font-semibold py-2 px-3 shadow-sm transition duration-150 ease-in-out dark:hover:bg-gray-300 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'
+                    >
+                      My journey
                     </button>
                     {/* TODO: Make this secondary button */}
-                    <button className='rounded dark:text-white text-gray-900 drop-shadow-lg font-semibold py-2 px-3 shadow-sm transition duration-300 ease-in-out ring-1 ring-inset ring-gray-300 dark:hover:bg-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'>
+                    <button
+                      onClick={() => handleActionBtn('/projects')}
+                      className='rounded dark:text-white text-gray-900 drop-shadow-lg font-semibold py-2 px-3 shadow-sm transition duration-300 ease-in-out ring-1 ring-inset ring-gray-300 dark:hover:bg-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'
+                    >
                       My projects
                     </button>
                   </motion.div>
@@ -67,7 +82,7 @@ export default function Home() {
                   className='w-80 h-80 dark:bg-gray-300 bg-gray-800 rounded-full shadow-xl '
                 />
               </div>
-            </>   
+            </>
           </Container>
         </div>
       </motion.div>
