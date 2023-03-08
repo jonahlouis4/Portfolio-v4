@@ -40,3 +40,10 @@ export const DF_ITEM_VARIANT = {
       },
     },
   };
+
+  // Socials
+  export const SOCIALS = [
+    { name: 'GitHub', href: '' },
+    { name: 'LinkedIn', href: '' },
+    { name: 'Resume', href: '' },
+  ];

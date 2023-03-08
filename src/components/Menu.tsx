@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { DF_ITEM_VARIANT } from '@/constants';
+import { DF_ITEM_VARIANT, SOCIALS } from '@/constants';
 import { useRouter } from 'next/router';
 import Container from './Container';
 import { useGlobal } from '@/store/globals';
@@ -14,12 +14,6 @@ export default function Menu() {
     { name: 'Projects', href: '/projects' },
     { name: 'Journey', href: '/journey' },
     { name: 'Contact', href: '/contact' },
-  ];
-
-  const socials = [
-    { name: 'GitHub', href: '' },
-    { name: 'LinkedIn', href: '' },
-    { name: 'Resume', href: '' },
   ];
 
   const pageWrapper = {
@@ -84,7 +78,7 @@ export default function Menu() {
             className='w-full border-2 border-gray-200 my-8'
           />
           <div className='flex gap-12'>
-            {socials.map((social, index) => (
+            {SOCIALS.map((social, index) => (
               <motion.button
                 variants={DF_ITEM_VARIANT}
                 className='flex items-center gap-x-1 text-gray-400 text-lg font-medium'
