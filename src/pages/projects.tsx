@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
 import Container from '@/components/Container';
+import { useState } from 'react';
+import ProjectDetails from '@/components/ProjectDetails';
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<null | string>(null);
   const myProjects = [
     {
       name: 'StudyBuddy',
@@ -42,8 +45,12 @@ export default function Projects() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='pt-48 pb-16'
+      className='pt-48 pb-16 relative'
     >
+      <ProjectDetails
+        selectedProject={selectedProject}
+        setSelectedProject={setSelectedProject}
+      />
       <Container>
         <motion.h1
           variants={DF_ITEM_VARIANT}
@@ -55,6 +62,7 @@ export default function Projects() {
           {myProjects.map((project, index) => (
             <motion.button
               variants={DF_ITEM_VARIANT}
+              layoutId={project.name}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
@@ -63,6 +71,7 @@ export default function Projects() {
                 'relative w-full h-72  rounded-md bg-gray-50 ' +
                 project.className
               }
+              onClick={() => setSelectedProject(project.name)}
             >
               <h1 className='font-extrabold text-lg drop-shadow-xl'>
                 {project.name}

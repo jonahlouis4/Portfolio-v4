@@ -35,7 +35,7 @@ export default function Home() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='h-full dark:bg-gray-900'
+      className='h-screen dark:bg-gray-900'
     >
       <motion.div className='h-full flex flex-col items-center justify-center'>
         <div className='w-full'>

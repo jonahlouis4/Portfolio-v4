@@ -1,3 +1,4 @@
+/* ========= FRAMER MOTION VARIANTS ========= */
 // outter container - fade in & stagger children
 export const DF_WRAPPER_VARIANT = {
     visible: {
@@ -41,6 +42,7 @@ export const DF_ITEM_VARIANT = {
     },
   };
 
+  /* ========= APPLICATION CONSTANTS ========= */
   // Socials
   export const SOCIALS = [
     { name: 'GitHub', href: '' },
