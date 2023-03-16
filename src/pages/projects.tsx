@@ -40,7 +40,7 @@ export default function Projects() {
     >
       {/* Project modal */}
       <AnimatePresence>
-        {selectedProject && (
+        {selectedProject.name && (
           <ProjectDetails
             selectedProject={selectedProject}
             setSelectedProject={setSelectedProject}

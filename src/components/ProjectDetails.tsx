@@ -12,7 +12,12 @@ export default function MyDialog(props: any) {
 
   const handleClose = () => {
     document.documentElement.style.overflow = 'auto';
-    setSelectedProject(null);
+    setSelectedProject({
+      name: null,
+      description: null,
+      langs: [],
+      media: null,
+    });
   };
 
   useEffect(() => {
@@ -62,9 +67,9 @@ TODO 2:
           </h2>
           <ul className='flex gap-4 mt-8 '>
             {selectedProject.langs.map((lang: string, index: number) => (
-                <li className='flex items-center text-gray-500 font-medium'>
-                    <span>{lang}</span>
-                </li>
+              <li className='flex items-center text-gray-500 font-medium'>
+                <span>{lang}</span>
+              </li>
             ))}
           </ul>
         </div>
