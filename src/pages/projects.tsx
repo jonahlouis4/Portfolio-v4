@@ -1,43 +1,34 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import {
+  DF_WRAPPER_VARIANT,
+  DF_PAGE_ITEM_VARIANT,
+  PROJECTS,
+} from '@/constants';
 import Container from '@/components/Container';
 import { useState } from 'react';
 import ProjectDetails from '@/components/ProjectDetails';
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<null | string>(null);
-  const myProjects = [
-    {
-      name: 'StudyBuddy',
-      description: 'Flashcard web application designed for studying.',
-      langs: 'React - TailwindCSS',
-      className: '',
-    },
-    {
-      name: 'COVID-19 Tracker',
-      description: 'Live COVID-19 web application tracker.',
-      langs: '',
-      className: '',
-    },
-    {
-      name: 'Royal Drip Check',
-      description: 'Streetwear reselling ecommerce website.',
-      langs: '',
-      className: '',
-    },
-    {
-      name: 'CreativeFloww',
-      description: 'Web agency landing page.',
-      langs: '',
-      className: '',
-    },
-    {
-      name: 'iContribute',
-      description: 'Mobile application made for volunteering opportunities.',
-      langs: '',
-      className: '',
-    },
-  ];
+  const [selectedProject, setSelectedProject] = useState<{
+    name: null | string;
+    description: null | string;
+    langs: undefined | Array<string>;
+    media: null | string;
+  }>({
+    name: null,
+    description: null,
+    langs: [],
+    media: null,
+  });
+
+  const handleProject = (props: any) => {
+    setSelectedProject({
+      name: props.name,
+      description: props.longDescription,
+      langs: props.langs,
+      media: null,
+    });
+  };
 
   return (
     <motion.div
@@ -66,7 +57,7 @@ export default function Projects() {
           Projects
         </motion.h1>
         <div className='mt-28 grid grid-cols-2 gap-20'>
-          {myProjects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
               layoutId={project.name}
@@ -75,10 +66,11 @@ export default function Projects() {
                 transition: { duration: 0.2 },
               }}
               className={
-                'relative w-full h-72 rounded-md bg-gray-50 ' +
+                'relative w-full h-72 rounded-md bg-gray-50 drop-shadow-md ' +
                 project.className
               }
-              onClick={() => setSelectedProject(project.name)}
+              onClick={() => handleProject(project)}
+              key={project.name}
             >
               <h1 className='font-extrabold text-lg drop-shadow-xl'>
                 {project.name}

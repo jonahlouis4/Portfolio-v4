@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, MinusSmallIcon } from '@heroicons/react/24/outline';
 import {
   DF_ITEM_VARIANT,
   DF_PAGE_ITEM_VARIANT,
@@ -36,12 +36,12 @@ TODO 2:
       initial='hidden'
       animate='visible'
       exit='exit'
-      className=' fixed inset-0 flex justify-center items-center z-40'
+      className='fixed inset-0 flex justify-center items-center z-30'
     >
       <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
       <motion.div
-        className='bg-gray-50 rounded-md p-4 w-2/5 min-h-min z-40 shadow-xl'
-        layoutId={selectedProject}
+        className='bg-gray-100 rounded-md p-4 w-2/5 min-h-min z-40 shadow-xl'
+        layoutId={selectedProject.name}
       >
         <div className='flex justify-end'>
           <motion.button
@@ -53,8 +53,20 @@ TODO 2:
           </motion.button>
         </div>
 
-        <div>
-
+        <div className='mt-4 mb-4'>
+          <h1 className='text-3xl font-extrabold text-gray-900 drop-shadow-xl text-center'>
+            {selectedProject.name}
+          </h1>
+          <h2 className='mt-12 text-base drop-shadow-lg'>
+            {selectedProject.description}
+          </h2>
+          <ul className='flex gap-4 mt-8 '>
+            {selectedProject.langs.map((lang: string, index: number) => (
+                <li className='flex items-center text-gray-500 font-medium'>
+                    <span>{lang}</span>
+                </li>
+            ))}
+          </ul>
         </div>
       </motion.div>
     </motion.div>
