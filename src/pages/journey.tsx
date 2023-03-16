@@ -18,6 +18,19 @@ export default function Journey() {
         >
           Journey
         </motion.h1>
+        <div>
+          {/* 
+          01 May 2021:    
+            - Graduate
+          02 June 2021:
+            - NetFore
+            - iContribute
+          03 June 2022
+           - Isha Foundation
+          04 March 2023
+           - Return to Canada
+          */}
+        </div>
       </Container>
     </motion.div>
   );
