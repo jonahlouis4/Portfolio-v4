@@ -3,6 +3,8 @@ import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 import { motion } from 'framer-motion';
 
 export default function Journey() {
+  const Divider = () => <div className='h-20 bg-blue-50 my-4' />
+  
   return (
     <motion.div
       variants={DF_WRAPPER_VARIANT}
@@ -18,8 +20,7 @@ export default function Journey() {
         >
           Journey
         </motion.h1>
-        <div>
-          {/* 
+        {/* 
           01 May 2021:    
             - Graduate
           02 June 2021:
@@ -30,6 +31,18 @@ export default function Journey() {
           04 March 2023
            - Return to Canada
           */}
+
+        <div className='mt-16'>
+          <h1>May 2021</h1>
+          <Divider />
+
+          <h1>June 2021</h1>
+          <Divider />
+
+          <h1>June 2022</h1>
+          <Divider />
+
+          <h1>March 2023</h1>
         </div>
       </Container>
     </motion.div>

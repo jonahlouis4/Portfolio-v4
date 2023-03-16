@@ -1,11 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { XMarkIcon, MinusSmallIcon } from '@heroicons/react/24/outline';
-import {
-  DF_ITEM_VARIANT,
-  DF_PAGE_ITEM_VARIANT,
-  DF_WRAPPER_VARIANT,
-} from '@/constants';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 
 export default function MyDialog(props: any) {
   const { selectedProject, setSelectedProject } = props;

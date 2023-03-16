@@ -73,6 +73,8 @@ export const PROJECTS = [
       'TailwindCSS',
       'Firebase'
     ],
+    gitHub: '',
+    website: '',
     className: '',
   },
   {
@@ -86,6 +88,8 @@ export const PROJECTS = [
       'Ant Design Charts',
       'GraphQL'
     ],
+    gitHub: '',
+    website: null,
     className: '',
   },
   {
@@ -97,6 +101,8 @@ export const PROJECTS = [
       'Shopify',
       'TailwindCSS'
     ],
+    gitHub: null,
+    website: '',
     className: '',
   },
   {
@@ -119,6 +125,8 @@ export const PROJECTS = [
       'React Native',
       'Firebase',
     ],
+    gitHub: null,
+    website: '',
     className: '',
   },
 ];

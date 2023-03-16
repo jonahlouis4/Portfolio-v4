@@ -65,7 +65,7 @@ export default function Menu() {
                   0{index + 1}
                 </h1>
                 <button
-                  className='p-2 rounded-lg text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 hover:bg-gray-200 hover:tracking-normal transition-all duration-300'
+                  className='p-2 rounded-lg text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 dark:hover:bg-gray-700 hover:bg-gray-200 hover:tracking-normal transition-all duration-300'
                   onClick={() => handlePage(nav.href)}
                 >
                   {nav.name}

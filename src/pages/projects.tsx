@@ -56,7 +56,7 @@ export default function Projects() {
         >
           Projects
         </motion.h1>
-        <div className='mt-28 grid grid-cols-2 gap-20'>
+        <div className='mt-16 grid grid-cols-2 gap-20'>
           {PROJECTS.map((project, index) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
