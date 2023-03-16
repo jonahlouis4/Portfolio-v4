@@ -55,8 +55,12 @@ export default function Projects() {
           {myProjects.map((project, index) => (
             <motion.button
               variants={DF_ITEM_VARIANT}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.2 },
+              }}
               className={
-                'relative w-full h-72 border-1 rounded-3xl bg-gray-50 shadow ' +
+                'relative w-full h-72  rounded-md bg-gray-50 ' +
                 project.className
               }
             >
