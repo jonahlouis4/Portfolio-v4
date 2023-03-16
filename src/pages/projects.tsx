@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
 import Container from '@/components/Container';
 import { useState } from 'react';
@@ -47,10 +47,15 @@ export default function Projects() {
       exit='exit'
       className='pt-48 pb-16 relative'
     >
-      <ProjectDetails
-        selectedProject={selectedProject}
-        setSelectedProject={setSelectedProject}
-      />
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectDetails
+            selectedProject={selectedProject}
+            setSelectedProject={setSelectedProject}
+            key='project-modal'
+          />
+        )}
+      </AnimatePresence>
       <Container>
         <motion.h1
           variants={DF_ITEM_VARIANT}

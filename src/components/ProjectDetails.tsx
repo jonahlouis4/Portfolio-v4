@@ -1,34 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function MyDialog(props: any) {
   const { selectedProject, setSelectedProject } = props;
-  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    document.documentElement.style.overflow = 'auto'
+    setSelectedProject(null)
+  }
+
+  useEffect(() => {
+    if (selectedProject) {
+        document.documentElement.style.overflow = 'hidden'
+    }
+  }, [selectedProject]);
 
   return (
-    <AnimatePresence>
-      {selectedProject && (
-        <Dialog
-          static
-          as={motion.div}
-          open={props.selectedProject !== null}
-          onClose={() => setSelectedProject(null)}
-        >
-          {/* The backdrop, rendered as a fixed sibling to the panel container */}
-          <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
-
-          {/* Full-screen container to center the panel */}
-          <div className='fixed inset-0 flex items-center justify-center p-4'>
-            {/* The actual dialog panel  */}
-            <Dialog.Panel className='mx-auto max-w-sm rounded bg-white'>
-              <Dialog.Title>Complete your order</Dialog.Title>
-
-              {/* ... */}
-            </Dialog.Panel>
-          </div>
-        </Dialog>
-      )}
-    </AnimatePresence>
+    <motion.div className=' fixed inset-0 flex justify-center items-center z-40'>
+      <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
+      <motion.div
+        className='bg-blue-100 w-96 h-96 z-40'
+        layoutId={selectedProject}
+      >
+        <button onClick={handleClose}>Close</button>
+        <div>
+            {selectedProject}
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
