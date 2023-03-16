@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { DF_ITEM_VARIANT, SOCIALS } from '@/constants';
+import { DF_PAGE_ITEM_VARIANT, SOCIALS } from '@/constants';
 import { useRouter } from 'next/router';
 import Container from './Container';
 import { useGlobal } from '@/store/globals';
@@ -58,7 +58,7 @@ export default function Menu() {
           <div className='flex flex-col gap-y-6 mt-4'>
             {navigation.map((nav, index) => (
               <motion.div
-                variants={DF_ITEM_VARIANT}
+                variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-baseline gap-x-2'
               >
                 <h1 className='text-md dark:text-gray-400 text-gray-600 font-medium'>
@@ -74,13 +74,13 @@ export default function Menu() {
             ))}
           </div>
           <motion.div
-            variants={DF_ITEM_VARIANT}
+            variants={DF_PAGE_ITEM_VARIANT}
             className='w-full border-2 border-gray-200 my-8'
           />
           <div className='flex gap-12'>
             {SOCIALS.map((social, index) => (
               <motion.button
-                variants={DF_ITEM_VARIANT}
+                variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-center gap-x-1 text-gray-500 text-lg font-medium'
               >
                 <span>{social.name}</span>

@@ -1,7 +1,7 @@
 import Container from '@/components/Container';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
 
 export default function Home() {
   const router = useRouter();
@@ -44,13 +44,13 @@ export default function Home() {
               <div className='flex justify-between items-center'>
                 <div className='max-w-xl'>
                   <motion.h1
-                    variants={DF_ITEM_VARIANT}
+                    variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-7xl font-extrabold drop-shadow-lg'
                   >
                     Hey, I'm Jonah.
                   </motion.h1>
                   <motion.p
-                    variants={DF_ITEM_VARIANT}
+                    variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-xl drop-shadow-lg mt-6'
                   >
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -58,7 +58,7 @@ export default function Home() {
                     eveniet nihil itaque minima harum.
                   </motion.p>
                   <motion.div
-                    variants={DF_ITEM_VARIANT}
+                    variants={DF_PAGE_ITEM_VARIANT}
                     className='flex gap-x-8 mt-10'
                   >
                     {/* TODO: Make this primary button */}
@@ -78,7 +78,7 @@ export default function Home() {
                   </motion.div>
                 </div>
                 <motion.div
-                  variants={DF_ITEM_VARIANT}
+                  variants={DF_PAGE_ITEM_VARIANT}
                   className='w-80 h-80 dark:bg-gray-300 bg-gray-800 rounded-full shadow-xl '
                 />
               </div>

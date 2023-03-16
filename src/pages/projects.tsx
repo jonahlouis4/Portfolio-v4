@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
 import Container from '@/components/Container';
 import { useState } from 'react';
 import ProjectDetails from '@/components/ProjectDetails';
@@ -47,6 +47,7 @@ export default function Projects() {
       exit='exit'
       className='pt-48 pb-16 relative'
     >
+      {/* Project modal */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectDetails
@@ -56,9 +57,10 @@ export default function Projects() {
           />
         )}
       </AnimatePresence>
+
       <Container>
         <motion.h1
-          variants={DF_ITEM_VARIANT}
+          variants={DF_PAGE_ITEM_VARIANT}
           className='text-6xl font-extrabold drop-shadow-xl'
         >
           Projects
@@ -66,7 +68,7 @@ export default function Projects() {
         <div className='mt-28 grid grid-cols-2 gap-20'>
           {myProjects.map((project, index) => (
             <motion.button
-              variants={DF_ITEM_VARIANT}
+              variants={DF_PAGE_ITEM_VARIANT}
               layoutId={project.name}
               whileHover={{
                 scale: 1.1,
