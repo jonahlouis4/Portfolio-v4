@@ -73,7 +73,7 @@ export default function Projects() {
                 transition: { duration: 0.2 },
               }}
               className={
-                'relative w-full h-72  rounded-md bg-gray-50 ' +
+                'relative w-full h-72 rounded-md bg-gray-50 ' +
                 project.className
               }
               onClick={() => setSelectedProject(project.name)}
