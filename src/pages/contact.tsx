@@ -1,24 +1,65 @@
-import { SOCIALS } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_ITEM_VARIANT, SOCIALS } from '@/constants';
 import Container from '@/components/Container';
+import { motion } from 'framer-motion';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
   return (
-    <div className='pt-48'>
+    <motion.div
+      variants={DF_WRAPPER_VARIANT}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+      className='pt-48'
+    >
       <Container>
-        <h1 className='text-6xl font-extrabold drop-shadow-xl'>Contact</h1>
-        <div className='mt-28 flex justify-between'>
+        <motion.h1
+          variants={DF_ITEM_VARIANT}
+          className='text-6xl font-extrabold drop-shadow-xl'
+        >
+          Contact
+        </motion.h1>
+        <motion.div
+          variants={DF_ITEM_VARIANT}
+          className='w-full border-2 border-gray-200 my-8'
+        />
+        <div className='flex justify-between'>
           <div>
-            <h1>Email</h1>
-            <button>jonah_louis@outlook.com</button>
+            <motion.h1
+              variants={DF_ITEM_VARIANT}
+              className='text-2xl font-bold mb-2'
+            >
+              Email
+            </motion.h1>
+            <motion.button
+              variants={DF_ITEM_VARIANT}
+              className='flex items-center gap-x-1 text-gray-500 font-medium'
+            >
+              <span>jonah_louis@outlook.com</span>
+              <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+            </motion.button>
           </div>
           <div>
-            <h1>Social Medias</h1>
-            {SOCIALS.map((social) => (
-              <button>{social.name}</button>
-            ))}
+            <motion.h1
+              variants={DF_ITEM_VARIANT}
+              className='text-2xl font-bold mb-2'
+            >
+              Social Medias
+            </motion.h1>
+            <div className='flex gap-8'>
+              {SOCIALS.map((social) => (
+                <motion.button
+                  variants={DF_ITEM_VARIANT}
+                  className='flex items-center gap-x-1 text-gray-500 text-lg font-medium'
+                >
+                  <span>{social.name}</span>
+                  <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
       </Container>
-    </div>
+    </motion.div>
   );
 }
