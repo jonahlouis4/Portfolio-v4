@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  XMarkIcon,
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/react/24/outline';
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
+import { GitHubIcon } from './SocialIcons';
 
 export default function MyDialog(props: any) {
   const { selectedProject, setSelectedProject } = props;
@@ -13,8 +17,7 @@ export default function MyDialog(props: any) {
       description: null,
       langs: [],
       media: null,
-      github: null,
-      website: null,
+      links: [],
     });
   };
 
@@ -28,13 +31,13 @@ export default function MyDialog(props: any) {
   // Listen to 'ESC' key
   useEffect(() => {
     const close = (e: KeyboardEvent) => {
-      if(e.key === 'Escape'){
-        handleClose()
+      if (e.key === 'Escape') {
+        handleClose();
       }
-    }
-    window.addEventListener('keydown', close)
-  return () => window.removeEventListener('keydown', close)
-},[])
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, []);
 
   return (
     <motion.div
@@ -70,11 +73,40 @@ export default function MyDialog(props: any) {
           </h2>
           <ul className='flex gap-4 mt-8 '>
             {selectedProject.langs.map((lang: string, index: number) => (
-              <li className='flex items-center text-gray-500 font-medium'>
+              <li
+                key={lang}
+                className='flex items-center text-gray-500 font-medium'
+              >
                 <span>{lang}</span>
               </li>
             ))}
           </ul>
+          {selectedProject.links && (
+            <div className='mt-10 flex gap-8'>
+              {selectedProject.links.map((currLink: any) => (
+                <>
+                  {currLink.website && (
+                    <a
+                      href={currLink.website}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <ArrowTopRightOnSquareIcon className='h-6 w-6 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                    </a>
+                  )}
+                  {currLink.github && (
+                    <a
+                      href={currLink.github}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <GitHubIcon className='h-6 w-6 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                    </a>
+                  )}
+                </>
+              ))}
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>

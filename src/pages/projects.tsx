@@ -14,15 +14,13 @@ export default function Projects() {
     description: null | string;
     langs: undefined | Array<string>;
     media: null | string;
-    github: null |string;
-    website: null | string;
+    links: undefined | Array<any>
   }>({
     name: null,
     description: null,
     langs: [],
     media: null,
-    github: null,
-    website: null,
+    links: [],
   });
 
   const handleProject = (props: any) => {
@@ -31,8 +29,7 @@ export default function Projects() {
       description: props.longDescription,
       langs: props.langs,
       media: null,
-      github: props.github,
-      website: props.website
+      links: props.links
     });
   };
 

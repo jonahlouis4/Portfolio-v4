@@ -73,8 +73,9 @@ export const PROJECTS = [
       'TailwindCSS',
       'Firebase'
     ],
-    github: '',
-    website: '',
+    links: [
+      { github: 'https://github.com/jonahlouis4/StudyBuddy' },
+    ],
     className: '',
   },
   {
@@ -89,8 +90,9 @@ export const PROJECTS = [
       'Ant Design',
       'AntV',
     ],
-    github: 'https://github.com/jonahlouis4/COVID19-Tracker',
-    website: null,
+    links: [
+      { github: 'https://github.com/jonahlouis4/COVID19-Tracker', }
+    ],
     className: '',
   },
   {
@@ -102,8 +104,9 @@ export const PROJECTS = [
       'Shopify',
       'TailwindCSS'
     ],
-    github: null,
-    website: 'https://royaldripcheck.ca/',
+    links: [
+      { website: 'https://royaldripcheck.ca/' }
+    ],
     className: '',
   },
   {
@@ -115,8 +118,9 @@ export const PROJECTS = [
       'React',
       'TailwindCSS'
     ],
-    github: null,
-    website: 'https://www.creativefloww.ca/',
+    links: [
+      { website: 'https://www.creativefloww.ca/', }
+    ],
     className: '',
   },
   {
@@ -128,8 +132,9 @@ export const PROJECTS = [
       'React Native',
       'Firebase',
     ],
-    github: null,
-    website: 'https://icontribute.community/#/',
+    links: [
+      { website: 'https://icontribute.community/#/' }
+    ],
     className: '',
   },
 ];
