@@ -69,7 +69,7 @@ export default function Menu() {
                   className='group w-[7em] py-2 text-left text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
                   onClick={() => handlePage(nav.href)}
                 >
-                  <span className='px-4 rounded-lg dark:group-hover:bg-gray-700 group-hover:bg-gray-200 '>{nav.name}</span>
+                  <span className='px-4'>{nav.name}</span>
                 </button>
               </motion.div>
             ))}
