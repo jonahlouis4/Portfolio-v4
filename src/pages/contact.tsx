@@ -33,7 +33,7 @@ export default function Contact() {
             </motion.h1>
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
-              className='flex items-center gap-x-1 text-gray-500 font-medium'
+              className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
             >
               <span>jonah_louis@outlook.com</span>
               <ArrowTopRightOnSquareIcon className='h-4 w-4' />
@@ -50,7 +50,7 @@ export default function Contact() {
               {SOCIALS.map((social) => (
                 <motion.button
                   variants={DF_PAGE_ITEM_VARIANT}
-                  className='flex items-center gap-x-1 text-gray-500 text-lg font-medium'
+                  className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
                 >
                   <span>{social.name}</span>
                   <ArrowTopRightOnSquareIcon className='h-4 w-4' />

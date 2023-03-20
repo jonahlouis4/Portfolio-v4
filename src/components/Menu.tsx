@@ -82,7 +82,7 @@ export default function Menu() {
             {SOCIALS.map((social, index) => (
               <motion.button
                 variants={DF_PAGE_ITEM_VARIANT}
-                className='flex items-center gap-x-1 text-gray-500 text-lg font-medium'
+                className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
               >
                 <span>{social.name}</span>
                 <ArrowTopRightOnSquareIcon className='h-4 w-4' />
