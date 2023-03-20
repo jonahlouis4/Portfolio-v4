@@ -58,6 +58,7 @@ export default function Menu() {
           <div className='flex flex-col gap-y-6 mt-4'>
             {navigation.map((nav, index) => (
               <motion.div
+                key={nav.name}
                 variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-baseline gap-x-2'
               >
@@ -65,10 +66,10 @@ export default function Menu() {
                   0{index + 1}
                 </h1>
                 <button
-                  className='p-2 rounded-lg text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 dark:hover:bg-gray-700 hover:bg-gray-200 hover:tracking-normal transition-all duration-300'
+                  className='group w-[7em] py-2 text-left text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
                   onClick={() => handlePage(nav.href)}
                 >
-                  {nav.name}
+                  <span className='px-4 rounded-lg dark:group-hover:bg-gray-700 group-hover:bg-gray-200 '>{nav.name}</span>
                 </button>
               </motion.div>
             ))}
