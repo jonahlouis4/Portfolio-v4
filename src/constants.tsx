@@ -73,7 +73,7 @@ export const PROJECTS = [
       'TailwindCSS',
       'Firebase'
     ],
-    gitHub: '',
+    github: '',
     website: '',
     className: '',
   },
@@ -84,11 +84,12 @@ export const PROJECTS = [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, hic culpa. Nihil iste voluptates eligendi quasi, doloremque tempore voluptas ratione excepturi aspernatur placeat maiores dolor accusantium quae et animi saepe?',
     langs: [
       'React',
+      'GraphQL',
+      'Apollo Client',
       'Ant Design',
-      'Ant Design Charts',
-      'GraphQL'
+      'AntV',
     ],
-    gitHub: '',
+    github: 'https://github.com/jonahlouis4/COVID19-Tracker',
     website: null,
     className: '',
   },
@@ -101,8 +102,8 @@ export const PROJECTS = [
       'Shopify',
       'TailwindCSS'
     ],
-    gitHub: null,
-    website: '',
+    github: null,
+    website: 'https://royaldripcheck.ca/',
     className: '',
   },
   {
@@ -114,6 +115,8 @@ export const PROJECTS = [
       'React',
       'TailwindCSS'
     ],
+    github: null,
+    website: 'https://www.creativefloww.ca/',
     className: '',
   },
   {
@@ -125,8 +128,8 @@ export const PROJECTS = [
       'React Native',
       'Firebase',
     ],
-    gitHub: null,
-    website: '',
+    github: null,
+    website: 'https://icontribute.community/#/',
     className: '',
   },
 ];

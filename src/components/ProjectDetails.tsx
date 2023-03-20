@@ -13,23 +13,28 @@ export default function MyDialog(props: any) {
       description: null,
       langs: [],
       media: null,
+      github: null,
+      website: null,
     });
   };
 
+  // Hide scrollbar when modal is active
   useEffect(() => {
     if (selectedProject) {
       document.documentElement.style.overflow = 'hidden';
     }
   }, [selectedProject]);
 
-  // TODO 1: Add keyboard ESP functionality
-  /*
-TODO 2:
- - Project name
- - Project description
- - Project languages + frameworks/libraries
- - Project screenshots or videos
-*/
+  // Listen to 'ESC' key
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+      if(e.key === 'Escape'){
+        handleClose()
+      }
+    }
+    window.addEventListener('keydown', close)
+  return () => window.removeEventListener('keydown', close)
+},[])
 
   return (
     <motion.div
@@ -38,17 +43,19 @@ TODO 2:
       animate='visible'
       exit='exit'
       className='fixed inset-0 flex justify-center items-center z-30'
+      onClick={handleClose}
     >
       <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
       <motion.div
         className='bg-gray-100 rounded-md p-4 w-2/5 min-h-min z-40 shadow-xl'
         layoutId={selectedProject.name}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className='flex justify-end'>
           <motion.button
             variants={DF_ITEM_VARIANT}
             onClick={handleClose}
-            className='rounded-full p-1'
+            className='rounded-full p-1 z-40'
           >
             <XMarkIcon className='h-8 w-8 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
           </motion.button>

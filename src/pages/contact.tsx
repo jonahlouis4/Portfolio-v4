@@ -10,7 +10,7 @@ export default function Contact() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='pt-48'
+      className='py-48'
     >
       <Container>
         <motion.h1
