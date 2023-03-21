@@ -16,6 +16,9 @@ module.exports = {
       fontFamily: {
         sans: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        '3xl': '2200px',
+      },
     },
   },
   plugins: [],

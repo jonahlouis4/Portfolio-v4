@@ -7,7 +7,7 @@ export default function Container(props: funcProps) {
 
   return (
     <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8' >
-      <div className='mx-auto max-w-5xl'>{children}</div>
+      <div className='mx-auto max-w-5xl 3xl:max-w-6xl'>{children}</div>
     </div>
   );
 }
