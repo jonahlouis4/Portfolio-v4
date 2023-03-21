@@ -50,7 +50,7 @@ export default function MyDialog(props: any) {
     >
       <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
       <motion.div
-        className='bg-gray-100 rounded-md p-4 w-2/5 min-h-min z-40 shadow-xl'
+        className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 w-2/5 min-h-min z-40 shadow-xl'
         layoutId={selectedProject.name}
         onClick={(e) => e.stopPropagation()}
       >
@@ -65,17 +65,17 @@ export default function MyDialog(props: any) {
         </div>
 
         <div className='mt-4 mb-4'>
-          <h1 className='text-3xl font-extrabold text-gray-900 drop-shadow-xl text-center'>
+          <h1 className='text-3xl font-extrabold dark:text-gray-200 text-gray-900 drop-shadow-xl text-center'>
             {selectedProject.name}
           </h1>
-          <h2 className='mt-12 text-base drop-shadow-lg'>
+          <h2 className='mt-12 dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
             {selectedProject.description}
           </h2>
           <ul className='flex gap-4 mt-8 '>
             {selectedProject.langs.map((lang: string, index: number) => (
               <li
                 key={lang}
-                className='flex items-center text-gray-500 font-medium'
+                className='flex items-center dark:text-gray-400 text-gray-500 font-medium'
               >
                 <span>{lang}</span>
               </li>
@@ -91,7 +91,7 @@ export default function MyDialog(props: any) {
                       target='_blank'
                       rel='noreferrer'
                     >
-                      <ArrowTopRightOnSquareIcon className='h-6 w-6 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                      <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                     </a>
                   )}
                   {currLink.github && (
@@ -100,7 +100,7 @@ export default function MyDialog(props: any) {
                       target='_blank'
                       rel='noreferrer'
                     >
-                      <GitHubIcon className='h-6 w-6 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                      <GitHubIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                     </a>
                   )}
                 </>

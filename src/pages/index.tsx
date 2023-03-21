@@ -32,7 +32,7 @@ export default function Home() {
                     className='dark:text-gray-200 text-gray-900 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
                   >
                     Hey, I'm{' '}
-                    <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500'>
+                    <span className='bg-clip-text animate-header text-transparent bg-gradient-to-r from-pink-500 to-purple-500'>
                       Jonah.
                     </span>
                   </motion.h1>
@@ -74,7 +74,7 @@ export default function Home() {
                   <Image
                     src={avatar}
                     alt='Picture of Jonah Louis'
-                    className='lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl'
+                    className='lg:w-80 lg:h-80 2xl:h-96 2xl:w-96 object-cover rounded-full shadow-2xl'
                   />
                 </motion.div>
               </div>

@@ -14,7 +14,7 @@ export default function Projects() {
     description: null | string;
     langs: undefined | Array<string>;
     media: null | string;
-    links: undefined | Array<any>
+    links: undefined | Array<any>;
   }>({
     name: null,
     description: null,
@@ -29,7 +29,7 @@ export default function Projects() {
       description: props.longDescription,
       langs: props.langs,
       media: null,
-      links: props.links
+      links: props.links,
     });
   };
 
@@ -69,7 +69,7 @@ export default function Projects() {
                 transition: { duration: 0.2 },
               }}
               className={
-                'relative w-full h-72 rounded-md bg-gray-50 drop-shadow-md ' +
+                'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
                 project.className
               }
               onClick={() => handleProject(project)}
@@ -78,7 +78,7 @@ export default function Projects() {
               <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
                 {project.name}
               </h1>
-              <h2 className='text-white text-sm drop-shadow-xl mx-auto max-w-xs'>
+              <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
                 {project.description}
               </h2>
             </motion.button>
