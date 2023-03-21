@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html
       lang='en'
-      className='selection:bg-purple-300 selection:text-purple-900'
+      className='selection:bg-purple-500 selection:text-purple-900'
     >
       <Head />
       <body>

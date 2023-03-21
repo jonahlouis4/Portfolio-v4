@@ -26,14 +26,15 @@ export default function Loader() {
   const item = {
     visible: {
       opacity: 1,
-      scale: 1,
+      scale: 1.2,
       transition: {
-        duration: 0.5,
+        duration: 2.5,
+
       },
     },
     hidden: {
       opacity: 0,
-      scale: 0
+      scale: 0.8
     },
     exit: {
       opacity: 0,
