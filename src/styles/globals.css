@@ -7,15 +7,15 @@
     width: 7px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f9fafb;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    height: 5px;
-    border-radius: 10px;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  height: 5px;
+  border-radius: 10px;
+}
