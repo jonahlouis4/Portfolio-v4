@@ -26,8 +26,7 @@ export default function Loader() {
   const item = {
     exit: {
       opacity: 0,
-      y: -15,
-      scale: 0.8,
+      y: -25,
       transition: {
         duration: 0.2,
       },

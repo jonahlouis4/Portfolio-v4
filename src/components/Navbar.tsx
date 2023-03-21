@@ -48,9 +48,9 @@ export default function Navbar() {
       <div className='flex gap-x-4 justify-between'>
         <Link
           href='/'
-          className='dark:bg-gray-700 dark:text-gray-400 bg-gray-200 px-4 py-2 rounded-lg shadow-sm font-extrabold text-2xl'
+          className='text-5xl text-white font-extrabold drop-shadow-lg px-3 py-2 rounded-full bg-pink-600'
         >
-          <span className='drop-shadow-lg'>J</span>
+          <span>J.</span>
         </Link>
         {/* <Image
             src='logo_v4_light.svg'
