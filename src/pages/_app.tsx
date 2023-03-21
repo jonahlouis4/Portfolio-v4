@@ -19,10 +19,10 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (mode === 'dark') {
       document.documentElement.classList.add('dark');
-      document.documentElement.classList.add('bg-gray-900');
+      document.documentElement.classList.add('bg-zinc-900');
     } else {
       document.documentElement.classList.remove('dark');
-      document.documentElement.classList.remove('bg-gray-900');
+      document.documentElement.classList.remove('bg-zinc-900');
     }
   }, [mode]);
 

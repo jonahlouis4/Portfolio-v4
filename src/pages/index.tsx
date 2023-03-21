@@ -1,7 +1,10 @@
 import Container from '@/components/Container';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import avatar from '../assets/jonah.jpg';
 
 export default function Home() {
   const router = useRouter();
@@ -16,7 +19,7 @@ export default function Home() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='h-screen dark:bg-gray-900'
+      className='h-screen dark:bg-zinc-900'
     >
       <motion.div className='h-full flex flex-col items-center justify-center'>
         <div className='w-full'>
@@ -26,13 +29,16 @@ export default function Home() {
                 <div className='max-w-xl 3xl:max-w-2xl text-center lg:text-left'>
                   <motion.h1
                     variants={DF_PAGE_ITEM_VARIANT}
-                    className='dark:text-gray-200 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
+                    className='dark:text-gray-200 text-gray-900 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
                   >
-                    Hey, I'm Jonah.
+                    Hey, I'm{' '}
+                    <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500'>
+                      Jonah.
+                    </span>
                   </motion.h1>
                   <motion.p
                     variants={DF_PAGE_ITEM_VARIANT}
-                    className='dark:text-gray-200 text-lg lg:text-xl drop-shadow-lg mt-6'
+                    className='dark:text-gray-200 text-lg lg:text-2xl drop-shadow-lg mt-6'
                   >
                     I'm a full-stack web developer who loves to build things for
                     the web. Other than coding, I spend my time deepening my
@@ -46,23 +52,31 @@ export default function Home() {
                     {/* TODO: Make this primary button */}
                     <button
                       onClick={() => handleActionBtn('/journey')}
-                      className='rounded dark:bg-white bg-gray-900 dark:text-gray-900 text-white drop-shadow-lg font-semibold py-2 px-3 3xl:py-2.5 3xl:px-3.5 shadow-sm transition duration-150 ease-in-out dark:hover:bg-gray-300 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'
+                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 hover:scale-105 transition duration-150'
                     >
-                      My journey
+                      <span>My journey</span>
+                      <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                     {/* TODO: Make this secondary button */}
                     <button
                       onClick={() => handleActionBtn('/projects')}
-                      className='rounded dark:text-white text-gray-900 drop-shadow-lg font-semibold py-2 px-3 3xl:py-2.5 3xl:px-3.5 shadow-sm transition duration-300 ease-in-out ring-1 ring-inset ring-gray-300 dark:hover:bg-gray-700 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500'
+                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 hover:scale-105 transition duration-150'
                     >
-                      My projects
+                      <span>My projects</span>
+                      <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                   </motion.div>
                 </div>
                 <motion.div
                   variants={DF_PAGE_ITEM_VARIANT}
-                  className='hidden lg:block lg:w-80 lg:h-80 3xl:w-96 3xl:h-96 dark:bg-gray-300 bg-gray-800 rounded-full shadow-xl '
-                />
+                  className='hidden lg:block '
+                >
+                  <Image
+                    src={avatar}
+                    alt='Picture of Jonah Louis'
+                    className='lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl'
+                  />
+                </motion.div>
               </div>
             </>
           </Container>

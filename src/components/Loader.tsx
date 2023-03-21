@@ -34,7 +34,7 @@ export default function Loader() {
   };
 
   return (
-    <div className='dark:bg-gray-900 flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
+    <div className='dark:bg-zinc-900 flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
       <motion.div
         initial={false}
         variants={item}

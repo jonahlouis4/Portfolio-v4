@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className='flex gap-x-4 justify-between'>
         <Link
           href='/'
-          className='text-5xl text-white font-extrabold drop-shadow-lg px-3 py-2 rounded-full bg-pink-600'
+          className='text-3xl text-white font-extrabold drop-shadow-lg px-3.5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500'
         >
           <span>J.</span>
         </Link>
