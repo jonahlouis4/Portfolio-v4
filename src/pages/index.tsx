@@ -34,9 +34,10 @@ export default function Home() {
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-lg lg:text-xl drop-shadow-lg mt-6'
                   >
-                    I'm a full-stack web developer who loves to build pixel perfect
-                    things for the web. Other than coding, I spend my time deepening my experience in classical Yoga, listening to music,
-                    and simply enjoying what the world have to offer.
+                    I'm a full-stack web developer who loves to build things for
+                    the web. Other than coding, I spend my time deepening my
+                    experience in classical Yoga, listening to music, and simply
+                    enjoying what the world has to offer.
                   </motion.p>
                   <motion.div
                     variants={DF_PAGE_ITEM_VARIANT}
