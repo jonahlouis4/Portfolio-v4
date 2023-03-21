@@ -11,7 +11,7 @@ export const useGlobalsPersist = create<modeState>()(
   devtools(
     persist(
       (set) => ({
-        mode: 'light',
+        mode: 'dark',
         setMode: (newMode) => set(({ mode: newMode })),
       }),
       {

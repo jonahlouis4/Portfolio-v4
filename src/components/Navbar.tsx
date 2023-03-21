@@ -45,7 +45,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className='z-10 absolute w-full p-4 md:p-8 xl:py-14 xl:px-28 '>
+    <div className='z-10 absolute w-full p-4 lg:p-8 xl:py-14 xl:px-28 '>
       <div className='flex gap-x-4 justify-between'>
         {/* <Link
           href='/'

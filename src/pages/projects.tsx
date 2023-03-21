@@ -55,11 +55,11 @@ export default function Projects() {
       <Container>
         <motion.h1
           variants={DF_PAGE_ITEM_VARIANT}
-          className='text-6xl font-extrabold drop-shadow-xl'
+          className='dark:text-gray-200 text-gray-900 text-6xl font-extrabold drop-shadow-xl'
         >
           Projects
         </motion.h1>
-        <div className='mt-16 grid grid-cols-2 gap-20'>
+        <div className='mt-16 grid md:grid-cols-2 gap-20'>
           {PROJECTS.map((project, index) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
@@ -75,10 +75,10 @@ export default function Projects() {
               onClick={() => handleProject(project)}
               key={project.name}
             >
-              <h1 className='font-extrabold text-lg drop-shadow-xl'>
+              <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
                 {project.name}
               </h1>
-              <h2 className='text-sm drop-shadow-xl mx-auto max-w-xs'>
+              <h2 className='text-white text-sm drop-shadow-xl mx-auto max-w-xs'>
                 {project.description}
               </h2>
             </motion.button>

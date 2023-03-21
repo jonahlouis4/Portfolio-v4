@@ -76,7 +76,7 @@ export const PROJECTS = [
     links: [
       { github: 'https://github.com/jonahlouis4/StudyBuddy' },
     ],
-    className: '',
+    className: 'bg-gradient-to-br from-pink-500 to-fuchsia-600',
   },
   {
     name: 'COVID-19 Tracker',
@@ -93,7 +93,7 @@ export const PROJECTS = [
     links: [
       { github: 'https://github.com/jonahlouis4/COVID19-Tracker', }
     ],
-    className: '',
+    className: 'bg-gradient-to-br from-fuchsia-500 to-purple-700',
   },
   {
     name: 'Royal Drip Check',
@@ -107,7 +107,7 @@ export const PROJECTS = [
     links: [
       { website: 'https://royaldripcheck.ca/' }
     ],
-    className: '',
+    className: 'bg-gradient-to-br from-violet-700 to-violet-600',
   },
   {
     name: 'CreativeFloww',
@@ -121,7 +121,7 @@ export const PROJECTS = [
     links: [
       { website: 'https://www.creativefloww.ca/', }
     ],
-    className: '',
+    className: 'bg-gradient-to-br from-blue-700 to-blue-600',
   },
   {
     name: 'iContribute',
@@ -135,6 +135,6 @@ export const PROJECTS = [
     links: [
       { website: 'https://icontribute.community/#/' }
     ],
-    className: '',
+    className: 'bg-gradient-to-br from-blue-700 to-sky-500',
   },
 ];
