@@ -62,11 +62,11 @@ export default function Menu() {
                 variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-baseline gap-x-2'
               >
-                <h1 className='text-md dark:text-gray-400 text-gray-600 font-medium'>
+                <h1 className='text-md dark:text-gray-400 text-gray-600 font-bold'>
                   0{index + 1}
                 </h1>
                 <button
-                  className='group w-[7em] py-2 text-left text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
+                  className='group w-[7em] py-2 text-left text-5xl md:text-6xl lg:text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
                   onClick={() => handlePage(nav.href)}
                 >
                   <span className='px-4'>{nav.name}</span>
@@ -82,7 +82,7 @@ export default function Menu() {
             {SOCIALS.map((social, index) => (
               <motion.a
                 variants={DF_PAGE_ITEM_VARIANT}
-                className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
+                className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
                 href={social.href}
                 target="_blank"
                 rel='noreferrer'

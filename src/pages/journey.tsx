@@ -6,52 +6,6 @@ import {
 import { motion } from 'framer-motion';
 
 export default function Journey() {
-  type DividerProps = {
-    start?: boolean;
-    end?: boolean;
-    section?: boolean;
-    extend?: boolean;
-  };
-
-  const Divider = ({ start, end, section, extend }: DividerProps) => (
-    <motion.div
-      variants={DF_PAGE_ITEM_VARIANT}
-      className={
-        'flex flex-col justify-center items-center' +
-        (extend ? ' py-10' : ' py-32')
-      }
-    >
-      {start && (
-        <>
-          <div className='h-4 w-4 bg-stone-300 rounded-full' />
-          <div className='h-12 border-r-2 border-stone-300' />
-          <div className='h-4 w-4 bg-stone-300 rounded-full' />
-        </>
-      )}
-
-      {section && (
-        <>
-          <div className='h-4 w-4 bg-stone-300 rounded-full' />
-          <div className='h-6 border-r-2 border-stone-300' />
-          <div className='h-6 border-r-2 border-stone-300 mt-2' />
-          <div className='h-6 border-r-2 border-stone-300 mt-2' />
-          <div className='h-6 border-r-2 border-stone-300 mt-2' />
-          <div className='h-4 w-4 bg-stone-300 rounded-full' />
-        </>
-      )}
-
-      {extend && <div className='h-12 border-r-2 border-stone-300' />}
-    </motion.div>
-  );
-
-  const Header = ({ children }: any) => (
-    <motion.h1
-      variants={DF_PAGE_ITEM_VARIANT}
-      className='text-xl font-extrabold drop-shadow-xl text-gray-800 text-center'
-    >
-      {children}
-    </motion.h1>
-  );
 
   return (
     <motion.div
@@ -64,10 +18,14 @@ export default function Journey() {
       <Container>
         <motion.h1
           variants={DF_PAGE_ITEM_VARIANT}
-          className='text-6xl font-extrabold drop-shadow-xl'
+          className='text-6xl dark:text-gray-200 text-gray-900 font-extrabold drop-shadow-xl'
         >
           Journey
         </motion.h1>
+        <motion.div
+          variants={DF_PAGE_ITEM_VARIANT}
+          className='w-full border-2 border-gray-200 my-8'
+        />
       </Container>
     </motion.div>
   );

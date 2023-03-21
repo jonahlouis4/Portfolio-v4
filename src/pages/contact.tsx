@@ -15,7 +15,7 @@ export default function Contact() {
       <Container>
         <motion.h1
           variants={DF_PAGE_ITEM_VARIANT}
-          className='text-6xl font-extrabold drop-shadow-xl'
+          className='text-6xl dark:text-gray-200 text-gray-900 font-extrabold drop-shadow-xl'
         >
           Contact
         </motion.h1>
@@ -27,13 +27,13 @@ export default function Contact() {
           <div>
             <motion.h1
               variants={DF_PAGE_ITEM_VARIANT}
-              className='text-2xl font-bold mb-2'
+              className='text-2xl dark:text-gray-200 font-bold mb-2'
             >
               Email
             </motion.h1>
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
-              className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
+              className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
             >
               <span>jonah_louis@outlook.com</span>
               <ArrowTopRightOnSquareIcon className='h-4 w-4' />
@@ -42,7 +42,7 @@ export default function Contact() {
           <div>
             <motion.h1
               variants={DF_PAGE_ITEM_VARIANT}
-              className='text-2xl font-bold mb-2'
+              className='text-2xl dark:text-gray-200 text-gray-900 font-bold mb-2'
             >
               Social Medias
             </motion.h1>
@@ -50,7 +50,7 @@ export default function Contact() {
               {SOCIALS.map((social) => (
                 <motion.button
                   variants={DF_PAGE_ITEM_VARIANT}
-                  className='flex items-center gap-x-1 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400'
+                  className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
                 >
                   <span>{social.name}</span>
                   <ArrowTopRightOnSquareIcon className='h-4 w-4' />

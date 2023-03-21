@@ -59,6 +59,10 @@ export default function Projects() {
         >
           Projects
         </motion.h1>
+        <motion.div
+          variants={DF_PAGE_ITEM_VARIANT}
+          className='w-full border-2 border-gray-200 my-8'
+        />
         <div className='mt-16 grid md:grid-cols-2 gap-20'>
           {PROJECTS.map((project, index) => (
             <motion.button

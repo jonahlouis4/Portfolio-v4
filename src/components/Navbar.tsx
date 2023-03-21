@@ -47,12 +47,6 @@ export default function Navbar() {
   return (
     <div className='z-10 absolute w-full p-4 lg:p-8 xl:py-14 xl:px-28 '>
       <div className='flex gap-x-4 justify-between'>
-        {/* <Link
-          href='/'
-          className='text-3xl text-white font-extrabold drop-shadow-lg px-3.5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500'
-        >
-          <span>J.</span>
-        </Link> */}
         <Link href='/'>
           <Image
             src='logo_v4.svg'
