@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Bars3Icon,
   XMarkIcon,
@@ -10,13 +11,13 @@ import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 
 export default function Navbar() {
-  const mode = useGlobalsPersist(state => state.mode);
-  const setMode = useGlobalsPersist(state => state.setMode);
-  const menu = useGlobal(state => state.menu)
-  const setMenu = useGlobal(state => state.setMenu)
+  const mode = useGlobalsPersist((state) => state.mode);
+  const setMode = useGlobalsPersist((state) => state.setMode);
+  const menu = useGlobal((state) => state.menu);
+  const setMenu = useGlobal((state) => state.setMenu);
 
   const handleMenu = () => {
-    setMenu()
+    setMenu();
   };
 
   const handleMode = () => {
@@ -46,19 +47,21 @@ export default function Navbar() {
   return (
     <div className='z-10 absolute w-full p-4 md:p-8 xl:py-14 xl:px-28 '>
       <div className='flex gap-x-4 justify-between'>
-        <Link
+        {/* <Link
           href='/'
           className='text-3xl text-white font-extrabold drop-shadow-lg px-3.5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500'
         >
           <span>J.</span>
-        </Link>
-        {/* <Image
-            src='logo_v4_light.svg'
+        </Link> */}
+        <Link href='/'>
+          <Image
+            src='logo_v4.svg'
             alt="Jonah's portfolio logo"
             width={48}
             height={48}
-            className='drop-shadow-lg'
-          /> */}
+            className='drop-shadow-xl'
+          />
+        </Link>
         <div className='flex items-center gap-x-4'>
           <button onClick={handleMode}>
             <AnimatePresence mode='wait'>

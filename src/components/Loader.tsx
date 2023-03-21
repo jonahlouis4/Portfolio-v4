@@ -1,7 +1,7 @@
 import { useGlobal } from '@/store/globals';
 import { motion, usePresence } from 'framer-motion';
 import { useEffect } from 'react';
-import animatedLogo from '../assets/logo_v4_loading.mp4';
+import Image from 'next/image';
 
 export default function Loader() {
   const [isPresent, safeToRemove] = usePresence();
@@ -24,11 +24,22 @@ export default function Loader() {
   }, [isPresent]);
 
   const item = {
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      scale: 0
+    },
     exit: {
       opacity: 0,
-      y: -25,
+      scale: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.5,
       },
     },
   };
@@ -36,15 +47,19 @@ export default function Loader() {
   return (
     <div className='dark:bg-zinc-900 flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
       <motion.div
-        initial={false}
+        initial='hidden'
+        animate='visible'
         variants={item}
         exit='exit'
         className='dark:text-white text-lg font-extrabold'
       >
-        {/* <video className='h-16 w-16' autoPlay muted>
-          <source src='logo_v4_loading.mp4' type='video/mp4' />
-        </video> */}
-        logo animation
+        <Image
+          src='logo_v4.svg'
+          alt="Jonah's portfolio logo"
+          width={68}
+          height={68}
+          className='drop-shadow-xl'
+        />
       </motion.div>
     </div>
   );
