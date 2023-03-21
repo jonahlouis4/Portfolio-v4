@@ -5,25 +5,6 @@ import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
 
 export default function Home() {
   const router = useRouter();
-  const wrapper = {
-    visible: {
-      opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.05,
-      },
-    },
-    hidden: {
-      opacity: 0,
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-        staggerChildren: 0.05,
-      },
-    },
-  };
 
   const handleActionBtn = (href: string) => {
     router.push(href);

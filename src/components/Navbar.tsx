@@ -5,7 +5,6 @@ import {
   SunIcon,
   MoonIcon,
 } from '@heroicons/react/24/outline';
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
@@ -53,6 +52,13 @@ export default function Navbar() {
         >
           <span className='drop-shadow-lg'>J</span>
         </Link>
+        {/* <Image
+            src='logo_v4_light.svg'
+            alt="Jonah's portfolio logo"
+            width={48}
+            height={48}
+            className='drop-shadow-lg'
+          /> */}
         <div className='flex items-center gap-x-4'>
           <button onClick={handleMode}>
             <AnimatePresence mode='wait'>

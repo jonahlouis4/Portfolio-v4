@@ -1,6 +1,7 @@
 import { useGlobal } from '@/store/globals';
 import { motion, usePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import animatedLogo from '../assets/logo_v4_loading.mp4';
 
 export default function Loader() {
   const [isPresent, safeToRemove] = usePresence();
@@ -25,23 +26,27 @@ export default function Loader() {
   const item = {
     exit: {
       opacity: 0,
-      y: -25,
+      y: -15,
+      scale: 0.8,
       transition: {
-        duration: 0.45,
+        duration: 0.2,
       },
     },
   };
 
   return (
     <div className='dark:bg-gray-900 flex items-center justify-center absolute w-full h-screen z-40 shadow-2xl'>
-      <motion.h1
+      <motion.div
         initial={false}
         variants={item}
         exit='exit'
         className='dark:text-white text-lg font-extrabold'
       >
-        Logo Animation
-      </motion.h1>
+        {/* <video className='h-16 w-16' autoPlay muted>
+          <source src='logo_v4_loading.mp4' type='video/mp4' />
+        </video> */}
+        logo animation
+      </motion.div>
     </div>
   );
 }
