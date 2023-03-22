@@ -42,6 +42,17 @@ export const DF_PAGE_ITEM_VARIANT = {
   },
 };
 
+// item 2 - fade in only
+export const DF_PAGE_ITEM_VARIANT_2 = {
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+  hidden: { opacity: 0 },
+};
+
 export const DF_ITEM_VARIANT = {
   visible: {
     opacity: 1,

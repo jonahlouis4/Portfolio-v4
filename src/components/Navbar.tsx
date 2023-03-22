@@ -10,6 +10,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 import Container from './Container';
+import {
+  DF_PAGE_ITEM_VARIANT_2,
+  DF_WRAPPER_VARIANT,
+} from '@/constants';
 
 export default function Navbar() {
   const mode = useGlobalsPersist((state) => state.mode);
@@ -46,20 +50,27 @@ export default function Navbar() {
   };
 
   return (
-    <div className='z-10 absolute w-full py-4 lg:py-10'>
+    <motion.div
+      variants={DF_WRAPPER_VARIANT}
+      initial='hidden'
+      animate='visible'
+      className='z-10 absolute w-full py-4 lg:py-10'
+    >
       <Container narrow={false}>
         <div className='flex gap-x-4 justify-between'>
-          <Link href='/'>
-            <Image
-              src='logo_v4.svg'
-              alt="Jonah's portfolio logo"
-              width={48}
-              height={48}
-              className='drop-shadow-xl'
-            />
-          </Link>
+          <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
+            <Link href='/'>
+              <Image
+                src='logo_v4.svg'
+                alt="Jonah's portfolio logo"
+                width={48}
+                height={48}
+                className='drop-shadow-xl'
+              />
+            </Link>
+          </motion.div>
           <div className='flex items-center gap-x-4'>
-            <button onClick={handleMode}>
+            <motion.button variants={DF_PAGE_ITEM_VARIANT_2} onClick={handleMode}>
               <AnimatePresence mode='wait'>
                 {mode === 'light' ? (
                   <motion.div
@@ -83,8 +94,8 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </button>
-            <button onClick={handleMenu}>
+            </motion.button>
+            <motion.button variants={DF_PAGE_ITEM_VARIANT_2} onClick={handleMenu}>
               <AnimatePresence mode='wait'>
                 {!menu ? (
                   <motion.div
@@ -108,10 +119,10 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </button>
+            </motion.button>
           </div>
         </div>
       </Container>
-    </div>
+    </motion.div>
   );
 }
