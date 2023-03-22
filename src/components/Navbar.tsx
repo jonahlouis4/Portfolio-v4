@@ -10,16 +10,22 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 import Container from './Container';
-import {
-  DF_PAGE_ITEM_VARIANT_2,
-  DF_WRAPPER_VARIANT,
-} from '@/constants';
+import { DF_PAGE_ITEM_VARIANT_2, DF_WRAPPER_VARIANT } from '@/constants';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const mode = useGlobalsPersist((state) => state.mode);
   const setMode = useGlobalsPersist((state) => state.setMode);
   const menu = useGlobal((state) => state.menu);
   const setMenu = useGlobal((state) => state.setMenu);
+  const router = useRouter();
+
+  const handleHome = async () => {
+    if (menu) {
+      setMenu();
+    }
+    await router.push('/');
+  };
 
   const handleMenu = () => {
     setMenu();
@@ -59,7 +65,7 @@ export default function Navbar() {
       <Container narrow={false}>
         <div className='flex gap-x-4 justify-between'>
           <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
-            <Link href='/'>
+            <button onClick={handleHome}>
               <Image
                 src='logo_v4.svg'
                 alt="Jonah's portfolio logo"
@@ -67,10 +73,13 @@ export default function Navbar() {
                 height={48}
                 className='drop-shadow-xl'
               />
-            </Link>
+            </button>
           </motion.div>
           <div className='flex items-center gap-x-4'>
-            <motion.button variants={DF_PAGE_ITEM_VARIANT_2} onClick={handleMode}>
+            <motion.button
+              variants={DF_PAGE_ITEM_VARIANT_2}
+              onClick={handleMode}
+            >
               <AnimatePresence mode='wait'>
                 {mode === 'light' ? (
                   <motion.div
@@ -95,7 +104,10 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </motion.button>
-            <motion.button variants={DF_PAGE_ITEM_VARIANT_2} onClick={handleMenu}>
+            <motion.button
+              variants={DF_PAGE_ITEM_VARIANT_2}
+              onClick={handleMenu}
+            >
               <AnimatePresence mode='wait'>
                 {!menu ? (
                   <motion.div
