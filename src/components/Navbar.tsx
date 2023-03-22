@@ -9,6 +9,7 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
+import Container from './Container';
 
 export default function Navbar() {
   const mode = useGlobalsPersist((state) => state.mode);
@@ -45,70 +46,72 @@ export default function Navbar() {
   };
 
   return (
-    <div className='z-10 absolute w-full p-4 lg:p-8 xl:py-14 xl:px-28 '>
-      <div className='flex gap-x-4 justify-between'>
-        <Link href='/'>
-          <Image
-            src='logo_v4.svg'
-            alt="Jonah's portfolio logo"
-            width={48}
-            height={48}
-            className='drop-shadow-xl'
-          />
-        </Link>
-        <div className='flex items-center gap-x-4'>
-          <button onClick={handleMode}>
-            <AnimatePresence mode='wait'>
-              {mode === 'light' ? (
-                <motion.div
-                  key='darkMode'
-                  variants={modeVariant}
-                  initial='hidden'
-                  animate='visible'
-                  exit='exit'
-                >
-                  <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg hover:scale-110 hover:text-blue-500 transition ease-in-out duration-300 ' />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key='lightMode'
-                  variants={modeVariant}
-                  initial='hidden'
-                  animate='visible'
-                  exit='exit'
-                >
-                  <SunIcon className='h-5 w-5 text-gray-400 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
-          <button onClick={handleMenu}>
-            <AnimatePresence mode='wait'>
-              {!menu ? (
-                <motion.div
-                  key='menuClosed'
-                  variants={menuVariant}
-                  initial='hidden'
-                  animate='visible'
-                  exit='exit'
-                >
-                  <Bars3Icon className='h-12 w-12 dark:text-gray-400 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key='menuOpen'
-                  variants={menuVariant}
-                  initial='hidden'
-                  animate='visible'
-                  exit='exit'
-                >
-                  <XMarkIcon className='h-12 w-12 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+    <div className='z-10 absolute w-full py-4 lg:py-10'>
+      <Container narrow={false}>
+        <div className='flex gap-x-4 justify-between'>
+          <Link href='/'>
+            <Image
+              src='logo_v4.svg'
+              alt="Jonah's portfolio logo"
+              width={48}
+              height={48}
+              className='drop-shadow-xl'
+            />
+          </Link>
+          <div className='flex items-center gap-x-4'>
+            <button onClick={handleMode}>
+              <AnimatePresence mode='wait'>
+                {mode === 'light' ? (
+                  <motion.div
+                    key='darkMode'
+                    variants={modeVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg hover:scale-110 hover:text-blue-500 transition ease-in-out duration-300 ' />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key='lightMode'
+                    variants={modeVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    <SunIcon className='h-5 w-5 text-gray-400 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+            <button onClick={handleMenu}>
+              <AnimatePresence mode='wait'>
+                {!menu ? (
+                  <motion.div
+                    key='menuClosed'
+                    variants={menuVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    <Bars3Icon className='h-12 w-12 dark:text-gray-400 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key='menuOpen'
+                    variants={menuVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    <XMarkIcon className='h-12 w-12 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
