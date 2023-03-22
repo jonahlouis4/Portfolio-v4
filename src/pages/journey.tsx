@@ -13,7 +13,7 @@ export default function Journey() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='pt-48 pb-16'
+      className='pt-48 pb-16 dark:bg-main-dark bg-main-light'
     >
       <Container>
         <motion.h1

@@ -19,7 +19,7 @@ export default function Home() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='h-screen dark:bg-zinc-900'
+      className='h-screen dark:bg-zinc-900 dark:bg-main-dark bg-main-light'
     >
       <motion.div className='h-full flex flex-col items-center justify-center'>
         <div className='w-full'>
@@ -42,8 +42,8 @@ export default function Home() {
                   >
                     I'm a full-stack web developer who loves to build things for
                     the web. Other than coding, I spend my time deepening my
-                    experience of Yoga, listening to music, watching movies and simply
-                    enjoying what the world has to offer.
+                    experience of Yoga, listening to music, watching movies and
+                    simply enjoying what the world has to offer.
                   </motion.p>
                   <motion.div
                     variants={DF_PAGE_ITEM_VARIANT}
