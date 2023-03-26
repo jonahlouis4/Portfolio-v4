@@ -3,6 +3,32 @@ import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 import { motion } from 'framer-motion';
 
 export default function Journey() {
+  type ExperienceInfoProps = {
+    startDate: string;
+    endDate: string;
+    company: string;
+    description: string;
+  };
+
+  const ExperienceInfo = ({
+    startDate,
+    endDate,
+    company,
+    description,
+  }: ExperienceInfoProps) => (
+    <div className='grid grid-cols-2 items-center py-48'>
+      <div>
+        <h2 className='text-md font-bold uppercase'>
+          {startDate} - {endDate}
+        </h2>
+        <h1 className='text-4xl font-extrabold '>{company}</h1>
+      </div>
+      <div>
+        <p className='text-2xl'>{description}</p>
+      </div>
+    </div>
+  );
+
   return (
     <motion.div
       variants={DF_WRAPPER_VARIANT}
@@ -29,52 +55,35 @@ export default function Journey() {
           </h1>
 
           {/* Experience 1 */}
-          <div className='grid grid-cols-2 items-center py-48'>
-            <div>
-              <h2 className='text-md font-bold uppercase'>June 2021 - June 2022</h2>
-              <h1 className='text-4xl font-extrabold '>NetFore Systems</h1>
-            </div>
-            <div>
-              <p className='text-2xl'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <ExperienceInfo
+            startDate='June 2021'
+            endDate='June 2022'
+            company='NetFore Systems'
+            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!
-              </p>
-            </div>
-          </div>
-
+                doloremque accusamus deleniti molestiae!'
+          />
           {/* Experience 2 */}
-          <div className='grid grid-cols-2 items-center pt-20 pb-48'>
-            <div>
-              <h2 className='text-md font-bold uppercase'>June 2021 - June 2022</h2>
-              <h1 className='text-4xl font-extrabold '>iContribute</h1>
-            </div>
-            <div>
-              <p className='text-2xl'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <ExperienceInfo
+            startDate='June 2021'
+            endDate='June 2022'
+            company='iContribute'
+            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!
-              </p>
-            </div>
-          </div>
-
+                doloremque accusamus deleniti molestiae!'
+          />
           {/* Experience 3 */}
-          <div className='grid grid-cols-2 items-center pt-20 pb-48'>
-            <div>
-              <h2 className='text-md font-bold uppercase'>June 2022 - Present</h2>
-              <h1 className='text-4xl font-extrabold '>isha Foundation</h1>
-            </div>
-            <div>
-              <p className='text-2xl'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <ExperienceInfo
+            startDate='June 2021'
+            endDate='Present'
+            company='isha Foundation'
+            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!
-              </p>
-            </div>
-          </div>
+                doloremque accusamus deleniti molestiae!'
+          />
         </>
       </Container>
     </motion.div>
