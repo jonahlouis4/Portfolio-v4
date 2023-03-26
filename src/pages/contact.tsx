@@ -23,6 +23,7 @@ export default function Contact() {
           variants={DF_PAGE_ITEM_VARIANT}
           className='w-full border-2 border-gray-200 my-8'
         />
+        
         <div className='flex justify-between'>
           <div>
             <motion.h1
