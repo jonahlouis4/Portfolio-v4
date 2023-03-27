@@ -2,8 +2,8 @@ import Container from '@/components/Container';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
-import ic from '../assets/gallery/ic.jpg';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
+import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
 
 // ========= Section Header component =========
 
@@ -88,7 +88,7 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
         {location}
       </h1>
     </div>
-    <button className='group relative w-[38em] 3xl:w-[48em]'>
+    <button className='group relative w-[38em] h-[26em] 3xl:w-[48em] 3xl:h-[32em]'>
       <div className='bg-black/50 opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
         <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
           <span className='text-3xl font-extrabold text-gray-100 '>View</span>
@@ -97,7 +97,7 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
       <Image
         src={image}
         alt='canada-ottawa-thumbnail'
-        className='bg-cover rounded-tr-3xl rounded-br-3xl drop-shadow-2xl'
+        className='bg-contain w-full h-full rounded-tr-3xl rounded-br-3xl'
       />
     </button>
   </div>
@@ -167,12 +167,16 @@ export default function Journey() {
 
           <div className='flex flex-col gap-y-96'>
             {/* City #1 */}
-            <CityBox flagIcon='ca' location='Ottawa, Canada' image={thumb_ottawa} />
+            <CityBox
+              flagIcon='ca'
+              location='Ottawa, Canada'
+              image={thumb_ottawa}
+            />
             {/* City #2 */}
             <CityBox
               flagIcon='in'
               location='Coimbatore, India'
-              image={thumb_ottawa}
+              image={thumb_coimbatore}
             />
             {/* City #3 */}
             <CityBox
