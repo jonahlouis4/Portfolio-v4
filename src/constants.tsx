@@ -82,7 +82,8 @@ export const PROJECTS = [
     langs: [
       'React',
       'TailwindCSS',
-      'Firebase'
+      'Firebase',
+      'Framer Motion'
     ],
     links: [
       { github: 'https://github.com/jonahlouis4/StudyBuddy' },
