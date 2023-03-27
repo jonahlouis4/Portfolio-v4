@@ -11,7 +11,7 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title }: SectionHeaderProps) => (
   <motion.h1
     variants={DF_PAGE_ITEM_VARIANT}
-    className='pt-48 text-center font-extrabold text-3xl dark:text-gray-300'
+    className='py-32 text-center font-extrabold text-3xl text-gray-900 dark:text-gray-200 drop-shadow-xl'
   >
     {title}
   </motion.h1>
@@ -22,6 +22,8 @@ type ExperienceInfoProps = {
   endDate: string;
   company: string;
   description: string;
+  ptNone?: boolean;
+  pbNone?: boolean;
 };
 
 // ========= Experience Info component =========
@@ -31,21 +33,25 @@ const ExperienceInfo = ({
   endDate,
   company,
   description,
+  ptNone,
+  pbNone,
 }: ExperienceInfoProps) => (
   <motion.div
     variants={DF_PAGE_ITEM_VARIANT}
-    className='grid grid-cols-2 items-center py-48'
+    className={
+      'grid grid-cols-2 items-center' +
+      (ptNone ? ' pt-0' : ' pt-40') +
+      (pbNone ? ' pb-0' : ' pb-40')
+    }
   >
     <div>
       <motion.h2
         variants={DF_PAGE_ITEM_VARIANT}
-        className='text-md font-bold uppercase dark:text-gray-300'
+        className='text-md font-bold uppercase dark:text-gray-400'
       >
         {startDate} - {endDate}
       </motion.h2>
-      <h1 className='text-4xl font-extrabold dark:text-gray-300'>
-        {company}
-      </h1>
+      <h1 className='text-4xl font-extrabold dark:text-gray-200'>{company}</h1>
     </div>
     <div>
       <motion.p
@@ -93,6 +99,7 @@ export default function Journey() {
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
                 doloremque accusamus deleniti molestiae!'
+            ptNone
           />
           {/* Experience 2 */}
           <ExperienceInfo
@@ -113,6 +120,7 @@ export default function Journey() {
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
                 doloremque accusamus deleniti molestiae!'
+            pbNone
           />
         </>
       </Container>
