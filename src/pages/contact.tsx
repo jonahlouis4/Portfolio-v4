@@ -49,13 +49,16 @@ export default function Contact() {
             </motion.h1>
             <div className='flex gap-8'>
               {SOCIALS.map((social) => (
-                <motion.button
+                <motion.a
                   variants={DF_PAGE_ITEM_VARIANT}
                   className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
+                  href={social.href}
+                  target="_blank"
+                  rel='noreferrer'
                 >
                   <span>{social.name}</span>
                   <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-                </motion.button>
+                </motion.a>
               ))}
             </div>
           </div>

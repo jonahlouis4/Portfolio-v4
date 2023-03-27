@@ -123,6 +123,9 @@ export default function Journey() {
             pbNone
           />
         </>
+        <>
+          <SectionHeader title="Some of my captured adventures." />
+        </>
       </Container>
     </motion.div>
   );
