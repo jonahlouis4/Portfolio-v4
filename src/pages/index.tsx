@@ -27,6 +27,7 @@ export default function Home() {
             <>
               <div className='flex flex-col lg:flex-row justify-between items-center gap-y-12'>
                 <div className='max-w-xl 3xl:max-w-2xl text-center lg:text-left'>
+                  {/* Intro */}
                   <motion.h1
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-gray-900 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
@@ -42,14 +43,16 @@ export default function Home() {
                   >
                     I'm a full-stack web developer who loves to build things for
                     the web. Other than coding, I spend my time deepening my
-                    experience of Yoga, listening to music, playing video games, watching movies, and
-                    simply enjoying what the world has to offer.
+                    experience of Yoga, listening to music, playing video games,
+                    watching movies, and simply enjoying what the world has to
+                    offer.
                   </motion.p>
+
+                  {/* Buttons */}
                   <motion.div
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='flex justify-center lg:justify-start gap-x-8 mt-10'
                   >
-                    {/* TODO: Make this primary button */}
                     <button
                       onClick={() => handleActionBtn('/journey')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 hover:scale-105 transition duration-150'
@@ -57,7 +60,6 @@ export default function Home() {
                       <span>My journey</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
-                    {/* TODO: Make this secondary button */}
                     <button
                       onClick={() => handleActionBtn('/projects')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 hover:scale-105 transition duration-150'
@@ -67,6 +69,8 @@ export default function Home() {
                     </button>
                   </motion.div>
                 </div>
+                
+                {/* Image */}
                 <motion.div
                   variants={DF_PAGE_ITEM_VARIANT}
                   className='hidden lg:block '
