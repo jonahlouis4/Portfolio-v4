@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
+import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg'
+import thumb_paris from '../assets/gallery/thumb_paris.jpg'
 
 // ========= Section Header component =========
 
@@ -97,7 +99,7 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
       <Image
         src={image}
         alt='canada-ottawa-thumbnail'
-        className='bg-contain w-full h-full rounded-tr-3xl rounded-br-3xl'
+        className='bg-cover w-full h-full rounded-tr-3xl rounded-br-3xl'
       />
     </button>
   </div>
@@ -127,7 +129,7 @@ export default function Journey() {
         />
 
         <>
-          <SectionHeader title="What I've been up to lately." />
+          <SectionHeader title="What I've been up to lately 👋" />
 
           {/* Experience 1 */}
           <ExperienceInfo
@@ -163,7 +165,7 @@ export default function Journey() {
           />
         </>
         <>
-          <SectionHeader title='Some of my adventures captured.' ptLarge />
+          <SectionHeader title='Some of my adventures captured  🌏' ptLarge />
 
           <div className='flex flex-col gap-y-96'>
             {/* City #1 */}
@@ -182,13 +184,13 @@ export default function Journey() {
             <CityBox
               flagIcon='in'
               location='Amritsar, India'
-              image={thumb_ottawa}
+              image={thumb_amritsar}
             />
             {/* City #3 */}
             <CityBox
               flagIcon='fr'
               location='Paris, France'
-              image={thumb_ottawa}
+              image={thumb_paris}
             />
           </div>
         </>
