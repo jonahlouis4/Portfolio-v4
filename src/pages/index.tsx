@@ -42,7 +42,7 @@ export default function Home() {
                   >
                     I'm a full-stack web developer who loves to build things for
                     the web. Other than coding, I spend my time deepening my
-                    experience of Yoga, listening to music, watching movies and
+                    experience of Yoga, listening to music, playing video games, watching movies, and
                     simply enjoying what the world has to offer.
                   </motion.p>
                   <motion.div
