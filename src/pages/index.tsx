@@ -42,11 +42,14 @@ export default function Home() {
                     className='dark:text-gray-200 text-gray-900 text-lg lg:text-2xl drop-shadow-lg mt-6'
                   >
                     I'm a full-stack web developer who loves to build things for
-                    the web. Other than coding, I spend my time deepening my
+                    the web.
+                  </motion.p>
+                  {/* 
+                    Other than coding, I spend my time deepening my
                     experience of Yoga, listening to music, playing video games,
                     watching movies, and simply enjoying what the world has to
-                    offer.
-                  </motion.p>
+                    offer. 
+                  */}
 
                   {/* Buttons */}
                   <motion.div
