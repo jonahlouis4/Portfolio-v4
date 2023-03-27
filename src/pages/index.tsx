@@ -78,7 +78,7 @@ export default function Home() {
                   <Image
                     src={avatar}
                     alt='Picture of Jonah Louis'
-                    className='lg:w-80 lg:h-80 2xl:h-96 2xl:w-96 object-cover rounded-full shadow-2xl'
+                    className='lg:w-80 lg:h-80 2xl:h-96 2xl:w-96 object-cover rounded-full drop-shadow-2xl'
                   />
                 </motion.div>
               </div>

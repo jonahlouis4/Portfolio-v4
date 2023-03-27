@@ -1,21 +1,30 @@
 import Container from '@/components/Container';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import ic from '../assets/gallery/ic.jpg';
+import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 
 // ========= Section Header component =========
 
 type SectionHeaderProps = {
   title: string;
+  ptLarge?: boolean;
 };
 
-const SectionHeader = ({ title }: SectionHeaderProps) => (
+const SectionHeader = ({ title, ptLarge }: SectionHeaderProps) => (
   <motion.h1
     variants={DF_PAGE_ITEM_VARIANT}
-    className='py-32 text-center font-extrabold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 drop-shadow-xl'
+    className={
+      'text-center font-extrabold text-4xl text-gray-900 dark:text-gray-300 drop-shadow-xl' +
+      (ptLarge ? ' pt-56 pb-48' : ' pt-32 pb-48')
+    }
   >
     {title}
   </motion.h1>
 );
+
+// ========= Experience Info component =========
 
 type ExperienceInfoProps = {
   startDate: string;
@@ -25,8 +34,6 @@ type ExperienceInfoProps = {
   ptNone?: boolean;
   pbNone?: boolean;
 };
-
-// ========= Experience Info component =========
 
 const ExperienceInfo = ({
   startDate,
@@ -62,6 +69,38 @@ const ExperienceInfo = ({
       </motion.p>
     </div>
   </motion.div>
+);
+
+// ========= City Box component =========
+type CityBoxProps = {
+  flagIcon: string;
+  location: string;
+  image: StaticImageData;
+};
+
+const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
+  <div className='flex items-center rounded-3xl drop-shadow-2xl border-2 border-zinc-700 bg-gradient-to-bl from-zinc-900 to-zinc-800'>
+    <div className='text-center px-10'>
+      <span
+        className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
+      ></span>
+      <h1 className='text-5xl font-extrabold dark:text-gray-300 mt-4'>
+        {location}
+      </h1>
+    </div>
+    <button className='group relative w-[38em] 3xl:w-[48em]'>
+      <div className='bg-black/50 opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
+        <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
+          <span className='text-3xl font-extrabold text-gray-100 '>View</span>
+        </div>
+      </div>
+      <Image
+        src={image}
+        alt='canada-ottawa-thumbnail'
+        className='bg-cover rounded-tr-3xl rounded-br-3xl drop-shadow-2xl'
+      />
+    </button>
+  </div>
 );
 
 // ========= Journey page =========
@@ -124,7 +163,30 @@ export default function Journey() {
           />
         </>
         <>
-          <SectionHeader title="Some of my captured adventures." />
+          <SectionHeader title='Some of my captured adventures.' ptLarge />
+
+          <div className='flex flex-col gap-y-96'>
+            {/* City #1 */}
+            <CityBox flagIcon='ca' location='Ottawa, Canada' image={thumb_ottawa} />
+            {/* City #2 */}
+            <CityBox
+              flagIcon='in'
+              location='Coimbatore, India'
+              image={thumb_ottawa}
+            />
+            {/* City #3 */}
+            <CityBox
+              flagIcon='in'
+              location='Amritsar, India'
+              image={thumb_ottawa}
+            />
+            {/* City #3 */}
+            <CityBox
+              flagIcon='fr'
+              location='Paris, France'
+              image={thumb_ottawa}
+            />
+          </div>
         </>
       </Container>
     </motion.div>
