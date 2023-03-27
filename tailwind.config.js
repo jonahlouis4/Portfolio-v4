@@ -35,8 +35,8 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'main-dark': "url('../assets/bg_main_dark.svg')",
-        'main-light': "url('../assets/bg_main_light.svg')",
+        'main-dark': "url('../assets/background/bg_main_dark.svg')",
+        'main-light': "url('../assets/background/bg_main_light.svg')",
       }
     },
   },
