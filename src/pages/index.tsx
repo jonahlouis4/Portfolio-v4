@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import avatar from '../assets/jonah.jpg';
+import avatar from '../assets/avatar/jonah.jpg';
 
 export default function Home() {
   const router = useRouter();
@@ -69,7 +69,7 @@ export default function Home() {
                     </button>
                   </motion.div>
                 </div>
-                
+
                 {/* Image */}
                 <motion.div
                   variants={DF_PAGE_ITEM_VARIANT}
