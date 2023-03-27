@@ -11,7 +11,7 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title }: SectionHeaderProps) => (
   <motion.h1
     variants={DF_PAGE_ITEM_VARIANT}
-    className='py-32 text-center font-extrabold text-3xl text-gray-900 dark:text-gray-200 drop-shadow-xl'
+    className='py-32 text-center font-extrabold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 drop-shadow-xl'
   >
     {title}
   </motion.h1>
@@ -40,8 +40,8 @@ const ExperienceInfo = ({
     variants={DF_PAGE_ITEM_VARIANT}
     className={
       'grid grid-cols-2 items-center' +
-      (ptNone ? ' pt-0' : ' pt-40') +
-      (pbNone ? ' pb-0' : ' pb-40')
+      (ptNone ? ' pt-0' : ' pt-32') +
+      (pbNone ? ' pb-0' : ' pb-32')
     }
   >
     <div>
