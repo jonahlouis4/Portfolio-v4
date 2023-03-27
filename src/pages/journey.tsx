@@ -80,7 +80,7 @@ type CityBoxProps = {
 
 const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
   <div className='flex items-center rounded-3xl drop-shadow-2xl border-2 border-zinc-700 bg-gradient-to-bl from-zinc-900 to-zinc-800'>
-    <div className='text-center px-10'>
+    <div className='text-center px-14'>
       <span
         className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
       ></span>
@@ -163,7 +163,7 @@ export default function Journey() {
           />
         </>
         <>
-          <SectionHeader title='Some of my captured adventures.' ptLarge />
+          <SectionHeader title='Some of my adventures captured.' ptLarge />
 
           <div className='flex flex-col gap-y-96'>
             {/* City #1 */}
