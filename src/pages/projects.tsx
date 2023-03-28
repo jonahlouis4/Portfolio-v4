@@ -1,9 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  DF_WRAPPER_VARIANT,
-  DF_PAGE_ITEM_VARIANT,
-  PROJECTS,
-} from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { PROJECTS } from '@/data/projectData';
 import Container from '@/components/Container';
 import { useState } from 'react';
 import ProjectModal from '@/components/ProjectModal';

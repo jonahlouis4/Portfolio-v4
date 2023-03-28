@@ -1,11 +1,13 @@
 import Container from '@/components/Container';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
 import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
 import thumb_paris from '../assets/gallery/thumb_paris.jpg';
+import { useState } from 'react';
+import ImageSlideModal from '@/components/ImageSlideModal';
 
 // ========= Section Header component =========
 
@@ -111,6 +113,8 @@ const CityBox = ({ flagIcon, country, city, image }: CityBoxProps) => (
 // ========= Journey page =========
 
 export default function Journey() {
+  const [selectedCity, setSelectedCity] = useState<string | null>('')
+
   return (
     <motion.div
       variants={DF_WRAPPER_VARIANT}
@@ -170,6 +174,14 @@ export default function Journey() {
         <>
           <SectionHeader title='Some of my adventures captured  🌏' ptLarge />
 
+          <AnimatePresence>
+            {selectedCity && (
+              <ImageSlideModal 
+                selectedCity={selectedCity}
+                setSelectedCity={setSelectedCity}
+              />
+            )}
+          </AnimatePresence>
           <div className='flex flex-col gap-y-64'>
             {/* City #1 */}
             <CityBox

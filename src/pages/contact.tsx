@@ -1,4 +1,5 @@
-import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT, SOCIALS } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { SOCIALS } from '@/data/socialData';
 import Container from '@/components/Container';
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
