@@ -20,8 +20,12 @@
   border-radius: 10px;
 }
 
-.test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Swiper scroll thumb */
+.swiper-scrollbar-drag {
+  background-color: #d1d5db !important;
+}
+
+/* Swiper scroll background */
+.swiper-scrollbar-horizontal {
+  background-color: #d1d5db29 !important;
 }
