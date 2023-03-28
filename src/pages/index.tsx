@@ -44,12 +44,6 @@ export default function Home() {
                     I'm a full-stack web developer who loves to build things for
                     the web.
                   </motion.p>
-                  {/* 
-                    Other than coding, I spend my time deepening my
-                    experience of Yoga, listening to music, playing video games,
-                    watching movies, and simply enjoying what the world has to
-                    offer. 
-                  */}
 
                   {/* Buttons */}
                   <motion.div
@@ -58,14 +52,14 @@ export default function Home() {
                   >
                     <button
                       onClick={() => handleActionBtn('/journey')}
-                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 transition duration-150'
+                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
                       <span>My journey</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                     <button
                       onClick={() => handleActionBtn('/projects')}
-                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-600 transition duration-150'
+                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
                       <span>My projects</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
