@@ -3,10 +3,31 @@ import ottawa_1  from '../assets/gallery/ottawa/ottawa_1.jpg'
 
 export const CITIES = [
     { 
-        name: 'Ottawa', 
+        name: 'ottawa', 
+        images: [
+            ottawa_0,
+            ottawa_1,
+        ]
+    },
+    {
+        name: 'coimbatore', 
         images: [
             ottawa_0,
             ottawa_1
         ]
-    }
+    },
+    {
+        name: 'amritsar', 
+        images: [
+            ottawa_0,
+            ottawa_1
+        ]
+    },
+    {
+        name: 'paris', 
+        images: [
+            ottawa_0,
+            ottawa_1
+        ]
+    },
 ]

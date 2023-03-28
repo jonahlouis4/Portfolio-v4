@@ -48,7 +48,7 @@ export default function ProjectModal(props: any) {
       className='fixed inset-0 flex justify-center items-center z-30'
       onClick={handleClose}
     >
-      <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
+      <div className='fixed inset-0 bg-black/70 dark:bg-black/60' aria-hidden='true' />
       <motion.div
         className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 mx-4 sm:mx-0 w-full w-11/12 sm:w-4/5 lg:w-3/5 3xl:w-2/5 min-h-min z-40 shadow-xl'
         layoutId={selectedProject.name}
