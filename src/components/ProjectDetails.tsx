@@ -50,7 +50,7 @@ export default function MyDialog(props: any) {
     >
       <div className='fixed inset-0 bg-black/30' aria-hidden='true' />
       <motion.div
-        className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 w-full w-11/12 sm:w-4/5 lg:w-3/5 3xl:w-2/5 min-h-min z-40 shadow-xl'
+        className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 mx-4 sm:mx-0 w-full w-11/12 sm:w-4/5 lg:w-3/5 3xl:w-2/5 min-h-min z-40 shadow-xl'
         layoutId={selectedProject.name}
         onClick={(e) => e.stopPropagation()}
       >
