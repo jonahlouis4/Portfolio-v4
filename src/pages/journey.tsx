@@ -34,6 +34,7 @@ type ExperienceInfoProps = {
   startDate: string;
   endDate: string;
   company: string;
+  link: string;
   description: string;
   ptNone?: boolean;
   pbNone?: boolean;
@@ -43,6 +44,7 @@ const ExperienceInfo = ({
   startDate,
   endDate,
   company,
+  link,
   description,
   ptNone,
   pbNone,
@@ -62,7 +64,14 @@ const ExperienceInfo = ({
       >
         {startDate} - {endDate}
       </motion.h2>
-      <h1 className='text-4xl font-extrabold text-gray-900 dark:text-gray-200'>{company}</h1>
+      <a
+        href={link}
+        target='_blank'
+        rel='noreferrer'
+        className='text-4xl font-extrabold text-gray-900 dark:text-gray-200 hover:underline hover:text-gray-700 dark:hover:text-gray-400 transition duration-300'
+      >
+        {company}
+      </a>
     </div>
     <div>
       <motion.p
@@ -81,10 +90,16 @@ type CityBoxProps = {
   country: string;
   city: string;
   image: StaticImageData;
-  setSelectedCity: (city: string) => void
+  setSelectedCity: (city: string) => void;
 };
 
-const CityBox = ({ flagIcon, country, city, image, setSelectedCity }: CityBoxProps) => (
+const CityBox = ({
+  flagIcon,
+  country,
+  city,
+  image,
+  setSelectedCity,
+}: CityBoxProps) => (
   <div className='flex flex-col md:flex-row md:justify-between gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-gray-200 dark:border-zinc-700 bg-gradient-to-bl from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-800'>
     <div className='w-full text-center row-span-1 pb-8 md:pb-0 order-2 md:order-1'>
       <span
@@ -96,10 +111,10 @@ const CityBox = ({ flagIcon, country, city, image, setSelectedCity }: CityBoxPro
       </h1>
     </div>
 
-    <button 
+    <button
       className='group relative md:w-[100em] md:h-[26em] 3xl:h-[32em] order-1 md:order-2'
       onClick={() => setSelectedCity(city.toLocaleLowerCase())}
-      >
+    >
       <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
         <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
           <span className='text-3xl font-extrabold text-gray-100 '>View</span>
@@ -117,7 +132,7 @@ const CityBox = ({ flagIcon, country, city, image, setSelectedCity }: CityBoxPro
 // ========= Journey page =========
 
 export default function Journey() {
-  const [selectedCity, setSelectedCity] = useState<string | null>('')
+  const [selectedCity, setSelectedCity] = useState<string | null>('');
 
   return (
     <motion.div
@@ -147,6 +162,7 @@ export default function Journey() {
             startDate='June 2021'
             endDate='Present'
             company='isha Foundation'
+            link='https://isha.sadhguru.org/us/en'
             description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
@@ -158,6 +174,7 @@ export default function Journey() {
             startDate='June 2021'
             endDate='June 2022'
             company='NetFore Systems'
+            link='https://netfore.com/'
             description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
@@ -168,6 +185,7 @@ export default function Journey() {
             startDate='June 2021'
             endDate='June 2022'
             company='iContribute'
+            link='https://icontribute.community/#/'
             description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
                 ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
@@ -176,11 +194,14 @@ export default function Journey() {
           />
         </>
         <>
-          <SectionHeader title='Glimpses of my wonderful adventures 🌏' ptLarge />
+          <SectionHeader
+            title='Glimpses of my wonderful adventures 🌏'
+            ptLarge
+          />
 
           <AnimatePresence>
             {selectedCity && (
-              <ImageSlideModal 
+              <ImageSlideModal
                 selectedCity={selectedCity}
                 setSelectedCity={setSelectedCity}
               />
