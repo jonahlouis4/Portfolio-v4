@@ -60,7 +60,7 @@ const ExperienceInfo = ({
       >
         {startDate} - {endDate}
       </motion.h2>
-      <h1 className='text-4xl font-extrabold dark:text-gray-200'>{company}</h1>
+      <h1 className='text-4xl font-extrabold text-gray-900 dark:text-gray-200'>{company}</h1>
     </div>
     <div>
       <motion.p
