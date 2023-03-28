@@ -7,7 +7,7 @@ import {
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
 import { GitHubIcon } from './SocialIcons';
 
-export default function MyDialog(props: any) {
+export default function ProjectModal(props: any) {
   const { selectedProject, setSelectedProject } = props;
 
   const handleClose = () => {

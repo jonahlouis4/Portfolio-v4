@@ -6,7 +6,7 @@ import {
 } from '@/constants';
 import Container from '@/components/Container';
 import { useState } from 'react';
-import ProjectDetails from '@/components/ProjectDetails';
+import ProjectModal from '@/components/ProjectModal';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<{
@@ -44,7 +44,7 @@ export default function Projects() {
       {/* Project modal */}
       <AnimatePresence>
         {selectedProject.name && (
-          <ProjectDetails
+          <ProjectModal
             selectedProject={selectedProject}
             setSelectedProject={setSelectedProject}
             key='project-modal'
