@@ -75,6 +75,7 @@ export const SOCIALS = [
 
 export const PROJECTS = [
   {
+    active: false,
     name: 'StudyBuddy',
     description: 'Flashcard web application designed for studying.',
     longDescription:
@@ -91,6 +92,7 @@ export const PROJECTS = [
     className: 'bg-gradient-to-br from-pink-500 to-fuchsia-600',
   },
   {
+    active: false,
     name: 'COVID-19 Tracker',
     description: 'Live COVID-19 web application tracker.',
     longDescription:
@@ -108,6 +110,7 @@ export const PROJECTS = [
     className: 'bg-gradient-to-br from-fuchsia-500 to-purple-700',
   },
   {
+    active: true,
     name: 'Royal Drip Check',
     description: 'Streetwear reselling ecommerce website.',
     longDescription:
@@ -122,6 +125,7 @@ export const PROJECTS = [
     className: 'bg-gradient-to-br from-violet-700 to-violet-600',
   },
   {
+    active: true,
     name: 'CreativeFloww',
     description: 'Web agency landing page.',
     longDescription:
@@ -136,6 +140,7 @@ export const PROJECTS = [
     className: 'bg-gradient-to-br from-blue-700 to-blue-600',
   },
   {
+    active: true,
     name: 'iContribute',
     description: 'Mobile application made for volunteering opportunities.',
     longDescription:
