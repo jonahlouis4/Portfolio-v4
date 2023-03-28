@@ -257,7 +257,7 @@ export default function Journey() {
                 A non-profit organization who help connect volunteer
                 opportunities for both students and organizations. During my
                 time at iContribute, I lead a team of developers to rehaul the
-                look and feel of the mobile application. These changes are
+                look and feel of the mobile application. These changes are now
                 available on both{' '}
                 <DescLink
                   href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
