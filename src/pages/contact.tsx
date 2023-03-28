@@ -1,4 +1,4 @@
-import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
 import { SOCIALS } from '@/data/socialData';
 import Container from '@/components/Container';
 import { motion } from 'framer-motion';

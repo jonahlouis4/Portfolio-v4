@@ -2,7 +2,7 @@ import Container from '@/components/Container';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import avatar from '../assets/avatar/jonah.jpg';
 

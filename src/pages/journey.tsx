@@ -1,5 +1,5 @@
 import Container from '@/components/Container';
-import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
+import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';

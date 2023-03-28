@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 import Container from './Container';
-import { DF_PAGE_ITEM_VARIANT_2, DF_WRAPPER_VARIANT } from '@/constants';
+import { DF_PAGE_ITEM_VARIANT_2, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { useRouter } from 'next/router';
 
 export default function Navbar() {

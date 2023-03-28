@@ -4,7 +4,7 @@ import {
   XMarkIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline';
-import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
+import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { GitHubIcon } from './SocialIcons';
 
 export default function ProjectModal(props: any) {

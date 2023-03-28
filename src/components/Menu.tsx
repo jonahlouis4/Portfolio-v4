@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { DF_PAGE_ITEM_VARIANT } from '@/constants';
+import { DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
 import { SOCIALS } from '@/data/socialData';
 import { useRouter } from 'next/router';
 import Container from './Container';

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/constants';
+import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 
 export default function ImageSlideModal(props: any) {
   const { selectedCity, setSelectedCity } = props;
