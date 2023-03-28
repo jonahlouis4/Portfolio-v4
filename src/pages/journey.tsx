@@ -48,7 +48,7 @@ const ExperienceInfo = ({
   <motion.div
     variants={DF_PAGE_ITEM_VARIANT}
     className={
-      'grid grid-cols-2 items-center' +
+      'grid md:grid-cols-2 items-center gap-y-4 md:gap-y-0' +
       (ptNone ? ' pt-0' : ' pt-32') +
       (pbNone ? ' pb-0' : ' pb-32')
     }
@@ -81,8 +81,8 @@ type CityBoxProps = {
 };
 
 const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
-  <div className='flex items-center rounded-3xl drop-shadow-2xl border-2 border-zinc-700 bg-gradient-to-bl from-zinc-900 to-zinc-800'>
-    <div className='text-center px-14'>
+  <div className='flex flex-col md:flex-row gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-zinc-700 bg-gradient-to-bl from-zinc-900 to-zinc-800'>
+    <div className='text-center px-14 pb-8 md:pb-0 order-2 md:order-1'>
       <span
         className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
       ></span>
@@ -90,8 +90,8 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
         {location}
       </h1>
     </div>
-    <button className='group relative w-[38em] h-[26em] 3xl:w-[48em] 3xl:h-[32em]'>
-      <div className='bg-black/50 opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
+    <button className='group relative md:w-[38em] md:h-[26em] 3xl:w-[48em] 3xl:h-[32em] order-1 md:order-2'>
+      <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
         <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
           <span className='text-3xl font-extrabold text-gray-100 '>View</span>
         </div>
@@ -99,7 +99,7 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
       <Image
         src={image}
         alt='canada-ottawa-thumbnail'
-        className='bg-cover w-full h-full rounded-tr-3xl rounded-br-3xl'
+        className='bg-cover w-full h-full rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl'
       />
     </button>
   </div>

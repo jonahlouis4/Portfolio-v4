@@ -39,7 +39,7 @@ export default function Home() {
                   </motion.h1>
                   <motion.p
                     variants={DF_PAGE_ITEM_VARIANT}
-                    className='dark:text-gray-200 text-gray-900 text-lg lg:text-2xl drop-shadow-lg mt-6'
+                    className='dark:text-gray-200 text-gray-900 text-xl lg:text-3xl drop-shadow-lg mt-6'
                   >
                     I'm a full-stack web developer who loves to build things for
                     the web.
