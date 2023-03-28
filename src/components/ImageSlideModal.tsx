@@ -89,7 +89,11 @@ export default function ImageSlideModal(props: any) {
             {images?.map((image, index) => (
               <SwiperSlide className=''>
                 <div className='h-full flex items-center justify-center rounded-3xl'>
-                  <Image src={image} className='rounded-3xl' alt='image' />
+                  <Image
+                    src={image}
+                    className='rounded-3xl'
+                    alt='memory in city'
+                  />
                 </div>
               </SwiperSlide>
             ))}
