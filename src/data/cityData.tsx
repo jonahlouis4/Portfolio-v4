@@ -22,6 +22,20 @@ import coimbatore_5 from '../assets/gallery/coimbatore/coimbatore_5.jpg';
 import coimbatore_6 from '../assets/gallery/coimbatore/coimbatore_6.jpg';
 import coimbatore_7 from '../assets/gallery/coimbatore/coimbatore_7.jpg';
 
+import amritsar_0 from '../assets/gallery/amritsar/amritsar_0.jpg';
+import amritsar_1 from '../assets/gallery/amritsar/amritsar_1.jpg';
+import amritsar_2 from '../assets/gallery/amritsar/amritsar_2.jpg';
+import amritsar_3 from '../assets/gallery/amritsar/amritsar_3.jpg';
+import amritsar_4 from '../assets/gallery/amritsar/amritsar_4.jpg';
+import amritsar_5 from '../assets/gallery/amritsar/amritsar_5.jpg';
+import amritsar_6 from '../assets/gallery/amritsar/amritsar_6.jpg';
+import amritsar_7 from '../assets/gallery/amritsar/amritsar_7.jpg';
+import amritsar_8 from '../assets/gallery/amritsar/amritsar_8.jpg';
+import amritsar_9 from '../assets/gallery/amritsar/amritsar_9.jpg';
+import amritsar_10 from '../assets/gallery/amritsar/amritsar_10.jpg';
+import amritsar_11 from '../assets/gallery/amritsar/amritsar_11.jpg';
+import amritsar_12 from '../assets/gallery/amritsar/amritsar_12.jpg';
+
 export const CITIES = [
   {
     name: 'ottawa',
@@ -57,7 +71,21 @@ export const CITIES = [
   },
   {
     name: 'amritsar',
-    images: [ottawa_0, ottawa_1],
+    images: [
+        amritsar_0, 
+        amritsar_1, 
+        amritsar_2, 
+        amritsar_3,
+        amritsar_4,
+        amritsar_5,
+        amritsar_6,
+        amritsar_7,
+        amritsar_8,
+        amritsar_9,
+        amritsar_10,
+        amritsar_11,
+        amritsar_12
+    ],
   },
   {
     name: 'paris',
