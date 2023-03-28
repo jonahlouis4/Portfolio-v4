@@ -52,7 +52,7 @@ export default function Projects() {
       <Container>
         <motion.h1
           variants={DF_PAGE_ITEM_VARIANT}
-          className='dark:text-gray-200 text-gray-900 text-6xl font-extrabold drop-shadow-xl'
+          className='dark:text-gray-200 text-gray-900 text-6xl font-extrabold text-center sm:text-left drop-shadow-xl'
         >
           Projects
         </motion.h1>

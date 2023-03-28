@@ -16,7 +16,7 @@ export default function Contact() {
       <Container>
         <motion.h1
           variants={DF_PAGE_ITEM_VARIANT}
-          className='text-6xl dark:text-gray-200 text-gray-900 font-extrabold drop-shadow-xl'
+          className='text-6xl dark:text-gray-200 text-gray-900 font-extrabold text-center sm:text-left drop-shadow-xl'
         >
           Contact
         </motion.h1>
