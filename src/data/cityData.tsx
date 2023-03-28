@@ -13,6 +13,15 @@ import ottawa_11  from '../assets/gallery/ottawa/ottawa_11.jpg'
 import ottawa_12  from '../assets/gallery/ottawa/ottawa_12.jpg'
 import ottawa_13  from '../assets/gallery/ottawa/ottawa_13.jpg'
 
+import coimbatore_0 from '../assets/gallery/coimbatore/coimbatore_0.jpg'
+import coimbatore_1 from '../assets/gallery/coimbatore/coimbatore_1.jpg'
+import coimbatore_2 from '../assets/gallery/coimbatore/coimbatore_2.jpg'
+import coimbatore_3 from '../assets/gallery/coimbatore/coimbatore_3.jpg'
+import coimbatore_4 from '../assets/gallery/coimbatore/coimbatore_4.jpg'
+import coimbatore_5 from '../assets/gallery/coimbatore/coimbatore_5.jpg'
+import coimbatore_6 from '../assets/gallery/coimbatore/coimbatore_6.jpg'
+import coimbatore_7 from '../assets/gallery/coimbatore/coimbatore_7.jpg'
+
 export const CITIES = [
     { 
         name: 'ottawa', 
@@ -36,8 +45,14 @@ export const CITIES = [
     {
         name: 'coimbatore', 
         images: [
-            ottawa_0,
-            ottawa_1
+            coimbatore_0,
+            coimbatore_1,
+            coimbatore_2,
+            coimbatore_3,
+            coimbatore_4,
+            coimbatore_5,
+            coimbatore_6,
+            coimbatore_7,
         ]
     },
     {

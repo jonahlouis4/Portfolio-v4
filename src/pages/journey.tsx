@@ -176,7 +176,7 @@ export default function Journey() {
           />
         </>
         <>
-          <SectionHeader title='Some of my adventures captured  🌏' ptLarge />
+          <SectionHeader title='Glimpses of my wonderful adventures 🌏' ptLarge />
 
           <AnimatePresence>
             {selectedCity && (
