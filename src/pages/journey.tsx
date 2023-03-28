@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
-import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg'
-import thumb_paris from '../assets/gallery/thumb_paris.jpg'
+import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
+import thumb_paris from '../assets/gallery/thumb_paris.jpg';
 
 // ========= Section Header component =========
 
@@ -81,8 +81,8 @@ type CityBoxProps = {
 };
 
 const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
-  <div className='flex flex-col md:flex-row gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-zinc-700 bg-gradient-to-bl from-zinc-900 to-zinc-800'>
-    <div className='text-center px-14 pb-8 md:pb-0 order-2 md:order-1'>
+  <div className='flex flex-col md:flex-row gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-gray-200 dark:border-zinc-700 bg-gradient-to-bl from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-800'>
+    <div className='text-center px-14 row-span-1 pb-8 md:pb-0 order-2 md:order-1'>
       <span
         className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
       ></span>
@@ -90,6 +90,7 @@ const CityBox = ({ flagIcon, location, image }: CityBoxProps) => (
         {location}
       </h1>
     </div>
+
     <button className='group relative md:w-[38em] md:h-[26em] 3xl:w-[48em] 3xl:h-[32em] order-1 md:order-2'>
       <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
         <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
@@ -167,7 +168,7 @@ export default function Journey() {
         <>
           <SectionHeader title='Some of my adventures captured  🌏' ptLarge />
 
-          <div className='flex flex-col gap-y-96'>
+          <div className='flex flex-col gap-y-64'>
             {/* City #1 */}
             <CityBox
               flagIcon='ca'
