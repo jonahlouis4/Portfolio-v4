@@ -6,7 +6,7 @@ import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
 import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
 import thumb_paris from '../assets/gallery/thumb_paris.jpg';
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import ImageSlideModal from '@/components/ImageSlideModal';
 
 // ========= Section Header component =========
@@ -28,6 +28,24 @@ const SectionHeader = ({ title, ptLarge }: SectionHeaderProps) => (
   </motion.h1>
 );
 
+// ========= Description Link component =========
+
+type DescLink = {
+  href: string;
+  text: string;
+};
+
+const DescLink = ({ href, text }: DescLink) => (
+  <a
+    href={href}
+    target='_blank'
+    rel='noreferrer'
+    className='underline hover:text-gray-700 dark:hover:text-gray-400 transition-color duration-300'
+  >
+    {text}
+  </a>
+);
+
 // ========= Experience Info component =========
 
 type ExperienceInfoProps = {
@@ -35,7 +53,7 @@ type ExperienceInfoProps = {
   endDate: string;
   company: string;
   link: string;
-  description: string;
+  description: ReactElement<any, any>;
   ptNone?: boolean;
   pbNone?: boolean;
 };
@@ -73,14 +91,12 @@ const ExperienceInfo = ({
         {company}
       </a>
     </div>
-    <div>
-      <motion.p
-        variants={DF_PAGE_ITEM_VARIANT}
-        className='text-2xl dark:text-gray-300'
-      >
-        {description}
-      </motion.p>
-    </div>
+    <motion.div
+      variants={DF_PAGE_ITEM_VARIANT}
+      className='text-2xl text-gray-900 dark:text-gray-300'
+    >
+      {description}
+    </motion.div>
   </motion.div>
 );
 
@@ -163,10 +179,38 @@ export default function Journey() {
             endDate='Present'
             company='isha Foundation'
             link='https://isha.sadhguru.org/us/en'
-            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
-                ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!'
+            description={
+              <p>
+                A non-profit organization with over 10 million volunteers who
+                offer classical yoga to the World. I have worked on multiple
+                projects, such as developing a gift card system for their{' '}
+                <DescLink
+                  href='https://www.ishalife.com/ca/'
+                  text='isha life store'
+                />
+                , an admin portal to host live{' '}
+                <DescLink
+                  href='https://isha.sadhguru.org/yoga/yoga-programs/'
+                  text='yoga programs'
+                />
+                , and maintaining the main{' '}
+                <DescLink
+                  href='https://arpanam.sadhguru.org/'
+                  text='Linga Bhairavi website'
+                />.{' '}
+                Currently, I am maintaining the{' '}
+                <DescLink
+                  href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
+                  text='Isha Institute of Inner-Sciences'
+                />{' '}
+                and the{' '}
+                <DescLink
+                  href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
+                  text='Adiyogi Abode of Yoga'
+                />{' '}
+                websites.
+              </p>
+            }
             ptNone
           />
           {/* Experience 2 */}
@@ -175,10 +219,32 @@ export default function Journey() {
             endDate='June 2022'
             company='NetFore Systems'
             link='https://netfore.com/'
-            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
-                ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!'
+            description={
+              <p>
+                A full-service custom software development firm. I developed and
+                maintained multiple IVA's (intelligent virtual assistant) using{' '}
+                <DescLink
+                  href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
+                  text='Inference Solutions'
+                />{' '}
+                and{' '}
+                <DescLink
+                  href='https://cloud.google.com/dialogflow'
+                  text='Google Dialogflow'
+                />.{' '}
+                I was primarly in charge of the IVA for{' '}
+                <DescLink
+                  href='https://www.arkansasbluecross.com/'
+                  text='Arkansas BlueCross BlueShield'
+                />{' '}
+                and{' '}
+                <DescLink
+                  href='https://www.enterprisebanking.com/'
+                  text='Enterprise Bank'
+                />
+                .
+              </p>
+            }
           />
           {/* Experience 3 */}
           <ExperienceInfo
@@ -186,10 +252,25 @@ export default function Journey() {
             endDate='June 2022'
             company='iContribute'
             link='https://icontribute.community/#/'
-            description='Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas unde quibusdam vitae dolor nobis quo ut ex atque harum,
-                ullam voluptatibus ipsum saepe dolorum? Consequatur voluptate
-                doloremque accusamus deleniti molestiae!'
+            description={
+              <p>
+                A non-profit organization who help connect volunteer
+                opportunities for both students and organizations. During my
+                time at iContribute, I lead a team of developers to rehaul the
+                look and feel of the mobile application. These changes are
+                available on both{' '}
+                <DescLink
+                  href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
+                  text='IOS'
+                />{' '}
+                and{' '}
+                <DescLink
+                  href='https://play.google.com/store/apps/details?id=com.icontribute'
+                  text='Android'
+                />
+                .
+              </p>
+            }
             pbNone
           />
         </>
