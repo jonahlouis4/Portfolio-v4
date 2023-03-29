@@ -62,7 +62,7 @@ export default function ImageSlideModal(props: any) {
           <motion.button
             variants={DF_ITEM_VARIANT}
             onClick={handleClose}
-            className='rounded-full p-1 z-40 bg-gray-100 shadow-2xl'
+            className='rounded-full p-1 z-40 bg-gray-100 dark:bg-zinc-600 shadow-2xl'
           >
             <XMarkIcon className='h-8 w-8 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
           </motion.button>
