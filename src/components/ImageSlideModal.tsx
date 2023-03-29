@@ -11,7 +11,12 @@ import Image, { StaticImageData } from 'next/image';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-export default function ImageSlideModal(props: any) {
+type ImageSlideModalProps = {
+  selectedCity: string | null;
+  setSelectedCity: (city: string | null) => void;
+}
+
+export default function ImageSlideModal(props: ImageSlideModalProps) {
   const { selectedCity, setSelectedCity } = props;
   const [images, setImages] = useState<StaticImageData[] | null>(null);
 
