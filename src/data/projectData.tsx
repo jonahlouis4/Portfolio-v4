@@ -11,6 +11,7 @@ export const PROJECTS = [
         'Firebase',
         'Framer Motion'
       ],
+      media: null,
       links: [
         { github: 'https://github.com/jonahlouis4/StudyBuddy' },
       ],
@@ -29,6 +30,7 @@ export const PROJECTS = [
         'Ant Design',
         'AntV',
       ],
+      media: null,
       links: [
         { github: 'https://github.com/jonahlouis4/COVID19-Tracker', }
       ],
@@ -44,6 +46,7 @@ export const PROJECTS = [
         'Shopify',
         'TailwindCSS'
       ],
+      media: null,
       links: [
         { website: 'https://royaldripcheck.ca/' }
       ],
@@ -59,6 +62,7 @@ export const PROJECTS = [
         'React',
         'TailwindCSS'
       ],
+      media: null,
       links: [
         { website: 'https://www.creativefloww.ca/', }
       ],
@@ -74,6 +78,7 @@ export const PROJECTS = [
         'React Native',
         'Firebase',
       ],
+      media: null,
       links: [
         { website: 'https://icontribute.community/#/' }
       ],

@@ -2,26 +2,23 @@ import Container from '@/components/Container';
 import ProjectModal from '@/components/ProjectModal';
 import { PROJECTS } from '@/data/projectData';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
-import { Project } from '@/models/project';
+import { Project, InitProject } from '@/models/project';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<Project>({
-    name: null,
-    longDescription: null,
-    langs: [],
-    media: null,
-    links: [],
-  });
+  const [selectedProject, setSelectedProject] = useState<Project>(InitProject);
 
-  const handleProject = (props: any) => {
+  const handleProject = (props: Project) => {
     setSelectedProject({
+      active: props.active,
       name: props.name,
+      description: null,
       longDescription: props.longDescription,
       langs: props.langs,
       media: null,
       links: props.links,
+      className: null
     });
   };
 

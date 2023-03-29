@@ -1,5 +1,5 @@
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
-import { Project } from '@/models/project';
+import { Project, InitProject } from '@/models/project';
 import {
   ArrowTopRightOnSquareIcon,
   XMarkIcon,
@@ -18,13 +18,7 @@ export default function ProjectModal(props: ProjectModalProps) {
 
   const handleClose = () => {
     document.documentElement.style.overflow = 'auto';
-    setSelectedProject({
-      name: null,
-      longDescription: null,
-      langs: [],
-      media: null,
-      links: [],
-    });
+    setSelectedProject(InitProject);
   };
 
   // Hide scrollbar when modal is active
