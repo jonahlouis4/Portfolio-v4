@@ -51,6 +51,7 @@ export default function Contact() {
             <div className='flex gap-8'>
               {SOCIALS.map((social) => (
                 <motion.a
+                  key={social.name}
                   variants={DF_PAGE_ITEM_VARIANT}
                   className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
                   href={social.href}

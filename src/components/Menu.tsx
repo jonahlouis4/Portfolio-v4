@@ -80,8 +80,9 @@ export default function Menu() {
             className='w-full border-2 border-gray-200 my-8'
           />
           <div className='flex gap-12'>
-            {SOCIALS.map((social, index) => (
+            {SOCIALS.map((social) => (
               <motion.a
+                key={social.name}
                 variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
                 href={social.href}
