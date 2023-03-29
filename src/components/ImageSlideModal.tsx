@@ -84,14 +84,14 @@ export default function ImageSlideModal(props: any) {
               hide: false,
             }}
             modules={[EffectCreative, Scrollbar]}
-            className='mySwiper w-[60em] h-[70em] rounded-3xl'
+            className='mySwiper w-[60em] h-[60em] rounded-3xl'
           >
             {images?.map((image, index) => (
-              <SwiperSlide className=''>
+              <SwiperSlide>
                 <div className='h-full flex items-center justify-center rounded-3xl'>
                   <Image
                     src={image}
-                    className='rounded-3xl'
+                    className='object-cover rounded-3xl  max-h-[60em]'
                     alt='memory in city'
                   />
                 </div>
