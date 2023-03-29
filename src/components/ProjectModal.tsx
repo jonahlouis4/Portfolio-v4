@@ -1,12 +1,12 @@
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
-import { Project, InitProject } from '@/models/project';
+import { InitProject, Project } from '@/models/project';
 import {
   ArrowTopRightOnSquareIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { GitHubIcon } from './SocialIcons';
+import { AppStoreIcon, GitHubIcon, PlayStoreIcon } from './SocialIcons';
 
 type ProjectModalProps = {
   selectedProject: any;
@@ -96,6 +96,16 @@ export default function ProjectModal(props: ProjectModalProps) {
                   {currLink.github && (
                     <a href={currLink.github} target='_blank' rel='noreferrer'>
                       <GitHubIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                    </a>
+                  )}
+                  {currLink.ios && (
+                    <a href={currLink.github} target='_blank' rel='noreferrer'>
+                      <AppStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
+                    </a>
+                  )}
+                  {currLink.android && (
+                    <a href={currLink.github} target='_blank' rel='noreferrer'>
+                      <PlayStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
                     </a>
                   )}
                 </>
