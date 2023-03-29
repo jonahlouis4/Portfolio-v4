@@ -25,7 +25,7 @@ export default function Contact() {
           className='w-full border-2 border-gray-200 my-8'
         />
         
-        <div className='flex justify-between'>
+        <div className='flex flex-col gap-y-16 sm:flex-row sm:gap-y-0 justify-between'>
           <div>
             <motion.h1
               variants={DF_PAGE_ITEM_VARIANT}
