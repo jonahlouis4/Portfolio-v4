@@ -53,7 +53,7 @@ export default function Projects() {
           className='w-full border-2 border-gray-200 my-8'
         />
         <div className='mt-16 grid md:grid-cols-2 gap-20'>
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
               layoutId={project.name}
