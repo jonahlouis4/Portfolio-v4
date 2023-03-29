@@ -5,5 +5,5 @@
   Fourth version of my <b>portfolio</b> made with <a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a> & <a href="https://reactjs.org/docs/hooks-overview.html" target="_blank">React</a>.
 </p>
 <div align="center">
-   <img src="src/public/jonah-louis-thumb.png" width="95%" height="95%">
+   <img src="public/jonah-louis-thumb.png" width="95%" height="95%">
 </div>
