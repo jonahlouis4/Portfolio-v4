@@ -28,7 +28,7 @@ export default function Projects() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='pt-48 pb-16 relative dark:bg-main-dark bg-main-light'
+      className='pt-48 pb-16 relative'
     >
       {/* Project modal */}
       <AnimatePresence>
