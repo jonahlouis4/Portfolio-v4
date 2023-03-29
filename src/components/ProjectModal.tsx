@@ -6,10 +6,11 @@ import {
 } from '@heroicons/react/24/outline';
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { GitHubIcon } from './SocialIcons';
+import { Project } from '@/models/project';
 
 type ProjectModalProps = {
   selectedProject: any
-  setSelectedProject: (project: any) => void
+  setSelectedProject: (project: Project) => void
 }
 
 export default function ProjectModal(props: ProjectModalProps) {
@@ -19,7 +20,7 @@ export default function ProjectModal(props: ProjectModalProps) {
     document.documentElement.style.overflow = 'auto';
     setSelectedProject({
       name: null,
-      description: null,
+      longDescription: null,
       langs: [],
       media: null,
       links: [],
@@ -74,7 +75,7 @@ export default function ProjectModal(props: ProjectModalProps) {
             {selectedProject.name}
           </h1>
           <h2 className='mt-12 dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
-            {selectedProject.description}
+            {selectedProject.longDescription}
           </h2>
           <ul className='flex gap-4 mt-8 '>
             {selectedProject.langs.map((lang: string, index: number) => (

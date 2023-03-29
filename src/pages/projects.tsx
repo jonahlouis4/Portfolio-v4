@@ -1,20 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
 import { PROJECTS } from '@/data/projectData';
+import { Project } from '@/models/project';
 import Container from '@/components/Container';
 import { useState } from 'react';
 import ProjectModal from '@/components/ProjectModal';
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<{
-    name: null | string;
-    description: null | string;
-    langs: undefined | Array<string>;
-    media: null | string;
-    links: undefined | Array<any>;
-  }>({
+  const [selectedProject, setSelectedProject] = useState<Project>({
     name: null,
-    description: null,
+    longDescription: null,
     langs: [],
     media: null,
     links: [],
@@ -23,7 +18,7 @@ export default function Projects() {
   const handleProject = (props: any) => {
     setSelectedProject({
       name: props.name,
-      description: props.longDescription,
+      longDescription: props.longDescription,
       langs: props.langs,
       media: null,
       links: props.links,
