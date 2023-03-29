@@ -1,17 +1,16 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import {
-  Bars3Icon,
-  XMarkIcon,
-  SunIcon,
-  MoonIcon,
-} from '@heroicons/react/24/outline';
-import { AnimatePresence, motion } from 'framer-motion';
+import { DF_PAGE_ITEM_VARIANT_2, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
-import Container from './Container';
-import { DF_PAGE_ITEM_VARIANT_2, DF_WRAPPER_VARIANT } from '@/data/variantData';
+import {
+  Bars3Icon,
+  MoonIcon,
+  SunIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Container from './Container';
 
 export default function Navbar() {
   const mode = useGlobalsPersist((state) => state.mode);

@@ -1,7 +1,7 @@
 import { useGlobal } from '@/store/globals';
 import { motion, usePresence } from 'framer-motion';
-import { useEffect } from 'react';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 export default function Loader() {
   const [isPresent, safeToRemove] = usePresence();
@@ -29,12 +29,11 @@ export default function Loader() {
       scale: 1.2,
       transition: {
         duration: 2.5,
-
       },
     },
     hidden: {
       opacity: 0,
-      scale: 0.8
+      scale: 0.8,
     },
     exit: {
       opacity: 0,

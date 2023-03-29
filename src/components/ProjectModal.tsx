@@ -1,17 +1,17 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import {
-  XMarkIcon,
-  ArrowTopRightOnSquareIcon,
-} from '@heroicons/react/24/outline';
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
-import { GitHubIcon } from './SocialIcons';
 import { Project } from '@/models/project';
+import {
+  ArrowTopRightOnSquareIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { GitHubIcon } from './SocialIcons';
 
 type ProjectModalProps = {
-  selectedProject: any
-  setSelectedProject: (project: Project) => void
-}
+  selectedProject: any;
+  setSelectedProject: (project: Project) => void;
+};
 
 export default function ProjectModal(props: ProjectModalProps) {
   const { selectedProject, setSelectedProject } = props;
@@ -54,7 +54,10 @@ export default function ProjectModal(props: ProjectModalProps) {
       className='fixed inset-0 flex justify-center items-center z-30'
       onClick={handleClose}
     >
-      <div className='fixed inset-0 bg-black/70 dark:bg-black/60' aria-hidden='true' />
+      <div
+        className='fixed inset-0 bg-black/70 dark:bg-black/60'
+        aria-hidden='true'
+      />
       <motion.div
         className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 mx-4 sm:mx-0 w-full w-11/12 sm:w-4/5 lg:w-3/5 3xl:w-2/5 min-h-min z-40 shadow-xl'
         layoutId={selectedProject.name}
@@ -92,20 +95,12 @@ export default function ProjectModal(props: ProjectModalProps) {
               {selectedProject.links.map((currLink: any) => (
                 <>
                   {currLink.website && (
-                    <a
-                      href={currLink.website}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
+                    <a href={currLink.website} target='_blank' rel='noreferrer'>
                       <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                     </a>
                   )}
                   {currLink.github && (
-                    <a
-                      href={currLink.github}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
+                    <a href={currLink.github} target='_blank' rel='noreferrer'>
                       <GitHubIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                     </a>
                   )}

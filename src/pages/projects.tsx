@@ -1,10 +1,10 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { DF_WRAPPER_VARIANT, DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
-import { PROJECTS } from '@/data/projectData';
-import { Project } from '@/models/project';
 import Container from '@/components/Container';
-import { useState } from 'react';
 import ProjectModal from '@/components/ProjectModal';
+import { PROJECTS } from '@/data/projectData';
+import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
+import { Project } from '@/models/project';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project>({

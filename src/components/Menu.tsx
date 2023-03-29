@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
 import { SOCIALS } from '@/data/socialData';
+import { DF_PAGE_ITEM_VARIANT } from '@/data/variantData';
+import { useGlobal } from '@/store/globals';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Container from './Container';
-import { useGlobal } from '@/store/globals';
 
 export default function Menu() {
   const setMenu = useGlobal((state) => state.setMenu);
@@ -85,7 +85,7 @@ export default function Menu() {
                 variants={DF_PAGE_ITEM_VARIANT}
                 className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
                 href={social.href}
-                target="_blank"
+                target='_blank'
                 rel='noreferrer'
               >
                 <span>{social.name}</span>

@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { CITIES } from '@/data/cityData';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { EffectCreative, Scrollbar } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Image, { StaticImageData } from 'next/image';
 
@@ -14,7 +14,7 @@ import 'swiper/css/scrollbar';
 type ImageSlideModalProps = {
   selectedCity: string | null;
   setSelectedCity: (city: string | null) => void;
-}
+};
 
 export default function ImageSlideModal(props: ImageSlideModalProps) {
   const { selectedCity, setSelectedCity } = props;

@@ -1,9 +1,9 @@
-type funcProps = {
+type ContainerProps = {
   children: any;
   narrow?: boolean;
 };
 
-export default function Container(props: funcProps) {
+export default function Container(props: ContainerProps) {
   const { children, narrow = true } = props;
 
   return (

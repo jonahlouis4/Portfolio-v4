@@ -1,13 +1,13 @@
 import Container from '@/components/Container';
+import ImageSlideModal from '@/components/ImageSlideModal';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
-import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
-import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
-import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
-import thumb_paris from '../assets/gallery/thumb_paris.jpg';
 import { ReactElement, useState } from 'react';
-import ImageSlideModal from '@/components/ImageSlideModal';
+import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
+import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
+import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
+import thumb_paris from '../assets/gallery/thumb_paris.jpg';
 
 // ========= Section Header component =========
 
@@ -197,8 +197,8 @@ export default function Journey() {
                 <DescLink
                   href='https://arpanam.sadhguru.org/'
                   text='Linga Bhairavi website'
-                />.{' '}
-                Currently, I am maintaining the{' '}
+                />
+                . Currently, I am maintaining the{' '}
                 <DescLink
                   href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
                   text='Isha Institute of Inner-Sciences'
@@ -231,8 +231,8 @@ export default function Journey() {
                 <DescLink
                   href='https://cloud.google.com/dialogflow'
                   text='Google Dialogflow'
-                />.{' '}
-                I was primarly in charge of the IVA for{' '}
+                />
+                . I was primarly in charge of the IVA for{' '}
                 <DescLink
                   href='https://www.arkansasbluecross.com/'
                   text='Arkansas BlueCross BlueShield'
