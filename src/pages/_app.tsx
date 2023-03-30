@@ -4,11 +4,11 @@ import Navbar from '@/components/Navbar';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 import '@/styles/globals.css';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const mode = useGlobalsPersist((state) => state.mode);
@@ -30,12 +30,19 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Jonah Louis</title>
+        <meta name='author' content='Jonah Louis' />
         <meta
           name='description'
-          content='Front-end web developer located in Ottawa, Ontario who specializes in developing high-quality websites and web applications.'
+          content='Jonah is a full-stack web developer in Canada 
+          who specializes in developing high-quality websites and web applications.
+          He also loves to spend his time volunteeing, watching movies, playing video games,
+          and simply exploring what the world has to offer.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta property='og:title' content='Portfolio - Jonah Louis' />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://jonahlouis.ca/' />
+
         <meta
           name='image'
           property='og:image'
@@ -43,10 +50,8 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property='og:description'
-          content='Front-end web developer located in Ottawa, Ontario who specializes in developing high-quality websites and web applications.'
+          content='Full-stack web developer in Canada who specializes in developing high-quality websites and web applications.'
         />
-        <meta property='og:url' content='https://jonahlouis.ca/' />
-        <meta name='author' content='Jonah Louis' />
       </Head>
 
       {/* Show navbar only when loading is done */}
