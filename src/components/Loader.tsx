@@ -28,12 +28,12 @@ export default function Loader() {
       opacity: 1,
       scale: 1.2,
       transition: {
-        duration: 2.5,
+        duration: 1,
       },
     },
     hidden: {
       opacity: 0,
-      scale: 0.8,
+      scale: 0,
     },
     exit: {
       opacity: 0,
