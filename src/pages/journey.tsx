@@ -254,7 +254,7 @@ export default function Journey() {
             link='https://icontribute.community/#/'
             description={
               <p>
-                A non-profit organization who help connect volunteer
+                A non-profit organization that helps connect volunteer
                 opportunities for both students and organizations. During my
                 time at iContribute, I lead a team of developers to rehaul the
                 look and feel of the mobile application. These changes are now

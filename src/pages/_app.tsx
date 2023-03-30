@@ -11,7 +11,6 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const mode = useGlobalsPersist((state) => state.mode);
   const isLoading = useGlobal((state) => state.loader);
   const isMenu = useGlobal((state) => state.menu);
@@ -26,28 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
       document.documentElement.classList.remove('bg-zinc-900');
     }
   }, [mode]);
-
-  useEffect(() => {
-    const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener('mousemove', mouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', mouseMove);
-    };
-  }, []);
-
-  const mouseVariant = {
-    default: {
-      x: mousePosition.x - 20,
-      y: mousePosition.y - 20,
-    },
-  };
 
   return (
     <>
@@ -71,15 +48,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property='og:url' content='https://jonahlouis.ca/' />
         <meta name='author' content='Jonah Louis' />
       </Head>
-      {/* Mouse div (follows mouse) */}
-
-      <motion.div
-        variants={mouseVariant}
-        animate='default'
-        className='invisible sm:visible flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 fixed top-0 left-0 z-40 pointer-events-none'
-      >
-        <div className='w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300' />
-      </motion.div>
 
       {/* Show navbar only when loading is done */}
       {!isLoading ? <Navbar /> : null}
