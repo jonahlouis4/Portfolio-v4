@@ -20,12 +20,15 @@
   border-radius: 10px;
 }
 
-/* Swiper scroll thumb */
-.swiper-scrollbar-drag {
+/* swiper progress bar */
+.swiper-pagination-progressbar-fill {
   background-color: #d1d5db !important;
 }
 
-/* Swiper scroll background */
-.swiper-scrollbar-horizontal {
-  background-color: #d1d5db29 !important;
+/* swiper arrows */
+.swiper-button-next {
+  color: #f3f4f6 !important;
+}
+.swiper-button-prev {
+  color: #f3f4f6 !important;
 }

@@ -3,13 +3,14 @@ import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { EffectCreative, Scrollbar } from 'swiper';
+import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Image, { StaticImageData } from 'next/image';
 
-import 'swiper/css';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 type ImageSlideModalProps = {
   selectedCity: string | null;
@@ -76,27 +77,19 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
         <div className='flex items-center h-full'>
           <Swiper
             grabCursor={true}
-            effect={'creative'}
-            creativeEffect={{
-              prev: {
-                translate: [0, 0, -400],
-              },
-              next: {
-                translate: ['100%', 0, 0],
-              },
+            pagination={{
+              type: "progressbar",
             }}
-            scrollbar={{
-              hide: false,
-            }}
-            modules={[EffectCreative, Scrollbar]}
-            className='mySwiper w-[60em] h-[60em] rounded-3xl'
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className='mySwiper h-[25em] sm:h-[40em] lg:w-[60em] lg:h-[50em] 3xl:h-[60em] rounded-3xl'
           >
             {images?.map((image, index) => (
-              <SwiperSlide key={'city-image-' + index}>
+              <SwiperSlide key={'city-image-' + index} className='bg-black/50'>
                 <div className='h-full flex items-center justify-center rounded-3xl'>
                   <Image
                     src={image}
-                    className='object-cover rounded-3xl w-full max-h-[60em]'
+                    className='object-cover rounded-3xl w-full w-full h-full lg:max-h-[60em]'
                     alt='memory in city'
                   />
                 </div>
