@@ -3,14 +3,14 @@ import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Pagination, Navigation } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Image, { StaticImageData } from 'next/image';
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 type ImageSlideModalProps = {
   selectedCity: string | null;
@@ -22,6 +22,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
   const [images, setImages] = useState<StaticImageData[] | null>(null);
 
   const handleClose = () => {
+    console.log('CLICKED');
     document.documentElement.style.overflow = 'auto';
     setSelectedCity(null);
   };
@@ -57,13 +58,10 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
       onClick={handleClose}
     >
       <div
-        className='fixed inset-0 bg-black/70 dark:bg-black/60'
+        className='fixed inset-0 bg-black/80 dark:bg-black/90'
         aria-hidden='true'
       />
-      <motion.div
-        className='w-full min-h-min z-40'
-        onClick={(e) => e.stopPropagation()}
-      >
+      <motion.div className='w-full min-h-min z-40'>
         <div className='flex justify-end'>
           <motion.button
             variants={DF_ITEM_VARIANT}
@@ -73,29 +71,33 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
             <XMarkIcon className='h-8 w-8 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
           </motion.button>
         </div>
-
-        <div className='flex items-center h-full'>
-          <Swiper
-            grabCursor={true}
-            pagination={{
-              type: "progressbar",
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className='mySwiper h-[25em] sm:h-[40em] lg:w-[60em] lg:h-[50em] 3xl:h-[60em] rounded-3xl'
-          >
-            {images?.map((image, index) => (
-              <SwiperSlide key={'city-image-' + index} className='bg-black/50'>
-                <div className='h-full flex items-center justify-center rounded-3xl'>
-                  <Image
-                    src={image}
-                    className='object-cover rounded-3xl w-full w-full h-full lg:max-h-[60em]'
-                    alt='memory in city'
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className='flex justify-center items-center h-full'>
+          <div onClick={(e) => e.stopPropagation()}>
+            <Swiper
+              grabCursor={true}
+              pagination={{
+                type: 'progressbar',
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className='mySwiper h-[25em] sm:h-[40em] lg:w-[60em] lg:h-[50em] 3xl:h-[60em] rounded-3xl'
+            >
+              {images?.map((image, index) => (
+                <SwiperSlide
+                  key={'city-image-' + index}
+                  className='bg-black/50'
+                >
+                  <div className='h-full flex items-center justify-center rounded-3xl'>
+                    <Image
+                      src={image}
+                      className='object-cover rounded-3xl w-full w-full h-full lg:max-h-[60em]'
+                      alt='memory in city'
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </motion.div>
     </motion.div>
