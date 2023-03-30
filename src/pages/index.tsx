@@ -4,7 +4,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import avatar from '../assets/avatar/jonah.jpg';
+import avatar from '../assets/avatar/jonah_3.jpg';
 
 export default function Home() {
   const router = useRouter();
