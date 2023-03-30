@@ -3,7 +3,6 @@ import ottawa_1 from '../assets/gallery/ottawa/ottawa_1.jpg';
 import ottawa_2 from '../assets/gallery/ottawa/ottawa_2.jpg';
 import ottawa_3 from '../assets/gallery/ottawa/ottawa_3.jpg';
 import ottawa_4 from '../assets/gallery/ottawa/ottawa_4.jpg';
-import ottawa_5 from '../assets/gallery/ottawa/ottawa_5.jpg';
 import ottawa_6 from '../assets/gallery/ottawa/ottawa_6.jpg';
 import ottawa_7 from '../assets/gallery/ottawa/ottawa_7.jpg';
 import ottawa_8 from '../assets/gallery/ottawa/ottawa_8.jpg';
@@ -65,7 +64,6 @@ export const CITIES = [
       ottawa_2,
       ottawa_3,
       ottawa_4,
-      ottawa_5,
       ottawa_6,
       ottawa_7,
       ottawa_8,
