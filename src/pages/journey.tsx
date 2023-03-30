@@ -138,7 +138,7 @@ const CityBox = ({
       </div>
       <Image
         src={image}
-        alt='canada-ottawa-thumbnail'
+        alt={`Album picture of Jonah's memories for ${country}, ${city}`}
         className='bg-cover w-full h-full rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl'
       />
     </button>
