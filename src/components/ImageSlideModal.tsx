@@ -71,7 +71,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
           </motion.button>
         </div>
         <div className='flex justify-center items-center h-full'>
-          <div onClick={(e) => e.stopPropagation()} className='w-full'>
+          <div onClick={(e) => e.stopPropagation()} className='w-full sm:w-min'>
             <Swiper
               grabCursor={true}
               pagination={{
