@@ -42,7 +42,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property='og:title' content='Portfolio - Jonah Louis' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://jonahlouis.ca/' />
-
         <meta
           name='image'
           property='og:image'
@@ -51,6 +50,25 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta
           property='og:description'
           content='Full-stack web developer in Canada who specializes in developing high-quality websites and web applications.'
+        />
+        {/* Twitter meta tags */}
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:site' content='https://jonahlouis.ca/' />
+        <meta name='twitter:title' content='Portfolio - Jonah Louis' />
+        <meta
+          name='twitter:description'
+          content='Jonah is a full-stack web developer in Canada 
+          who specializes in developing high-quality websites and web applications.
+          He also loves to spend his time volunteeing, watching movies, playing video games,
+          and simply exploring what the world has to offer.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://jonahlouis.ca/jonah-louis-thumb.png'
+        />
+        <meta
+          name='twitter:image:alt'
+          content="Front page of Jonah's portfolio"
         />
       </Head>
 
