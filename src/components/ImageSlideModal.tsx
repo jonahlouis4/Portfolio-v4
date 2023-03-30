@@ -90,7 +90,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
                     <Image
                       src={image}
                       className='object-cover rounded-3xl w-full w-full h-full lg:max-h-[60em]'
-                      alt='memory in city'
+                      alt={`memory in ${selectedCity}-${index}`}
                     />
                   </div>
                 </SwiperSlide>
