@@ -44,8 +44,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const mouseVariant = {
     default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
+      x: mousePosition.x - 20,
+      y: mousePosition.y - 20,
     },
   };
 
