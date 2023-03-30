@@ -1,5 +1,6 @@
 import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { InitProject, Project } from '@/models/project';
+import { useGlobal } from '@/store/globals';
 import {
   ArrowTopRightOnSquareIcon,
   XMarkIcon,
@@ -15,16 +16,19 @@ type ProjectModalProps = {
 
 export default function ProjectModal(props: ProjectModalProps) {
   const { selectedProject, setSelectedProject } = props;
+  const setProjectOpen = useGlobal(state => state.setProjectOpen)
 
   const handleClose = () => {
     document.documentElement.style.overflow = 'auto';
     setSelectedProject(InitProject);
+    setProjectOpen(false)
   };
 
   // Hide scrollbar when modal is active
   useEffect(() => {
     if (selectedProject) {
       document.documentElement.style.overflow = 'hidden';
+      setProjectOpen(true)
     }
   }, [selectedProject]);
 
@@ -33,6 +37,7 @@ export default function ProjectModal(props: ProjectModalProps) {
     const close = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         handleClose();
+        setProjectOpen(false)
       }
     };
     window.addEventListener('keydown', close);

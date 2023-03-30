@@ -11,6 +11,11 @@ interface LoaderSlice {
   setLoader: () => void;
 }
 
+interface ProjectSlice {
+  projectOpen: boolean;
+  setProjectOpen: (state: boolean) => void;
+}
+
 /********* Slices *********/
 const createMenuSlice: StateCreator<MenuSlice> = (set) => ({
   menu: false,
@@ -22,8 +27,14 @@ const createLoaderSlice: StateCreator<LoaderSlice> = (set) => ({
   setLoader: () => set((state) => ({ loader: !state.loader })),
 });
 
+const createProjectSlice: StateCreator<ProjectSlice> = (set) => ({
+  projectOpen: false,
+  setProjectOpen: (newVal: boolean) => set((state) => ({ projectOpen: newVal })),
+});
+
 /******** Global store ********/
-export const useGlobal = create<MenuSlice & LoaderSlice>()((...a) => ({
+export const useGlobal = create<MenuSlice & LoaderSlice & ProjectSlice>()((...a) => ({
   ...createMenuSlice(...a),
   ...createLoaderSlice(...a),
+  ...createProjectSlice(...a),
 }))

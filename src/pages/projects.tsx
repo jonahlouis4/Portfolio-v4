@@ -28,7 +28,7 @@ export default function Projects() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='pt-48 pb-16 relative bg-main-light dark:bg-main-dark bg-no-repeat bg-cover'
+      className='pt-48 h-screen relative bg-main-light dark:bg-main-dark bg-no-repeat bg-cover'
     >
       {/* Project modal */}
       <AnimatePresence>
@@ -52,7 +52,7 @@ export default function Projects() {
           variants={DF_PAGE_ITEM_VARIANT}
           className='w-full border-2 border-gray-200 my-8'
         />
-        <div className='mt-16 grid md:grid-cols-2 gap-20'>
+        <div className='mt-16 grid md:grid-cols-2 gap-20 pb-16'>
           {PROJECTS.map((project) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
