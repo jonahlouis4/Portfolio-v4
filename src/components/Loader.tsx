@@ -28,7 +28,7 @@ export default function Loader() {
       opacity: 1,
       scale: 1.2,
       transition: {
-        duration: 2.5,
+        duration: 0.5,
       },
     },
     hidden: {
