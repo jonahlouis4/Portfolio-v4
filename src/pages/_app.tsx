@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const mode = useGlobalsPersist((state) => state.mode);
   const isLoading = useGlobal((state) => state.loader);
   const isMenu = useGlobal((state) => state.menu);
-  const projectOpen = useGlobal((state) => state.projectOpen);
   const router = useRouter();
 
   useEffect(() => {
@@ -30,12 +29,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
-      if (!projectOpen) {
-        setMousePosition({
-          x: e.clientX,
-          y: e.clientY,
-        });
-      }
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
     };
 
     window.addEventListener('mousemove', mouseMove);
@@ -43,7 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => {
       window.removeEventListener('mousemove', mouseMove);
     };
-  }, [projectOpen]);
+  }, []);
 
   const mouseVariant = {
     default: {
@@ -75,15 +72,14 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='author' content='Jonah Louis' />
       </Head>
       {/* Mouse div (follows mouse) */}
-      {!projectOpen && (
-        <motion.div
-          variants={mouseVariant}
-          animate='default'
-          className='invisible sm:visible flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 fixed top-0 left-0 z-40 pointer-events-none'
-        >
-          <div className='w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300' />
-        </motion.div>
-      )}
+
+      <motion.div
+        variants={mouseVariant}
+        animate='default'
+        className='invisible sm:visible flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 fixed top-0 left-0 z-40 pointer-events-none'
+      >
+        <div className='w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300' />
+      </motion.div>
 
       {/* Show navbar only when loading is done */}
       {!isLoading ? <Navbar /> : null}
