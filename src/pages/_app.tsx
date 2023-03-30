@@ -43,7 +43,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://jonahlouis.ca/' />
         <meta
-          name='image'
           property='og:image'
           content='https://jonahlouis.ca/jonah-louis-thumb.png'
         />
