@@ -30,19 +30,22 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Jonah Louis</title>
-        <meta name='description' content='Front-end web developer located in Ottawa, Ontario who specializes in developing high-quality websites and web applications.' />
+        <meta
+          name='description'
+          content='Front-end web developer located in Ottawa, Ontario who specializes in developing high-quality websites and web applications.'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta property='og:title' content='Portfolio - Jonah Louis' />
         <meta
           name='image'
           property='og:image'
-          content='../public/jonah-louis-thumb.png'
+          content='https://jonahlouis.ca/jonah-louis-thumb.png'
         />
         <meta
           property='og:description'
           content='Front-end web developer located in Ottawa, Ontario who specializes in developing high-quality websites and web applications.'
         />
-        <meta property='og:url' content='https://www.jonahlouis.ca/' />
+        <meta property='og:url' content='https://jonahlouis.ca/' />
         <meta name='author' content='Jonah Louis' />
       </Head>
       {!isLoading ? <Navbar /> : null}
