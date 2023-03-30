@@ -29,7 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
-      console.log(e);
       setMousePosition({
         x: e.clientX,
         y: e.clientY,
