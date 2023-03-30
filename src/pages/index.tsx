@@ -19,7 +19,7 @@ export default function Home() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='h-screen dark:bg-zinc-900'
+      className='h-screen dark:bg-zinc-900 bg-main-light dark:bg-main-dark bg-no-repeat bg-cover'
     >
       <motion.div className='h-full flex flex-col items-center justify-center'>
         <div className='w-full'>

@@ -11,7 +11,7 @@ export default function Contact() {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='py-48 h-screen'
+      className='py-48 h-screen bg-main-light dark:bg-main-dark bg-no-repeat bg-cover'
     >
       <Container>
         <motion.h1
