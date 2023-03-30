@@ -54,7 +54,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='fixed inset-0 flex z-30 py-10 px-10'
+      className='fixed inset-0 flex z-30 py-10 px-2 sm:px-10'
       onClick={handleClose}
     >
       <div
@@ -72,7 +72,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
           </motion.button>
         </div>
         <div className='flex justify-center items-center h-full'>
-          <div onClick={(e) => e.stopPropagation()}>
+          <div onClick={(e) => e.stopPropagation()} className='w-full'>
             <Swiper
               grabCursor={true}
               pagination={{
