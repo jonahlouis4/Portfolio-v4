@@ -22,7 +22,6 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
   const [images, setImages] = useState<StaticImageData[] | null>(null);
 
   const handleClose = () => {
-    console.log('CLICKED');
     document.documentElement.style.overflow = 'auto';
     setSelectedCity(null);
   };
