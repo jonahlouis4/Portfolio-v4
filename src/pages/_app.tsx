@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta
           name='image'
           property='og:image'
-          content='https://www.jonahlouis.ca/jonah-louis-thumb.png'
+          content='../public/jonah-louis-thumb.png'
         />
         <meta
           property='og:description'
