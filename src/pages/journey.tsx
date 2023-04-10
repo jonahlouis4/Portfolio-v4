@@ -175,7 +175,7 @@ export default function Journey() {
 
           {/* Experience 1 */}
           <ExperienceInfo
-            startDate='June 2021'
+            startDate='June 2022'
             endDate='Present'
             company='isha Foundation'
             link='https://isha.sadhguru.org/us/en'
