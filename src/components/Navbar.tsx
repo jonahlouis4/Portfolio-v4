@@ -20,10 +20,11 @@ export default function Navbar() {
   const router = useRouter();
 
   const handleHome = async () => {
+    await router.push('/');
+
     if (menu) {
       setMenu();
     }
-    await router.push('/');
   };
 
   const handleMenu = () => {
