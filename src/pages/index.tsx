@@ -41,8 +41,7 @@ export default function Home() {
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-gray-900 text-xl lg:text-3xl drop-shadow-lg mt-6'
                   >
-                    A full-stack web developer who loves to build things for the
-                    web.
+                    I'm a full-stack web developer who loves to build things for the web.
                   </motion.p>
 
                   {/* Buttons */}
