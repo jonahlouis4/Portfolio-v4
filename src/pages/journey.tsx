@@ -181,9 +181,8 @@ export default function Journey() {
             link='https://isha.sadhguru.org/us/en'
             description={
               <p>
-                A non-profit organization with over 10 million volunteers who
-                offer classical yoga to the World. I have worked on multiple
-                projects, such as developing a gift card system for their{' '}
+                An international non-profit organization dedicated to cultivating human well-being by offering
+                classical yoga. I have worked on multiple projects, such as developing a gift card system for their{' '}
                 <DescLink
                   href='https://www.ishalife.com/ca/'
                   text='isha life store'
@@ -198,7 +197,7 @@ export default function Journey() {
                   href='https://arpanam.sadhguru.org/'
                   text='Linga Bhairavi website'
                 />
-                . Currently, I am maintaining the{' '}
+                . To this date, I have been given the opportunity to implement new features and maintain changes for the{' '}
                 <DescLink
                   href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
                   text='Isha Institute of Inner-Sciences'
@@ -222,7 +221,7 @@ export default function Journey() {
             description={
               <p>
                 A full-service custom software development firm. I developed and
-                maintained multiple IVA's (intelligent virtual assistant) using{' '}
+                maintained multiple IVAs (intelligent virtual assistant) using{' '}
                 <DescLink
                   href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
                   text='Inference Solutions'
@@ -232,17 +231,17 @@ export default function Journey() {
                   href='https://cloud.google.com/dialogflow'
                   text='Google Dialogflow'
                 />
-                . I was primarly in charge of the IVA for{' '}
+                . I was primarily in charge of the{' '}
                 <DescLink
                   href='https://www.arkansasbluecross.com/'
                   text='Arkansas BlueCross BlueShield'
                 />{' '}
-                and{' '}
+                and the{' '}
                 <DescLink
                   href='https://www.enterprisebanking.com/'
                   text='Enterprise Bank'
                 />
-                .
+                {' '}IVA.
               </p>
             }
           />
@@ -256,7 +255,7 @@ export default function Journey() {
               <p>
                 A non-profit organization that helps connect volunteer
                 opportunities for both students and organizations. During my
-                time at iContribute, I lead a team of developers to rehaul the
+                time at iContribute, I led a team of developers to rehaul the
                 look and feel of the mobile application. These changes are now
                 available on both{' '}
                 <DescLink
