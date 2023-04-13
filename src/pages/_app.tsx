@@ -9,12 +9,17 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import '@/translation/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const language = useGlobalsPersist((state) => state.language);
   const mode = useGlobalsPersist((state) => state.mode);
   const isLoading = useGlobal((state) => state.loader);
   const isMenu = useGlobal((state) => state.menu);
   const router = useRouter();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     if (mode === 'dark') {
@@ -25,6 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
       document.documentElement.classList.remove('bg-zinc-900');
     }
   }, [mode]);
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language]);
 
   return (
     <>

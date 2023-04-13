@@ -38,7 +38,7 @@ export default function Navbar() {
   };
 
   const handleLang = () => {
-    language === 'english' ? setLanguage('francais') : setLanguage('english');
+    language === 'en' ? setLanguage('fr') : setLanguage('en');
   };
 
   const menuVariant = {
@@ -88,7 +88,7 @@ export default function Navbar() {
               onClick={handleLang}
             >
               <AnimatePresence mode='wait'>
-                {language === 'english' ? (
+                {language === 'en' ? (
                   <motion.div
                     key='langEn'
                     variants={modeVariant}

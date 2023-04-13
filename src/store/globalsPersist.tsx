@@ -4,8 +4,8 @@ import { devtools, persist } from 'zustand/middleware'
 interface modeState {
   mode: 'light' | 'dark';
   setMode: (newMode: 'light' | 'dark') => void
-  language: 'english' | 'francais',
-  setLanguage: (newLang: 'english' | 'francais') => void
+  language: 'en' | 'fr',
+  setLanguage: (newLang: 'en' | 'fr') => void
 }
 
 // Stores in localstorage
@@ -15,7 +15,7 @@ export const useGlobalsPersist = create<modeState>()(
       (set) => ({
         mode: 'dark',
         setMode: (newMode) => set(({ mode: newMode })),
-        language: 'english',
+        language: 'en',
         setLanguage: (newLang) => set(({ language: newLang }))
       }),
       {
