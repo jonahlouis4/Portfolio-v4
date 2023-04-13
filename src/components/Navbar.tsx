@@ -86,9 +86,10 @@ export default function Navbar() {
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT_2}
               onClick={handleLang}
+              className='text-gray-500 hover:text-gray-600 transition-colors duration-150 ease-in'
             >
               <AnimatePresence mode='wait'>
-                {language === 'en' ? (
+                {language === 'fr' ? (
                   <motion.div
                     key='langEn'
                     variants={modeVariant}

@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import avatar from '../assets/avatar/jonah_3.jpg';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const router = useRouter();
+  const { t } = useTranslation('home');
 
   const handleActionBtn = (href: string) => {
     router.push(href);
@@ -26,13 +28,13 @@ export default function Home() {
           <Container>
             <>
               <div className='flex flex-col lg:flex-row justify-between items-center gap-y-12'>
-                <div className='max-w-xl 3xl:max-w-2xl text-center lg:text-left'>
+                <div className='max-w-xl md:max-w-2xl text-center lg:text-left'>
                   {/* Intro */}
                   <motion.h1
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-gray-900 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
                   >
-                    Hey, I'm{' '}
+                    {t('intro')}{' '}
                     <span className='bg-clip-text animate-header text-transparent bg-gradient-to-r from-pink-500 to-purple-500'>
                       Jonah.
                     </span>
