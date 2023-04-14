@@ -1,14 +1,15 @@
 import Container from '@/components/Container';
 import ImageSlideModal from '@/components/ImageSlideModal';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
+import { useGlobal } from '@/store/globals';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import { ReactElement, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_paris from '../assets/gallery/thumb_paris.jpg';
-import { useTranslation } from 'react-i18next';
 
 // ========= Section Header component =========
 
@@ -149,8 +150,9 @@ const CityBox = ({
 // ========= Journey page =========
 
 export default function Journey() {
+  const language = useGlobal((state) => state.language);
   const [selectedCity, setSelectedCity] = useState<string | null>('');
-  const { t } = useTranslation('journey')
+  const { t } = useTranslation('journey');
 
   return (
     <motion.div
@@ -176,110 +178,222 @@ export default function Journey() {
           <SectionHeader title={`${t('section-1-update')} 👋`} />
 
           {/* Experience 1 */}
-          <ExperienceInfo
-            startDate='June 2022'
-            endDate='Present'
-            company='isha Foundation'
-            link='https://isha.sadhguru.org/us/en'
-            description={
-              <p>
-                An international non-profit organization dedicated to cultivating human well-being by offering
-                classical yoga. I have worked on multiple projects, such as developing a gift card system for their{' '}
-                <DescLink
-                  href='https://www.ishalife.com/ca/'
-                  text='isha life store'
-                />
-                , an admin portal to host live{' '}
-                <DescLink
-                  href='https://isha.sadhguru.org/yoga/yoga-programs/'
-                  text='yoga programs'
-                />
-                , and maintaining the main{' '}
-                <DescLink
-                  href='https://arpanam.sadhguru.org/'
-                  text='Linga Bhairavi website'
-                />
-                . To this date, I have been given the opportunity to implement new features and maintain changes for the{' '}
-                <DescLink
-                  href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
-                  text='Isha Institute of Inner-Sciences'
-                />{' '}
-                and the{' '}
-                <DescLink
-                  href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
-                  text='Adiyogi Abode of Yoga'
-                />{' '}
-                websites.
-              </p>
-            }
-            ptNone
-          />
+          {language === 'en' ? (
+            <ExperienceInfo
+              startDate='June 2022'
+              endDate='Present'
+              company='isha Foundation'
+              link='https://isha.sadhguru.org/us/en'
+              description={
+                <p>
+                  An international non-profit organization dedicated to
+                  cultivating human well-being by offering classical yoga. I
+                  have worked on multiple projects, such as developing a gift
+                  card system for their{' '}
+                  <DescLink
+                    href='https://www.ishalife.com/ca/'
+                    text='isha life store'
+                  />
+                  , an admin portal to host live{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/yoga/yoga-programs/'
+                    text='yoga programs'
+                  />
+                  , and maintaining the main{' '}
+                  <DescLink
+                    href='https://arpanam.sadhguru.org/'
+                    text='Linga Bhairavi website'
+                  />
+                  . To this date, I have been given the opportunity to implement
+                  new features and maintain changes for the{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
+                    text='Isha Institute of Inner-Sciences'
+                  />{' '}
+                  and the{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
+                    text='Adiyogi Abode of Yoga'
+                  />{' '}
+                  websites.
+                </p>
+              }
+              ptNone
+            />
+          ) : (
+            <ExperienceInfo
+              startDate='Juin 2022'
+              endDate='Actuel'
+              company='isha Foundation'
+              link='https://isha.sadhguru.org/us/en'
+              description={
+                <p>
+                  An international non-profit organization dedicated to
+                  cultivating human well-being by offering classical yoga. I
+                  have worked on multiple projects, such as developing a gift
+                  card system for their{' '}
+                  <DescLink
+                    href='https://www.ishalife.com/ca/'
+                    text='isha life store'
+                  />
+                  , an admin portal to host live{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/yoga/yoga-programs/'
+                    text='yoga programs'
+                  />
+                  , and maintaining the main{' '}
+                  <DescLink
+                    href='https://arpanam.sadhguru.org/'
+                    text='Linga Bhairavi website'
+                  />
+                  . To this date, I have been given the opportunity to implement
+                  new features and maintain changes for the{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
+                    text='Isha Institute of Inner-Sciences'
+                  />{' '}
+                  and the{' '}
+                  <DescLink
+                    href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
+                    text='Adiyogi Abode of Yoga'
+                  />{' '}
+                  websites.
+                </p>
+              }
+              ptNone
+            />
+          )}
+
           {/* Experience 2 */}
-          <ExperienceInfo
-            startDate='June 2021'
-            endDate='June 2022'
-            company='NetFore Systems'
-            link='https://netfore.com/'
-            description={
-              <p>
-                A full-service custom software development firm. I developed and
-                maintained multiple IVAs (intelligent virtual assistant) using{' '}
-                <DescLink
-                  href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
-                  text='Inference Solutions'
-                />{' '}
-                and{' '}
-                <DescLink
-                  href='https://cloud.google.com/dialogflow'
-                  text='Google Dialogflow'
-                />
-                . I was primarily in charge of the{' '}
-                <DescLink
-                  href='https://www.arkansasbluecross.com/'
-                  text='Arkansas BlueCross BlueShield'
-                />{' '}
-                and the{' '}
-                <DescLink
-                  href='https://www.enterprisebanking.com/'
-                  text='Enterprise Bank'
-                />
-                {' '}IVA.
-              </p>
-            }
-          />
+          {language === 'en' ? (
+            <ExperienceInfo
+              startDate='June 2021'
+              endDate='June 2022'
+              company='NetFore Systems'
+              link='https://netfore.com/'
+              description={
+                <p>
+                  A full-service custom software development firm. I developed
+                  and maintained multiple IVAs (intelligent virtual assistant)
+                  using{' '}
+                  <DescLink
+                    href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
+                    text='Inference Solutions'
+                  />{' '}
+                  and{' '}
+                  <DescLink
+                    href='https://cloud.google.com/dialogflow'
+                    text='Google Dialogflow'
+                  />
+                  . I was primarily in charge of the{' '}
+                  <DescLink
+                    href='https://www.arkansasbluecross.com/'
+                    text='Arkansas BlueCross BlueShield'
+                  />{' '}
+                  and the{' '}
+                  <DescLink
+                    href='https://www.enterprisebanking.com/'
+                    text='Enterprise Bank'
+                  />{' '}
+                  IVA.
+                </p>
+              }
+            />
+          ) : (
+            <ExperienceInfo
+              startDate='June 2021'
+              endDate='June 2022'
+              company='NetFore Systems'
+              link='https://netfore.com/'
+              description={
+                <p>
+                  A full-service custom software development firm. I developed
+                  and maintained multiple IVAs (intelligent virtual assistant)
+                  using{' '}
+                  <DescLink
+                    href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
+                    text='Inference Solutions'
+                  />{' '}
+                  and{' '}
+                  <DescLink
+                    href='https://cloud.google.com/dialogflow'
+                    text='Google Dialogflow'
+                  />
+                  . I was primarily in charge of the{' '}
+                  <DescLink
+                    href='https://www.arkansasbluecross.com/'
+                    text='Arkansas BlueCross BlueShield'
+                  />{' '}
+                  and the{' '}
+                  <DescLink
+                    href='https://www.enterprisebanking.com/'
+                    text='Enterprise Bank'
+                  />{' '}
+                  IVA.
+                </p>
+              }
+            />
+          )}
+
           {/* Experience 3 */}
-          <ExperienceInfo
-            startDate='June 2021'
-            endDate='June 2022'
-            company='iContribute'
-            link='https://icontribute.community/#/'
-            description={
-              <p>
-                A non-profit organization that helps connect volunteer
-                opportunities for both students and organizations. During my
-                time at iContribute, I led a team of developers to rehaul the
-                look and feel of the mobile application. These changes are now
-                available on both{' '}
-                <DescLink
-                  href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
-                  text='IOS'
-                />{' '}
-                and{' '}
-                <DescLink
-                  href='https://play.google.com/store/apps/details?id=com.icontribute'
-                  text='Android'
-                />
-                .
-              </p>
-            }
-            pbNone
-          />
+          {language === 'en' ? (
+            <ExperienceInfo
+              startDate='June 2021'
+              endDate='June 2022'
+              company='iContribute'
+              link='https://icontribute.community/#/'
+              description={
+                <p>
+                  A non-profit organization that helps connect volunteer
+                  opportunities for both students and organizations. During my
+                  time at iContribute, I led a team of developers to rehaul the
+                  look and feel of the mobile application. These changes are now
+                  available on both{' '}
+                  <DescLink
+                    href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
+                    text='IOS'
+                  />{' '}
+                  and{' '}
+                  <DescLink
+                    href='https://play.google.com/store/apps/details?id=com.icontribute'
+                    text='Android'
+                  />
+                  .
+                </p>
+              }
+              pbNone
+            />
+          ) : (
+            <ExperienceInfo
+              startDate='June 2021'
+              endDate='June 2022'
+              company='iContribute'
+              link='https://icontribute.community/#/'
+              description={
+                <p>
+                  A non-profit organization that helps connect volunteer
+                  opportunities for both students and organizations. During my
+                  time at iContribute, I led a team of developers to rehaul the
+                  look and feel of the mobile application. These changes are now
+                  available on both{' '}
+                  <DescLink
+                    href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
+                    text='IOS'
+                  />{' '}
+                  and{' '}
+                  <DescLink
+                    href='https://play.google.com/store/apps/details?id=com.icontribute'
+                    text='Android'
+                  />
+                  .
+                </p>
+              }
+              pbNone
+            />
+          )}
         </>
         <>
-          <SectionHeader
-            title={`${t('section-2-glimpses')} 🌏`}
-            ptLarge
-          />
+          <SectionHeader title={`${t('section-2-glimpses')} 🌏`} ptLarge />
 
           <AnimatePresence>
             {selectedCity && (
