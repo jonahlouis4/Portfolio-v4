@@ -13,8 +13,8 @@ import { useRouter } from 'next/router';
 import Container from './Container';
 
 export default function Navbar() {
-  const language = useGlobalsPersist((state) => state.language);
-  const setLanguage = useGlobalsPersist((state) => state.setLanguage);
+  const language = useGlobal((state) => state.language);
+  const setLanguage = useGlobal((state) => state.setLanguage);
   const mode = useGlobalsPersist((state) => state.mode);
   const setMode = useGlobalsPersist((state) => state.setMode);
   const menu = useGlobal((state) => state.menu);

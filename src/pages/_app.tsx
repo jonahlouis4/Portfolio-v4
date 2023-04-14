@@ -14,7 +14,8 @@ import { useTranslation } from 'react-i18next';
 import '@/translation/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const language = useGlobalsPersist((state) => state.language);
+  const language = useGlobal((state) => state.language);
+  const setLanguage = useGlobal((state) => state.setLanguage);
   const mode = useGlobalsPersist((state) => state.mode);
   const isLoading = useGlobal((state) => state.loader);
   const isMenu = useGlobal((state) => state.menu);
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { pathname, locale } = router;
   const { i18n } = useTranslation();
 
+  // Handle dark mode toggle
   useEffect(() => {
     if (mode === 'dark') {
       document.documentElement.classList.add('dark');
@@ -33,14 +35,21 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [mode]);
 
+  // Check if user came with french link
   useEffect(() => {
-    i18n.changeLanguage(language)
+    if (locale) {
+      setLanguage('fr');
+    }
+  }, []);
 
-    // Add or remove 'fr' from url
+  // Handle language change
+  useEffect(() => {
+    i18n.changeLanguage(language);
+
     router.push(pathname, pathname, {
       locale: language === 'fr' ? 'fr' : false,
     });
-  }, [language]);
+  }, [language, locale]);
 
   return (
     <>
