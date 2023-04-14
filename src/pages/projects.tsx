@@ -2,12 +2,14 @@ import Container from '@/components/Container';
 import ProjectModal from '@/components/ProjectModal';
 import { PROJECTS } from '@/data/projectData';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
-import { Project, InitProject } from '@/models/project';
+import { InitProject, Project } from '@/models/project';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project>(InitProject);
+  const { t } = useTranslation('projects');
 
   const handleProject = (props: Project) => {
     setSelectedProject({
@@ -18,7 +20,7 @@ export default function Projects() {
       langs: props.langs,
       media: null,
       links: props.links,
-      className: null
+      className: null,
     });
   };
 
@@ -46,7 +48,7 @@ export default function Projects() {
           variants={DF_PAGE_ITEM_VARIANT}
           className='dark:text-gray-200 text-gray-900 text-6xl font-extrabold text-center sm:text-left drop-shadow-xl'
         >
-          Projects
+          {t('title')}
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
@@ -72,7 +74,7 @@ export default function Projects() {
                 {project.name}
               </h1>
               <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
-                {project.description}
+                {t(project.description)}
               </h2>
             </motion.button>
           ))}

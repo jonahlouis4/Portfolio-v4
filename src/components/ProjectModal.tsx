@@ -6,6 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AppStoreIcon, GitHubIcon, PlayStoreIcon } from './SocialIcons';
 
 type ProjectModalProps = {
@@ -15,6 +16,7 @@ type ProjectModalProps = {
 
 export default function ProjectModal(props: ProjectModalProps) {
   const { selectedProject, setSelectedProject } = props;
+  const { t } = useTranslation('projects');
 
   const handleClose = () => {
     document.documentElement.style.overflow = 'auto';
@@ -72,7 +74,7 @@ export default function ProjectModal(props: ProjectModalProps) {
             {selectedProject.name}
           </h1>
           <h2 className='mt-12 dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
-            {selectedProject.longDescription}
+            {t(selectedProject.longDescription)}
           </h2>
           <ul className='flex gap-4 mt-8 '>
             {selectedProject.langs.map((lang: string, index: number) => (
