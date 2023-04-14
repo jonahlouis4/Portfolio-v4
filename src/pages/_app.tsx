@@ -37,8 +37,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   // Check if user came with french link
   useEffect(() => {
-    if (locale) {
-      setLanguage('fr');
+    if (locale === 'en' || locale === 'fr') {
+      setLanguage(locale);
     }
   }, []);
 
