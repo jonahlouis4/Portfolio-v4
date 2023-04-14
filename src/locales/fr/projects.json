@@ -1,13 +1,13 @@
 {
     "title": "Projets",
-    "studybuddy-desc": "Application Web Flashcard conçue pour étudier.",
-    "studybuddy-ldesc": "Une simple application web flashcard conçue pour étudier. Il permet d'ajouter une vaste gamme de questions dans un compte et comprend un ordre aléatoire pour chaque quiz.",
-    "covid19app-desc": "Suivi d'application Web COVID-19 en direct",
+    "studybuddy-desc": "Application web carte mémoire conçue pour étudier.",
+    "studybuddy-ldesc": "Une simple application web carte mémoire conçue pour étudier. Elle permet d'ajouter une vaste gamme de questions dans un compte et comprend un ordre aléatoire pour chaque quiz.",
+    "covid19app-desc": "Une application web de suivi COVID-19 en direct.",
     "covid19app-ldesc": "Un outil de suivi covid-19 à l'échelle mondiale des décès, des cas et des guérisons à l'aide d'une API COVID-19. Il comprend des graphiques triés et des résumés d'une grande variété de pays.",
     "royaldripcheck-desc": "Site e-commerce de vente de streetwear.",
-    "royaldripcheck-ldesc": "A Shopify e-commerce website that resells the latest streetwear from a local business in Ottawa, Canada. Anything from shoes, t-shirts, hoodies, sweatshirts, or pants.",
-    "creativefloww-desc": "Page de destination de l'agence Web",
-    "creativefloww-ldesc": "Une page de destination d'agence Web utilisée comme moyen de fournir des détails sur l'entreprise et ses services aux clients potentiels.",
+    "royaldripcheck-ldesc": "Un site web de commerce électronique Shopify qui revend les derniers vêtements de rue d'une entreprise locale à Ottawa, au Canada. Des chaussures, des t-shirts, des sweats à capuche, des pulls molletonnés ou des pantalons.",
+    "creativefloww-desc": "Une page de destination d'agence web",
+    "creativefloww-ldesc": "Une page de destination d'agence web utilisée comme moyen de fournir des détails sur l'entreprise et ses services aux clients potentiels.",
     "icontribute-desc": "Application mobile conçue pour les opportunités de bénévolat.",
     "icontribute-ldesc": "Une application mobile qui aide à trouver, gérer et connecter les opportunités de bénévolat pour les étudiants et les organisations. Disponible à Ottawa et à Toronto."
 }
