@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [mode]);
 
   useEffect(() => {
-    i18n.changeLanguage(locale ? 'fr' : 'en')
+    i18n.changeLanguage(language)
 
     // Add or remove 'fr' from url
     router.push(pathname, pathname, {
