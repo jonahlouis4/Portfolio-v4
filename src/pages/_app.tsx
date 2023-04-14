@@ -19,6 +19,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const isLoading = useGlobal((state) => state.loader);
   const isMenu = useGlobal((state) => state.menu);
   const router = useRouter();
+
+  const { pathname, locale } = router;
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -32,7 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [mode]);
 
   useEffect(() => {
-    i18n.changeLanguage(language);
+    i18n.changeLanguage(locale ? 'fr' : 'en')
+
+    // Add or remove 'fr' from url
+    router.push(pathname, pathname, {
+      locale: language === 'fr' ? 'fr' : false,
+    });
   }, [language]);
 
   return (

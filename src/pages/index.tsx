@@ -55,14 +55,14 @@ export default function Home() {
                       onClick={() => handleActionBtn('/journey')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
-                      <span>My journey</span>
+                      <span>{t('journey-btn-text')}</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                     <button
                       onClick={() => handleActionBtn('/projects')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
-                      <span>My projects</span>
+                      <span>{t('project-btn-text')}</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                   </motion.div>

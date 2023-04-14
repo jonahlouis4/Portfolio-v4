@@ -37,7 +37,7 @@ export default function Navbar() {
     mode === 'light' ? setMode('dark') : setMode('light');
   };
 
-  const handleLang = () => {
+  const handleLang = async () => {
     language === 'en' ? setLanguage('fr') : setLanguage('en');
   };
 
@@ -86,7 +86,7 @@ export default function Navbar() {
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT_2}
               onClick={handleLang}
-              className='text-gray-500 hover:text-gray-600 transition-colors duration-150 ease-in'
+              className='dark:text-gray-400 text-gray-500 hover:text-gray-600 transition-colors duration-150 ease-in'
             >
               <AnimatePresence mode='wait'>
                 {language === 'fr' ? (

@@ -1,4 +1,6 @@
 {
   "intro": "Hey, I'm",
-  "description": "I'm a full-stack web developer who loves to build things for the web."
+  "description": "I'm a full-stack web developer who loves to build things for the web.",
+  "journey-btn-text": "My journey",
+  "project-btn-text": "My projects"
 }
