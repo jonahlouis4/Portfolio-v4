@@ -8,6 +8,7 @@ import thumb_amritsar from '../assets/gallery/thumb_amritsar.jpg';
 import thumb_coimbatore from '../assets/gallery/thumb_coimbatore.jpg';
 import thumb_ottawa from '../assets/gallery/thumb_ottawa.jpg';
 import thumb_paris from '../assets/gallery/thumb_paris.jpg';
+import { useTranslation } from 'react-i18next';
 
 // ========= Section Header component =========
 
@@ -149,6 +150,7 @@ const CityBox = ({
 
 export default function Journey() {
   const [selectedCity, setSelectedCity] = useState<string | null>('');
+  const { t } = useTranslation('journey')
 
   return (
     <motion.div
@@ -163,7 +165,7 @@ export default function Journey() {
           variants={DF_PAGE_ITEM_VARIANT}
           className='text-6xl dark:text-gray-200 text-gray-900 font-extrabold text-center sm:text-left drop-shadow-xl'
         >
-          Journey
+          {t('title')}
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
@@ -171,7 +173,7 @@ export default function Journey() {
         />
 
         <>
-          <SectionHeader title="What I've been up to lately 👋" />
+          <SectionHeader title={`${t('section-1-update')} 👋`} />
 
           {/* Experience 1 */}
           <ExperienceInfo
@@ -275,7 +277,7 @@ export default function Journey() {
         </>
         <>
           <SectionHeader
-            title='Glimpses of my wonderful adventures 🌏'
+            title={`${t('section-2-glimpses')} 🌏`}
             ptLarge
           />
 
