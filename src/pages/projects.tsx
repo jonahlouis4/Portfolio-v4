@@ -17,6 +17,7 @@ export default function Projects() {
       name: props.name,
       description: null,
       longDescription: props.longDescription,
+      contribution: props.contribution,
       langs: props.langs,
       media: null,
       links: props.links,

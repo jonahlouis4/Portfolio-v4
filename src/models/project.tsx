@@ -4,6 +4,7 @@ export type Project = {
   name: null | string;
   description: null | string;
   longDescription: null | string;
+  contribution: null | string;
   langs: undefined | Array<string>;
   media: null | string;
   links: undefined | Array<any>;
@@ -16,6 +17,7 @@ export const InitProject: Project = {
   name: null,
   description: null,
   longDescription: null,
+  contribution: null,
   langs: [],
   media: null,
   links: [],
