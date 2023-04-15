@@ -58,7 +58,6 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
-              layoutId={project.name}
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.2 },

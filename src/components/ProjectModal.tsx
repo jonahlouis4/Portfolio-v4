@@ -1,4 +1,4 @@
-import { DF_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
+import { DF_ITEM_VARIANT, DF_MODAL_VARIANT, DF_MODAL_WRAPPER_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { InitProject, Project } from '@/models/project';
 import {
   ArrowTopRightOnSquareIcon,
@@ -43,7 +43,7 @@ export default function ProjectModal(props: ProjectModalProps) {
 
   return (
     <motion.div
-      variants={DF_WRAPPER_VARIANT}
+      variants={DF_MODAL_WRAPPER_VARIANT}
       initial='hidden'
       animate='visible'
       exit='exit'
@@ -55,8 +55,8 @@ export default function ProjectModal(props: ProjectModalProps) {
         aria-hidden='true'
       />
       <motion.div
-        className='dark:bg-zinc-800 bg-gray-100 rounded-3xl p-4 mx-4 sm:mx-0 w-full w-11/12 sm:w-4/5 lg:w-3/5 3xl:w-2/5 min-h-min z-40 shadow-xl'
-        layoutId={selectedProject.name}
+        className='dark:bg-zinc-800 bg-gray-100 p-4 w-full h-full z-40 shadow-xl'
+        variants={DF_MODAL_VARIANT}
         onClick={(e) => e.stopPropagation()}
       >
         <div className='flex justify-end'>
