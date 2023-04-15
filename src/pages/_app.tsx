@@ -4,16 +4,17 @@ import Navbar from '@/components/Navbar';
 import { useGlobal } from '@/store/globals';
 import { useGlobalsPersist } from '@/store/globalsPersist';
 import '@/styles/globals.css';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import '@/translation/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const language = useGlobal((state) => state.language);
   const setLanguage = useGlobal((state) => state.setLanguage);
   const mode = useGlobalsPersist((state) => state.mode);
@@ -50,6 +51,29 @@ export default function App({ Component, pageProps }: AppProps) {
       locale: language === 'fr' ? 'fr' : false,
     });
   }, [language, locale]);
+
+  // Keep track of mouse movement
+  useEffect(() => {
+    const mouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener('mousemove', mouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', mouseMove);
+    };
+  }, []);
+
+  const mouseVariant = {
+    default: {
+      x: mousePosition.x - 20,
+      y: mousePosition.y - 20,
+    },
+  };
 
   return (
     <>
@@ -95,6 +119,14 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Front page of Jonah's portfolio"
         />
       </Head>
+      {/* Mouse div (follows mouse) */}
+      <motion.div
+        variants={mouseVariant}
+        animate='default'
+        className='invisible sm:visible flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 fixed top-0 left-0 z-40 pointer-events-none'
+      >
+        <div className='w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300' />
+      </motion.div>
 
       {/* Show navbar only when loading is done */}
       {!isLoading ? <Navbar /> : null}

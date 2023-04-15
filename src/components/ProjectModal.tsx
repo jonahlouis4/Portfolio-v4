@@ -82,9 +82,15 @@ export default function ProjectModal(props: ProjectModalProps) {
               {selectedProject.name}
             </h1>
             {/* project description */}
-            <h2 className='mt-12 dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
-              {t(selectedProject.longDescription)}
-            </h2>
+            <div className='mt-12'>
+              <h2 className='dark:text-gray-200 text-gray-900 text-lg font-extrabold'>
+                {t("about-project")}
+              </h2>
+              <h2 className='dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
+                {t(selectedProject.longDescription)}
+              </h2>
+            </div>
+            {/* project contribution */}
             {/* project languages, frameworks, and libraries */}
             <ul className='flex gap-4 mt-8 '>
               {selectedProject.langs.map((lang: string, index: number) => (
