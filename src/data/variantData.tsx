@@ -99,7 +99,7 @@ export const DF_MODAL_VARIANT = {
   exit: {
     y: 1500,
     opacity: 0,
-    scale: 0.5,
+    scale: 0,
     transition: {
       duration: 0.5,
     },
