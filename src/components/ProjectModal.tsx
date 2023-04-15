@@ -77,12 +77,15 @@ export default function ProjectModal(props: ProjectModalProps) {
 
         <Container>
           <div className='mt-4 mb-4'>
+            {/* project name */}
             <h1 className='text-3xl font-extrabold dark:text-gray-200 text-gray-900 drop-shadow-xl text-center'>
               {selectedProject.name}
             </h1>
+            {/* project description */}
             <h2 className='mt-12 dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
               {t(selectedProject.longDescription)}
             </h2>
+            {/* project languages, frameworks, and libraries */}
             <ul className='flex gap-4 mt-8 '>
               {selectedProject.langs.map((lang: string, index: number) => (
                 <li
@@ -93,6 +96,7 @@ export default function ProjectModal(props: ProjectModalProps) {
                 </li>
               ))}
             </ul>
+            {/* project urls */}
             {selectedProject.links && (
               <div className='mt-10 flex gap-8'>
                 {selectedProject.links.map((currLink: any) => (
@@ -137,6 +141,7 @@ export default function ProjectModal(props: ProjectModalProps) {
                 ))}
               </div>
             )}
+            <div className='w-full border-2 border-gray-200 my-8 rounded-full' />
           </div>
         </Container>
       </motion.div>

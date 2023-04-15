@@ -177,7 +177,7 @@ export default function Journey() {
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
-          className='w-full border-2 border-gray-200 mt-8'
+          className='w-full border-2 border-gray-200 mt-8 rounded-full'
         />
 
         <>
