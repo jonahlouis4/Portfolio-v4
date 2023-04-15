@@ -301,8 +301,8 @@ export default function Journey() {
             />
           ) : (
             <ExperienceInfo
-              startDate='June 2021'
-              endDate='June 2022'
+              startDate='Juin 2021'
+              endDate='Juin 2022'
               company='NetFore Systems'
               link='https://netfore.com/'
               description={
@@ -365,8 +365,8 @@ export default function Journey() {
             />
           ) : (
             <ExperienceInfo
-              startDate='June 2021'
-              endDate='June 2022'
+              startDate='Juin 2021'
+              endDate='Juin 2022'
               company='iContribute'
               link='https://icontribute.community/#/'
               description={
