@@ -3,8 +3,11 @@ import { SOCIALS } from '@/data/socialData';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation('contact');
+
   return (
     <motion.div
       variants={DF_WRAPPER_VARIANT}
@@ -31,7 +34,7 @@ export default function Contact() {
               variants={DF_PAGE_ITEM_VARIANT}
               className='text-2xl dark:text-gray-200 font-bold mb-2'
             >
-              Email
+              {t('email')}
             </motion.h1>
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT}
@@ -46,7 +49,7 @@ export default function Contact() {
               variants={DF_PAGE_ITEM_VARIANT}
               className='text-2xl dark:text-gray-200 text-gray-900 font-bold mb-2'
             >
-              Social Medias
+              {t('social-medias')}
             </motion.h1>
             <div className='flex gap-8'>
               {SOCIALS.map((social) => (
