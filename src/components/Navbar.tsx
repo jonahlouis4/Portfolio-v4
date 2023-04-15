@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import LOGO from '../assets/logo/logo_v4.svg';
 import Container from './Container';
 
 export default function Navbar() {
@@ -73,7 +74,7 @@ export default function Navbar() {
           <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
             <button onClick={handleHome}>
               <Image
-                src='logo_v4.svg'
+                src={LOGO}
                 alt="Jonah's portfolio logo"
                 width={48}
                 height={48}

@@ -117,35 +117,41 @@ const CityBox = ({
   city,
   image,
   setSelectedCity,
-}: CityBoxProps) => (
-  <div className='flex flex-col md:flex-row md:justify-between gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-gray-200 dark:border-zinc-700 bg-gradient-to-bl from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-800'>
-    <div className='w-full text-center row-span-1 pb-8 md:pb-0 order-2 md:order-1'>
-      <span
-        className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
-      ></span>
-      <h1 className='text-5xl font-extrabold dark:text-gray-300 mt-4'>
-        <span className='block'>{city}, </span>
-        <span>{country}</span>
-      </h1>
-    </div>
+}: CityBoxProps) => {
+  const { t } = useTranslation('journey');
 
-    <button
-      className='group relative md:w-[100em] md:h-[26em] 3xl:h-[32em] order-1 md:order-2'
-      onClick={() => setSelectedCity(city.toLocaleLowerCase())}
-    >
-      <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
-        <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
-          <span className='text-3xl font-extrabold text-gray-100 '>View</span>
-        </div>
+  return (
+    <div className='flex flex-col md:flex-row md:justify-between gap-y-8 md:gap-y-0 items-center rounded-3xl drop-shadow-2xl border-2 border-gray-200 dark:border-zinc-700 bg-gradient-to-bl from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-800'>
+      <div className='w-full text-center row-span-1 pb-8 md:pb-0 order-2 md:order-1'>
+        <span
+          className={`fi fi-${flagIcon} w-12 h-12 bg-cover rounded-3xl drop-shadow-2xl`}
+        ></span>
+        <h1 className='text-5xl font-extrabold dark:text-gray-300 mt-4'>
+          <span className='block'>{city}, </span>
+          <span>{country}</span>
+        </h1>
       </div>
-      <Image
-        src={image}
-        alt={`Album picture of Jonah's memories for ${country}, ${city}`}
-        className='bg-cover w-full h-full rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl'
-      />
-    </button>
-  </div>
-);
+
+      <button
+        className='group relative md:w-[100em] md:h-[26em] 3xl:h-[32em] order-1 md:order-2'
+        onClick={() => setSelectedCity(city.toLocaleLowerCase())}
+      >
+        <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
+          <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
+            <span className='text-3xl font-extrabold text-gray-100 '>
+              {t('view-btn-text')}
+            </span>
+          </div>
+        </div>
+        <Image
+          src={image}
+          alt={`Album picture of Jonah's memories for ${country}, ${city}`}
+          className='bg-cover w-full h-full rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl'
+        />
+      </button>
+    </div>
+  );
+};
 
 // ========= Journey page =========
 
@@ -246,13 +252,14 @@ export default function Journey() {
                     href='https://arpanam.sadhguru.org/'
                     text='Linga Bhairavi'
                   />
-                  . À ce jour, j'ai eu l'opportunité d'implémenter de nouvelles
-                  fonctionnalités et de maintenir les changements pour les sites de web{' '}
+                  . À ce jour, j'ai l'opportunité d'implémenter de nouvelles
+                  fonctionnalités et de maintenir les changements pour les sites
+                  de web{' '}
                   <DescLink
                     href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
                     text='Isha Institute of Inner-Sciences'
                   />{' '}
-                  et {' '}
+                  et{' '}
                   <DescLink
                     href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
                     text='Adiyogi Abode of Yoga'
@@ -307,29 +314,29 @@ export default function Journey() {
               link='https://netfore.com/'
               description={
                 <p>
-                  A full-service custom software development firm. I developed
-                  and maintained multiple IVAs (intelligent virtual assistant)
-                  using{' '}
+                  Une entreprise de développement de logiciels personnalisés à
+                  service complet. J'ai développé et maintenu plusieurs AVI
+                  (assistant intelligent vocal) en utilisant{' '}
                   <DescLink
                     href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
                     text='Inference Solutions'
                   />{' '}
-                  and{' '}
+                  et{' '}
                   <DescLink
                     href='https://cloud.google.com/dialogflow'
                     text='Google Dialogflow'
                   />
-                  . I was primarily in charge of the{' '}
+                  . J'étais principalement en charge du AVI de{'  '}
                   <DescLink
                     href='https://www.arkansasbluecross.com/'
                     text='Arkansas BlueCross BlueShield'
                   />{' '}
-                  and the{' '}
+                  et de{' '}
                   <DescLink
                     href='https://www.enterprisebanking.com/'
                     text='Enterprise Bank'
-                  />{' '}
-                  IVA.
+                  />
+                  .
                 </p>
               }
             />
@@ -371,16 +378,17 @@ export default function Journey() {
               link='https://icontribute.community/#/'
               description={
                 <p>
-                  A non-profit organization that helps connect volunteer
-                  opportunities for both students and organizations. During my
-                  time at iContribute, I led a team of developers to rehaul the
-                  look and feel of the mobile application. These changes are now
-                  available on both{' '}
+                  Une organisation à but non lucratif qui aide à connecter les
+                  opportunités de bénévolat pour les étudiants et les
+                  organisations. Pendant mon séjour chez iContribute, j'ai
+                  dirigé une équipe de développeurs pour effectué une
+                  réorganisation totale de l'apparence de l'application mobile.
+                  Ces modifications sont désormais disponibles sur{' '}
                   <DescLink
                     href='https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4'
                     text='IOS'
                   />{' '}
-                  and{' '}
+                  et{' '}
                   <DescLink
                     href='https://play.google.com/store/apps/details?id=com.icontribute'
                     text='Android'
