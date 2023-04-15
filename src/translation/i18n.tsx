@@ -7,17 +7,21 @@ import projectsEn from '@/locales/en/projects.json';
 import projectsFr from '@/locales/fr/projects.json';
 import journeyEn from '@/locales/en/journey.json';
 import journeyFr from '@/locales/fr/journey.json';
+import menuEn from '@/locales/en/menu.json';
+import menuFr from '@/locales/fr/menu.json';
 
 const resources = {
   en: {
     home: homeEn,
     projects: projectsEn,
-    journey: journeyEn
+    journey: journeyEn,
+    menu: menuEn
   },
   fr: {
     home: homeFr,
     projects: projectsFr,
-    journey: journeyFr
+    journey: journeyFr,
+    menu: menuFr
   },
 };
 

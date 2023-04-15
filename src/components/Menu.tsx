@@ -5,16 +5,18 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Container from './Container';
+import { useTranslation } from 'react-i18next';
 
 export default function Menu() {
   const setMenu = useGlobal((state) => state.setMenu);
   const router = useRouter();
+  const { t } = useTranslation("menu")
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Journey', href: '/journey' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'home', href: '/' },
+    { name: 'projects', href: '/projects' },
+    { name: 'journey', href: '/journey' },
+    { name: 'contact', href: '/contact' },
   ];
 
   const pageWrapper = {
@@ -70,7 +72,7 @@ export default function Menu() {
                   className='group w-[7em] py-2 text-left text-5xl md:text-6xl lg:text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
                   onClick={() => handlePage(nav.href)}
                 >
-                  <span className='px-4'>{nav.name}</span>
+                  <span className='px-4'>{t(nav.name)}</span>
                 </button>
               </motion.div>
             ))}
