@@ -228,36 +228,36 @@ export default function Journey() {
               link='https://isha.sadhguru.org/us/en'
               description={
                 <p>
-                  An international non-profit organization dedicated to
-                  cultivating human well-being by offering classical yoga. I
-                  have worked on multiple projects, such as developing a gift
-                  card system for their{' '}
+                  Une organisation internationale à but non lucratif dédiée à
+                  cultiver le bien-être humain en proposant du yoga classique.
+                  J'ai travaillé sur plusieurs projets, tels que le
+                  développement d'un système de cartes-cadeaux pour leur{' '}
                   <DescLink
                     href='https://www.ishalife.com/ca/'
                     text='isha life store'
                   />
-                  , an admin portal to host live{' '}
+                  , un portail d'administration pour héberger en direct des{' '}
                   <DescLink
                     href='https://isha.sadhguru.org/yoga/yoga-programs/'
-                    text='yoga programs'
+                    text='programmes de yoga'
                   />
-                  , and maintaining the main{' '}
+                  , et le maintien de l'essentiel site de web{' '}
                   <DescLink
                     href='https://arpanam.sadhguru.org/'
-                    text='Linga Bhairavi website'
+                    text='Linga Bhairavi'
                   />
-                  . To this date, I have been given the opportunity to implement
-                  new features and maintain changes for the{' '}
+                  . À ce jour, j'ai eu l'opportunité d'implémenter de nouvelles
+                  fonctionnalités et de maintenir les changements pour les sites de web{' '}
                   <DescLink
                     href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
                     text='Isha Institute of Inner-Sciences'
                   />{' '}
-                  and the{' '}
+                  et {' '}
                   <DescLink
                     href='https://isha.sadhguru.org/us/en/center/consecrated-spaces/adiyogi-abode-of-yoga#:~:text=The%20Abode%20of%20Yoga%20is,knowledge%2C%20philosophy%2C%20or%20technique.'
                     text='Adiyogi Abode of Yoga'
-                  />{' '}
-                  websites.
+                  />
+                  .
                 </p>
               }
               ptNone
