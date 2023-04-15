@@ -2,9 +2,8 @@ export const PROJECTS = [
   {
     active: false,
     name: 'StudyBuddy',
-    description: 'Flashcard web application designed for studying.',
-    longDescription:
-      'A simple flashcard web application designed for studying. It allows adding an extensive range of questions into an account and includes a randomized order for each quiz.',
+    description: 'studybuddy-desc',
+    longDescription: 'studybuddy-ldesc',
     langs: ['React', 'TailwindCSS', 'Firebase', 'Framer Motion'],
     media: null,
     links: [{ github: 'https://github.com/jonahlouis4/StudyBuddy' }],
@@ -13,9 +12,8 @@ export const PROJECTS = [
   {
     active: false,
     name: 'COVID-19 Tracker',
-    description: 'Live COVID-19 web application tracker.',
-    longDescription:
-      'A global scale covid-19 tracker of deaths, cases, and recoveries using a COVID-19 API. It includes sorted charts and summaries from a wide variety of Countries.',
+    description: 'covid19app-desc',
+    longDescription: 'covid19app-ldesc',
     langs: ['React', 'GraphQL', 'Apollo Client', 'Ant Design', 'AntV'],
     media: null,
     links: [{ github: 'https://github.com/jonahlouis4/COVID19-Tracker' }],
@@ -24,9 +22,8 @@ export const PROJECTS = [
   {
     active: true,
     name: 'Royal Drip Check',
-    description: 'Streetwear reselling e-commerce website.',
-    longDescription:
-      'A Shopify e-commerce website that resells the latest streetwear from a local business in Ottawa, Canada. Anything from shoes, t-shirts, hoodies, sweatshirts, or pants.',
+    description: 'royaldripcheck-desc',
+    longDescription: 'royaldripcheck-ldesc',
     langs: ['Shopify', 'TailwindCSS'],
     media: null,
     links: [{ website: 'https://royaldripcheck.ca/' }],
@@ -35,9 +32,8 @@ export const PROJECTS = [
   {
     active: true,
     name: 'CreativeFloww',
-    description: 'Web agency landing page.',
-    longDescription:
-      'A web agency landing page used as a means to provide details about the company and its services to potential clients.',
+    description: 'creativefloww-desc',
+    longDescription: 'creativefloww-ldesc',
     langs: ['React', 'TailwindCSS'],
     media: null,
     links: [{ website: 'https://www.creativefloww.ca/' }],
@@ -46,15 +42,19 @@ export const PROJECTS = [
   {
     active: true,
     name: 'iContribute',
-    description: 'Mobile application made for volunteering opportunities.',
-    longDescription:
-      'A mobile application that helps find, manage, and connect volunteer opportunities for both students and organizations. Available in both Ottawa and Toronto.',
+    description: 'icontribute-desc',
+    longDescription: 'icontribute-ldesc',
     langs: ['React Native', 'Firebase'],
     media: null,
     links: [
       { website: 'https://icontribute.community/#/' },
-      { android: 'https://play.google.com/store/apps/details?id=com.icontribute' },
-      { ios: 'https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4' },
+      {
+        android:
+          'https://play.google.com/store/apps/details?id=com.icontribute',
+      },
+      {
+        ios: 'https://apps.apple.com/ca/app/icontribute/id1524895764?ign-mpt=uo%3D4',
+      },
     ],
     className: 'bg-gradient-to-br from-blue-700 to-sky-500',
   },

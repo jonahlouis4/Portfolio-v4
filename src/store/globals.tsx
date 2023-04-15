@@ -11,6 +11,11 @@ interface LoaderSlice {
   setLoader: () => void;
 }
 
+interface LanguageSlice {
+  language: 'en' | 'fr';
+  setLanguage: (newLang: 'en' | 'fr') => void;
+}
+
 /********* Slices *********/
 const createMenuSlice: StateCreator<MenuSlice> = (set) => ({
   menu: false,
@@ -22,8 +27,14 @@ const createLoaderSlice: StateCreator<LoaderSlice> = (set) => ({
   setLoader: () => set((state) => ({ loader: !state.loader })),
 });
 
+const createLanguageSlice: StateCreator<LanguageSlice> = (set) => ({
+  language: 'en',
+  setLanguage: (newLang) => set(({ language: newLang }))
+});
+
 /******** Global store ********/
-export const useGlobal = create<MenuSlice & LoaderSlice>()((...a) => ({
+export const useGlobal = create<MenuSlice & LoaderSlice & LanguageSlice>()((...a) => ({
   ...createMenuSlice(...a),
   ...createLoaderSlice(...a),
+  ...createLanguageSlice(...a),
 }))

@@ -10,9 +10,12 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import LOGO from '../assets/logo/logo_v4.svg';
 import Container from './Container';
 
 export default function Navbar() {
+  const language = useGlobal((state) => state.language);
+  const setLanguage = useGlobal((state) => state.setLanguage);
   const mode = useGlobalsPersist((state) => state.mode);
   const setMode = useGlobalsPersist((state) => state.setMode);
   const menu = useGlobal((state) => state.menu);
@@ -33,6 +36,10 @@ export default function Navbar() {
 
   const handleMode = () => {
     mode === 'light' ? setMode('dark') : setMode('light');
+  };
+
+  const handleLang = async () => {
+    language === 'en' ? setLanguage('fr') : setLanguage('en');
   };
 
   const menuVariant = {
@@ -67,7 +74,7 @@ export default function Navbar() {
           <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
             <button onClick={handleHome}>
               <Image
-                src='logo_v4.svg'
+                src={LOGO}
                 alt="Jonah's portfolio logo"
                 width={48}
                 height={48}
@@ -76,6 +83,38 @@ export default function Navbar() {
             </button>
           </motion.div>
           <div className='flex items-center gap-x-4'>
+            {/* LANGUAGE */}
+            <motion.button
+              variants={DF_PAGE_ITEM_VARIANT_2}
+              onClick={handleLang}
+              className='dark:text-gray-400 text-gray-500 hover:text-gray-600 transition-colors duration-150 ease-in'
+            >
+              <AnimatePresence mode='wait'>
+                {language === 'fr' ? (
+                  <motion.div
+                    key='langEn'
+                    variants={modeVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    EN
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key='langFr'
+                    variants={modeVariant}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                  >
+                    FR
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+
+            {/* MODE */}
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT_2}
               onClick={handleMode}
@@ -104,6 +143,8 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </motion.button>
+
+            {/* MENU */}
             <motion.button
               variants={DF_PAGE_ITEM_VARIANT_2}
               onClick={handleMenu}

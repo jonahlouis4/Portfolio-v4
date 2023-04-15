@@ -2,6 +2,7 @@ import { useGlobal } from '@/store/globals';
 import { motion, usePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import LOGO from '../assets/logo/logo_v4.svg'
 
 export default function Loader() {
   const [isPresent, safeToRemove] = usePresence();
@@ -54,7 +55,7 @@ export default function Loader() {
         className='dark:text-white text-lg font-extrabold'
       >
         <Image
-          src='logo_v4.svg'
+          src={LOGO}
           alt="Jonah's portfolio logo"
           width={68}
           height={68}

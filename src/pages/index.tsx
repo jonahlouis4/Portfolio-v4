@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import avatar from '../assets/avatar/jonah_3.jpg';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const router = useRouter();
+  const { t } = useTranslation('home');
 
   const handleActionBtn = (href: string) => {
     router.push(href);
@@ -26,13 +28,13 @@ export default function Home() {
           <Container>
             <>
               <div className='flex flex-col lg:flex-row justify-between items-center gap-y-12'>
-                <div className='max-w-xl 3xl:max-w-2xl text-center lg:text-left'>
+                <div className='max-w-xl md:max-w-2xl text-center lg:text-left'>
                   {/* Intro */}
                   <motion.h1
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-gray-900 text-5xl lg:text-7xl font-extrabold drop-shadow-lg'
                   >
-                    Hey, I'm{' '}
+                    {t('intro')}{' '}
                     <span className='bg-clip-text animate-header text-transparent bg-gradient-to-r from-pink-500 to-purple-500'>
                       Jonah.
                     </span>
@@ -41,7 +43,7 @@ export default function Home() {
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='dark:text-gray-200 text-gray-900 text-xl lg:text-3xl drop-shadow-lg mt-6'
                   >
-                    I'm a full-stack web developer who loves to build things for the web.
+                    {t('description')}
                   </motion.p>
 
                   {/* Buttons */}
@@ -53,14 +55,14 @@ export default function Home() {
                       onClick={() => handleActionBtn('/journey')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
-                      <span>My journey</span>
+                      <span>{t('journey-btn-text')}</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                     <button
                       onClick={() => handleActionBtn('/projects')}
                       className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
                     >
-                      <span>My projects</span>
+                      <span>{t('project-btn-text')}</span>
                       <ArrowLongRightIcon className='h-6 w-6' />
                     </button>
                   </motion.div>
