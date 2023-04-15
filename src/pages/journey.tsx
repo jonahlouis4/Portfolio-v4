@@ -246,15 +246,15 @@ export default function Journey() {
                   <DescLink
                     href='https://isha.sadhguru.org/yoga/yoga-programs/'
                     text='programmes de yoga'
-                  />
-                  , et le maintien de l'essentiel site de web{' '}
+                  />{' '}
+                  et le maintien du site web principal{' '}
                   <DescLink
                     href='https://arpanam.sadhguru.org/'
                     text='Linga Bhairavi'
                   />
-                  . À ce jour, j'ai l'opportunité d'implémenter de nouvelles
-                  fonctionnalités et de maintenir les changements pour les sites
-                  de web{' '}
+                  . À ce jour, j'ai l'opportunité de mettre en œuvre de
+                  nouvelles fonctionnalités et de maintenir les changements pour
+                  les sites web{' '}
                   <DescLink
                     href='https://isha.sadhguru.org/us/en/center/isha-institute-inner-sciences-usa'
                     text='Isha Institute of Inner-Sciences'
@@ -316,7 +316,7 @@ export default function Journey() {
                 <p>
                   Une entreprise de développement de logiciels personnalisés à
                   service complet. J'ai développé et maintenu plusieurs AVI
-                  (assistant intelligent vocal) en utilisant{' '}
+                  (assistant vocal intelligent) en utilisant les applications{' '}
                   <DescLink
                     href='https://www.five9.com/products/capabilities/intelligent-virtual-agent'
                     text='Inference Solutions'
@@ -379,9 +379,9 @@ export default function Journey() {
               description={
                 <p>
                   Une organisation à but non lucratif qui aide à connecter les
-                  opportunités de bénévolat pour les étudiants et les
+                  opportunités de bénévolat entre les étudiants et les
                   organisations. Pendant mon séjour chez iContribute, j'ai
-                  dirigé une équipe de développeurs pour effectué une
+                  dirigé une équipe de développeurs pour effectuer une
                   réorganisation totale de l'apparence de l'application mobile.
                   Ces modifications sont désormais disponibles sur{' '}
                   <DescLink
