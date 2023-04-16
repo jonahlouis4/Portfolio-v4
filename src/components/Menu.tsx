@@ -61,9 +61,8 @@ export default function Menu() {
         <Container>
           <div className='flex flex-col gap-y-6 mt-4'>
             {navigation.map((nav, index) => (
-              <Clickable>
+              <Clickable key={nav.name}>
                 <motion.div
-                  key={nav.name}
                   variants={DF_PAGE_ITEM_VARIANT}
                   className='flex items-baseline gap-x-2'
                 >
@@ -86,9 +85,8 @@ export default function Menu() {
           />
           <div className='flex gap-12'>
             {SOCIALS.map((social) => (
-              <Clickable>
+              <Clickable key={social.name}>
                 <motion.a
-                  key={social.name}
                   variants={DF_PAGE_ITEM_VARIANT}
                   className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
                   href={social.href}
