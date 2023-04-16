@@ -107,15 +107,16 @@ export default function ProjectModal(props: ProjectModalProps) {
             </ul>
             {/* project urls */}
             {selectedProject.links && (
-              <div className='mt-10 flex gap-8'>
-                <Clickable>
-                  {selectedProject.links.map((currLink: any) => (
-                    <>
+              <>
+                <Clickable className='mt-10 flex gap-8'>
+                  {selectedProject.links.map((currLink: any, index: number) => (
+                    <div key={`url-${index}`}>
                       {currLink.website && (
                         <a
                           href={currLink.website}
                           target='_blank'
                           rel='noreferrer'
+
                         >
                           <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                         </a>
@@ -131,7 +132,7 @@ export default function ProjectModal(props: ProjectModalProps) {
                       )}
                       {currLink.ios && (
                         <a
-                          href={currLink.github}
+                          href={currLink.ios}
                           target='_blank'
                           rel='noreferrer'
                         >
@@ -140,17 +141,17 @@ export default function ProjectModal(props: ProjectModalProps) {
                       )}
                       {currLink.android && (
                         <a
-                          href={currLink.github}
+                          href={currLink.android}
                           target='_blank'
                           rel='noreferrer'
                         >
                           <PlayStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
                         </a>
                       )}
-                    </>
+                    </div>
                   ))}
                 </Clickable>
-              </div>
+              </>
             )}
             <div className='w-full border-2 border-gray-200 my-8 rounded-full' />
           </div>
