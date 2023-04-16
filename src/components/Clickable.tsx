@@ -2,6 +2,7 @@ import { useGlobal } from "@/store/globals";
 
 type ClickableProps = {
     children: any;
+    className?: any
   };
   
   export default function Clickable(props: ClickableProps) {
@@ -12,7 +13,7 @@ type ClickableProps = {
     const onLeave = () => setMouse('default')
   
     return (
-      <div onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <div onMouseEnter={onEnter} onMouseLeave={onLeave} {...props}>
         {children}
       </div>
     );

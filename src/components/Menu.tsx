@@ -4,13 +4,14 @@ import { useGlobal } from '@/store/globals';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import Container from './Container';
 import { useTranslation } from 'react-i18next';
+import Clickable from './Clickable';
+import Container from './Container';
 
 export default function Menu() {
   const setMenu = useGlobal((state) => state.setMenu);
   const router = useRouter();
-  const { t } = useTranslation("menu")
+  const { t } = useTranslation('menu');
 
   const navigation = [
     { name: 'home', href: '/' },
@@ -60,21 +61,23 @@ export default function Menu() {
         <Container>
           <div className='flex flex-col gap-y-6 mt-4'>
             {navigation.map((nav, index) => (
-              <motion.div
-                key={nav.name}
-                variants={DF_PAGE_ITEM_VARIANT}
-                className='flex items-baseline gap-x-2'
-              >
-                <h1 className='text-md dark:text-gray-400 text-gray-600 font-bold'>
-                  0{index + 1}
-                </h1>
-                <button
-                  className='group w-[7em] py-2 text-left text-5xl md:text-6xl lg:text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
-                  onClick={() => handlePage(nav.href)}
+              <Clickable>
+                <motion.div
+                  key={nav.name}
+                  variants={DF_PAGE_ITEM_VARIANT}
+                  className='flex items-baseline gap-x-2'
                 >
-                  <span className='px-4'>{t(nav.name)}</span>
-                </button>
-              </motion.div>
+                  <h1 className='text-md dark:text-gray-400 text-gray-600 font-bold'>
+                    0{index + 1}
+                  </h1>
+                  <button
+                    className='group w-[7em] py-2 text-left text-5xl md:text-6xl lg:text-7xl dark:text-gray-300 text-gray-900 font-extrabold uppercase tracking-widest dark:hover:text-gray-100 hover:text-gray-700 hover:tracking-normal transition-all duration-300'
+                    onClick={() => handlePage(nav.href)}
+                  >
+                    <span className='px-4'>{t(nav.name)}</span>
+                  </button>
+                </motion.div>
+              </Clickable>
             ))}
           </div>
           <motion.div
@@ -83,17 +86,19 @@ export default function Menu() {
           />
           <div className='flex gap-12'>
             {SOCIALS.map((social) => (
-              <motion.a
-                key={social.name}
-                variants={DF_PAGE_ITEM_VARIANT}
-                className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
-                href={social.href}
-                target='_blank'
-                rel='noreferrer'
-              >
-                <span>{social.name}</span>
-                <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-              </motion.a>
+              <Clickable>
+                <motion.a
+                  key={social.name}
+                  variants={DF_PAGE_ITEM_VARIANT}
+                  className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out dark:hover:text-gray-500 hover:text-gray-400'
+                  href={social.href}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <span>{social.name}</span>
+                  <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+                </motion.a>
+              </Clickable>
             ))}
           </div>
         </Container>

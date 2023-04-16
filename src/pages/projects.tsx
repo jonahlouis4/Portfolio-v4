@@ -1,3 +1,4 @@
+import Clickable from '@/components/Clickable';
 import Container from '@/components/Container';
 import ProjectModal from '@/components/ProjectModal';
 import { PROJECTS } from '@/data/projectData';
@@ -8,8 +9,12 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
-  const personalProjects = PROJECTS.filter(project => project.contribution === null)
-  const contributionProjects = PROJECTS.filter(project => project.contribution !== null)
+  const personalProjects = PROJECTS.filter(
+    (project) => project.contribution === null
+  );
+  const contributionProjects = PROJECTS.filter(
+    (project) => project.contribution !== null
+  );
   const [selectedProject, setSelectedProject] = useState<Project>(InitProject);
   const { t } = useTranslation('projects');
 
@@ -59,26 +64,28 @@ export default function Projects() {
         />
         <div className='mt-16 grid md:grid-cols-2 gap-20 pb-16'>
           {PROJECTS.map((project) => (
-            <motion.button
-              variants={DF_PAGE_ITEM_VARIANT}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              className={
-                'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
-                project.className
-              }
-              onClick={() => handleProject(project)}
-              key={project.name}
-            >
-              <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
-                {project.name}
-              </h1>
-              <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
-                {t(project.description)}
-              </h2>
-            </motion.button>
+            <Clickable>
+              <motion.button
+                variants={DF_PAGE_ITEM_VARIANT}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
+                }}
+                className={
+                  'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
+                  project.className
+                }
+                onClick={() => handleProject(project)}
+                key={project.name}
+              >
+                <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
+                  {project.name}
+                </h1>
+                <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
+                  {t(project.description)}
+                </h2>
+              </motion.button>
+            </Clickable>
           ))}
         </div>
       </Container>

@@ -11,6 +11,7 @@ import {
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import Clickable from './Clickable';
 import Container from './Container';
 import { AppStoreIcon, GitHubIcon, PlayStoreIcon } from './SocialIcons';
 
@@ -66,13 +67,15 @@ export default function ProjectModal(props: ProjectModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className='flex justify-end'>
-          <motion.button
-            variants={DF_ITEM_VARIANT}
-            onClick={handleClose}
-            className='rounded-full p-1 z-40'
-          >
-            <XMarkIcon className='h-8 w-8 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
-          </motion.button>
+          <Clickable>
+            <motion.button
+              variants={DF_ITEM_VARIANT}
+              onClick={handleClose}
+              className='rounded-full p-1 z-40'
+            >
+              <XMarkIcon className='h-8 w-8 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+            </motion.button>
+          </Clickable>
         </div>
 
         <Container>
@@ -84,7 +87,7 @@ export default function ProjectModal(props: ProjectModalProps) {
             {/* project description */}
             <div className='mt-12'>
               <h2 className='dark:text-gray-200 text-gray-900 text-lg font-extrabold'>
-                {t("about-project")}
+                {t('about-project')}
               </h2>
               <h2 className='dark:text-gray-200 text-gray-900 text-lg drop-shadow-lg'>
                 {t(selectedProject.longDescription)}
@@ -105,46 +108,48 @@ export default function ProjectModal(props: ProjectModalProps) {
             {/* project urls */}
             {selectedProject.links && (
               <div className='mt-10 flex gap-8'>
-                {selectedProject.links.map((currLink: any) => (
-                  <>
-                    {currLink.website && (
-                      <a
-                        href={currLink.website}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
-                      </a>
-                    )}
-                    {currLink.github && (
-                      <a
-                        href={currLink.github}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        <GitHubIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
-                      </a>
-                    )}
-                    {currLink.ios && (
-                      <a
-                        href={currLink.github}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        <AppStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
-                      </a>
-                    )}
-                    {currLink.android && (
-                      <a
-                        href={currLink.github}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        <PlayStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
-                      </a>
-                    )}
-                  </>
-                ))}
+                <Clickable>
+                  {selectedProject.links.map((currLink: any) => (
+                    <>
+                      {currLink.website && (
+                        <a
+                          href={currLink.website}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                        </a>
+                      )}
+                      {currLink.github && (
+                        <a
+                          href={currLink.github}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <GitHubIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110' />
+                        </a>
+                      )}
+                      {currLink.ios && (
+                        <a
+                          href={currLink.github}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <AppStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
+                        </a>
+                      )}
+                      {currLink.android && (
+                        <a
+                          href={currLink.github}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          <PlayStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
+                        </a>
+                      )}
+                    </>
+                  ))}
+                </Clickable>
               </div>
             )}
             <div className='w-full border-2 border-gray-200 my-8 rounded-full' />
