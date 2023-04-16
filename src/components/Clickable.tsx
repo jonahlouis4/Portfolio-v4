@@ -6,7 +6,7 @@ type ClickableProps = {
   };
   
   export default function Clickable(props: ClickableProps) {
-    const { children = true } = props;
+    const { children } = props;
     const setMouse = useGlobal((state) => state.setMouse)
 
     const onEnter = () => setMouse('hover')
