@@ -79,6 +79,8 @@ export default function App({ Component, pageProps }: AppProps) {
       width: 80,
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
+      backgroundColor: 'rgba(229, 231, 235, 0.3)',
+      mixBlendMode: 'difference'
     }
   };
 
