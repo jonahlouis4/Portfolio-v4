@@ -14,8 +14,8 @@ import { useTranslation } from 'react-i18next';
 import '@/translation/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const mouseStatus = useGlobal((state) => state.mouseEvent)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mouseStatus = useGlobal((state) => state.mouseEvent)
   const language = useGlobal((state) => state.language);
   const setLanguage = useGlobal((state) => state.setLanguage);
   const mode = useGlobalsPersist((state) => state.mode);
@@ -77,8 +77,8 @@ export default function App({ Component, pageProps }: AppProps) {
     hover: {
       height: 80,
       width: 80,
-      x: mousePosition.x - 45,
-      y: mousePosition.y - 45,
+      x: mousePosition.x - 40,
+      y: mousePosition.y - 40,
     }
   };
 
