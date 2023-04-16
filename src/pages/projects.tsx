@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
+  const personalProjects = PROJECTS.filter(project => project.contribution === null)
+  const contributionProjects = PROJECTS.filter(project => project.contribution !== null)
   const [selectedProject, setSelectedProject] = useState<Project>(InitProject);
   const { t } = useTranslation('projects');
 

@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import LOGO from '../assets/logo/logo_v4.svg';
+import Clickable from './Clickable';
 import Container from './Container';
 
 export default function Navbar() {
@@ -72,15 +73,17 @@ export default function Navbar() {
       <Container narrow={false}>
         <div className='flex gap-x-4 justify-between'>
           <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
-            <button onClick={handleHome}>
-              <Image
-                src={LOGO}
-                alt="Jonah's portfolio logo"
-                width={48}
-                height={48}
-                className='drop-shadow-xl'
-              />
-            </button>
+            <Clickable>
+              <button onClick={handleHome}>
+                <Image
+                  src={LOGO}
+                  alt="Jonah's portfolio logo"
+                  width={48}
+                  height={48}
+                  className='drop-shadow-xl'
+                />
+              </button>
+            </Clickable>
           </motion.div>
           <div className='flex items-center gap-x-4'>
             {/* LANGUAGE */}

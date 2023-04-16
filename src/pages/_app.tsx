@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import '@/translation/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const mouseStatus = useGlobal((state) => state.mouseEvent)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const language = useGlobal((state) => state.language);
   const setLanguage = useGlobal((state) => state.setLanguage);
@@ -73,6 +74,12 @@ export default function App({ Component, pageProps }: AppProps) {
       x: mousePosition.x - 20,
       y: mousePosition.y - 20,
     },
+    hover: {
+      height: 80,
+      width: 80,
+      x: mousePosition.x - 45,
+      y: mousePosition.y - 45,
+    }
   };
 
   return (
@@ -122,7 +129,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* Mouse div (follows mouse) */}
       <motion.div
         variants={mouseVariant}
-        animate='default'
+        animate={mouseStatus}
         className='invisible sm:visible flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 fixed top-0 left-0 z-40 pointer-events-none'
       >
         <div className='w-1 h-1 rounded-full bg-gray-700 dark:bg-gray-300' />
