@@ -64,7 +64,7 @@ export default function Projects() {
         />
         <div className='mt-16 grid md:grid-cols-2 gap-20 pb-16'>
           {PROJECTS.map((project) => (
-            <Clickable>
+            <Clickable key={project.name}>
               <motion.button
                 variants={DF_PAGE_ITEM_VARIANT}
                 whileHover={{
@@ -76,7 +76,6 @@ export default function Projects() {
                   project.className
                 }
                 onClick={() => handleProject(project)}
-                key={project.name}
               >
                 <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
                   {project.name}
