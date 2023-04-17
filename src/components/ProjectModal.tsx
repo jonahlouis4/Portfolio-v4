@@ -156,7 +156,7 @@ export default function ProjectModal(props: ProjectModalProps) {
           {selectedProject.media !== null && (
             <div className='flex flex-col gap-y-16 pb-16'>
               {selectedProject.media.map((media: Media) => (
-                <div>
+                <div key={media.name}>
                   {/* media Title */}
                   <h1 className='text-gray-900 dark:text-gray-300 font-extrabold uppercase mb-2'>
                     {t(media.name)}
