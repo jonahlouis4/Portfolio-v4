@@ -42,7 +42,6 @@ const SectionDescription = ({ description }: SectionDescriptionProps) => (
 // ========= Project box component =========
 
 type ProjectBoxProps = {
-  keyName: string;
   projectClassName: string;
   projectName: string;
   projectDescription: string;
@@ -50,13 +49,12 @@ type ProjectBoxProps = {
 };
 
 const ProjectBox = ({
-  keyName,
   projectClassName,
   projectName,
   projectDescription,
   handleProject,
 }: ProjectBoxProps) => (
-  <Clickable key={keyName}>
+  <Clickable>
     <motion.button
       variants={DF_PAGE_ITEM_VARIANT}
       whileHover={{
@@ -143,7 +141,7 @@ export default function Projects() {
         <div className='grid md:grid-cols-2 gap-20 pb-32'>
           {personalProjects.map((project) => (
             <ProjectBox
-              keyName={project.name}
+              key={project.name}
               projectClassName={project.className}
               handleProject={() => handleProject(project)}
               projectName={project.name}
@@ -159,7 +157,7 @@ export default function Projects() {
         <div className='grid md:grid-cols-2 gap-20 pb-40'>
           {contributionProjects.map((project) => (
             <ProjectBox
-              keyName={project.name}
+              key={project.name}
               projectClassName={project.className}
               handleProject={() => handleProject(project)}
               projectName={project.name}

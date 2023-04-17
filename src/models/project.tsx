@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 
+// Type of media in Project model
 export type Media = {
   name: string;
   image: StaticImageData
