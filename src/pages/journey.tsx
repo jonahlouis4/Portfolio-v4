@@ -108,6 +108,7 @@ const ExperienceInfo = ({
 );
 
 // ========= City Box component =========
+
 type CityBoxProps = {
   flagIcon: string;
   country: string;

@@ -8,6 +8,63 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+// ========= Section header component =========
+
+type SectionHeaderProps = {
+  title: string;
+};
+
+const SectionHeader = ({ title }: SectionHeaderProps) => (
+  <motion.h1
+    variants={DF_PAGE_ITEM_VARIANT}
+    className=' font-extrabold text-2xl text-gray-900 dark:text-gray-300 drop-shadow-xl pt-16 pb-8'
+  >
+    {title}
+  </motion.h1>
+);
+
+// ========= Project box component =========
+
+type ProjectBoxProps = {
+  keyName: string;
+  projectClassName: string;
+  projectName: string;
+  projectDescription: string;
+  handleProject: () => void;
+};
+
+const ProjectBox = ({
+  keyName,
+  projectClassName,
+  projectName,
+  projectDescription,
+  handleProject,
+}: ProjectBoxProps) => (
+  <Clickable key={keyName}>
+    <motion.button
+      variants={DF_PAGE_ITEM_VARIANT}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.2 },
+      }}
+      className={
+        'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
+        projectClassName
+      }
+      onClick={handleProject}
+    >
+      <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
+        {projectName}
+      </h1>
+      <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
+        {projectDescription}
+      </h2>
+    </motion.button>
+  </Clickable>
+);
+
+// ========= Projects page =========
+
 export default function Projects() {
   const personalProjects = PROJECTS.filter(
     (project) => project.contribution === null
@@ -62,29 +119,32 @@ export default function Projects() {
           variants={DF_PAGE_ITEM_VARIANT}
           className='w-full border-2 border-gray-200 my-8 rounded-full'
         />
-        <div className='mt-16 grid md:grid-cols-2 gap-20 pb-16'>
-          {PROJECTS.map((project) => (
-            <Clickable key={project.name}>
-              <motion.button
-                variants={DF_PAGE_ITEM_VARIANT}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
-                className={
-                  'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
-                  project.className
-                }
-                onClick={() => handleProject(project)}
-              >
-                <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
-                  {project.name}
-                </h1>
-                <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
-                  {t(project.description)}
-                </h2>
-              </motion.button>
-            </Clickable>
+
+        {/* Personal projects */}
+        <SectionHeader title={t('personal-projects')} />
+        <div className='grid md:grid-cols-2 gap-20 pb-32'>
+          {personalProjects.map((project) => (
+            <ProjectBox
+              keyName={project.name}
+              projectClassName={project.className}
+              handleProject={() => handleProject(project)}
+              projectName={project.name}
+              projectDescription={t(project.description)}
+            />
+          ))}
+        </div>
+
+        {/* Organization projects */}
+        <SectionHeader title={t('organization-projects')} />
+        <div className='grid md:grid-cols-2 gap-20 pb-40'>
+          {contributionProjects.map((project) => (
+            <ProjectBox
+              keyName={project.name}
+              projectClassName={project.className}
+              handleProject={() => handleProject(project)}
+              projectName={project.name}
+              projectDescription={t(project.description)}
+            />
           ))}
         </div>
       </Container>
