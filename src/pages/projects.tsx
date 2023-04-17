@@ -17,10 +17,26 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title }: SectionHeaderProps) => (
   <motion.h1
     variants={DF_PAGE_ITEM_VARIANT}
-    className=' font-extrabold text-2xl text-gray-900 dark:text-gray-300 drop-shadow-xl pt-16 pb-8'
+    className='font-extrabold text-4xl text-gray-900 dark:text-gray-300 drop-shadow-xl pt-16'
   >
     {title}
   </motion.h1>
+);
+
+// ========= Section description component =========
+
+type SectionDescriptionProps = {
+  description: string;
+};
+
+
+const SectionDescription = ({ description }: SectionDescriptionProps) => (
+  <motion.p
+    variants={DF_PAGE_ITEM_VARIANT}
+    className='font-extrabold text-2xl text-gray-500 dark:text-gray-400 drop-shadow-xl mt-1 pb-16 '
+  >
+    {description}
+  </motion.p>
 );
 
 // ========= Project box component =========
@@ -122,6 +138,8 @@ export default function Projects() {
 
         {/* Personal projects */}
         <SectionHeader title={t('personal-projects')} />
+        <SectionDescription description={t('personal-projects-desc')} />
+
         <div className='grid md:grid-cols-2 gap-20 pb-32'>
           {personalProjects.map((project) => (
             <ProjectBox
@@ -136,6 +154,8 @@ export default function Projects() {
 
         {/* Organization projects */}
         <SectionHeader title={t('organization-projects')} />
+        <SectionDescription description={t('organization-projects-desc')} />
+
         <div className='grid md:grid-cols-2 gap-20 pb-40'>
           {contributionProjects.map((project) => (
             <ProjectBox

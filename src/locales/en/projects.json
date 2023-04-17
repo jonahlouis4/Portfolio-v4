@@ -16,6 +16,8 @@
   "icontribute-ldesc": "A mobile application that helps find, manage, and connect volunteer opportunities for both students and organizations. Available in both Ottawa and Toronto.",
   "icontribute-contribution": "",
   "about-project": "About the project",
-  "personal-projects": "Personal projects",
-  "organization-projects": "Organization projects"
+  "personal-projects": "Personal",
+  "personal-projects-desc": "Projects I built myself",
+  "organization-projects": "Organization",
+  "organization-projects-desc": "Projects I contributed to"
 }
