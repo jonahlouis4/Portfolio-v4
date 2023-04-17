@@ -1,3 +1,10 @@
+import { StaticImageData } from "next/image";
+
+export type Media = {
+  name: string;
+  image: StaticImageData
+}
+
 // Expected fields
 export type Project = {
   active: null | boolean;
@@ -6,7 +13,7 @@ export type Project = {
   longDescription: null | string;
   contribution: null | string;
   langs: undefined | Array<string>;
-  media: null | string;
+  media: null | Array<Media>;
   links: undefined | Array<any>;
   className: null | string;
 };

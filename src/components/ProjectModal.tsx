@@ -3,12 +3,13 @@ import {
   DF_MODAL_VARIANT,
   DF_MODAL_WRAPPER_VARIANT,
 } from '@/data/variantData';
-import { InitProject, Project } from '@/models/project';
+import { InitProject, Media, Project } from '@/models/project';
 import {
   ArrowTopRightOnSquareIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Clickable from './Clickable';
@@ -62,7 +63,7 @@ export default function ProjectModal(props: ProjectModalProps) {
       />
       {/* Modal start */}
       <motion.div
-        className='dark:bg-zinc-800 bg-gray-100 p-4 w-full h-full z-40 shadow-xl'
+        className='dark:bg-zinc-800 bg-gray-100 p-4 w-full h-full z-40 shadow-xl overflow-auto'
         variants={DF_MODAL_VARIANT}
         onClick={(e) => e.stopPropagation()}
       >
@@ -116,7 +117,6 @@ export default function ProjectModal(props: ProjectModalProps) {
                           href={currLink.website}
                           target='_blank'
                           rel='noreferrer'
-
                         >
                           <ArrowTopRightOnSquareIcon className='h-6 w-6 dark:text-gray-400 text-gray-700 transition duration-150 ease-in-out hover:scale-110' />
                         </a>
@@ -131,11 +131,7 @@ export default function ProjectModal(props: ProjectModalProps) {
                         </a>
                       )}
                       {currLink.ios && (
-                        <a
-                          href={currLink.ios}
-                          target='_blank'
-                          rel='noreferrer'
-                        >
+                        <a href={currLink.ios} target='_blank' rel='noreferrer'>
                           <AppStoreIcon className='h-6 w-6 dark:fill-gray-400 fill-gray-700 transition duration-150 ease-in-out hover:scale-110 hover:cursor-pointer' />
                         </a>
                       )}
@@ -155,6 +151,18 @@ export default function ProjectModal(props: ProjectModalProps) {
             )}
             <div className='w-full border-2 border-gray-200 my-8 rounded-full' />
           </div>
+          {selectedProject.media !== null && (
+            <div className='flex flex-col gap-y-16 pb-16'>
+              {selectedProject.media.map((media: Media) => (
+                <div>
+                  <h1 className='text-gray-900 dark:text-gray-300 font-extrabold uppercase mb-2'>
+                    {media.name}
+                  </h1>
+                  <Image src={media.image} alt={media.name} />
+                </div>
+              ))}
+            </div>
+          )}
         </Container>
       </motion.div>
       {/* Modal end */}

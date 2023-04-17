@@ -99,7 +99,7 @@ export default function Projects() {
       longDescription: props.longDescription,
       contribution: props.contribution,
       langs: props.langs,
-      media: null,
+      media: props.media,
       links: props.links,
       className: null,
     });

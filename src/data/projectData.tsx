@@ -1,3 +1,7 @@
+import covid19api_1 from '../assets/projects/covidapi-1.png'
+import covid19api_2 from '../assets/projects/covidapi-2.png'
+import covid19api_3 from '../assets/projects/covidapi-3.png'
+
 export const PROJECTS = [
   {
     active: false,
@@ -17,7 +21,11 @@ export const PROJECTS = [
     longDescription: 'covid19app-ldesc',
     contribution: null,
     langs: ['React', 'GraphQL', 'Apollo Client', 'Ant Design', 'AntV'],
-    media: null,
+    media: [
+      { name: "Home", image: covid19api_1 },
+      { name: "Chart", image: covid19api_2 },
+      { name: "Chart Selection", image: covid19api_3 }
+    ],
     links: [{ github: 'https://github.com/jonahlouis4/COVID19-Tracker' }],
     className: 'bg-gradient-to-br from-fuchsia-500 to-purple-700',
   },
