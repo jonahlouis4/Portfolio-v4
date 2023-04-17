@@ -62,7 +62,9 @@ export const PROJECTS = [
     longDescription: 'royaldripcheck-ldesc',
     contribution: 'royaldripcheck-contribution',
     langs: ['Shopify', 'TailwindCSS'],
-    media: null,
+    media: [
+      { name: 'royaldripcheck-ss-1', image: null },
+    ],
     links: [{ website: 'https://royaldripcheck.ca/' }],
     className: 'bg-gradient-to-br from-violet-700 to-violet-600',
   },
@@ -94,7 +96,9 @@ export const PROJECTS = [
     longDescription: 'icontribute-ldesc',
     contribution: 'icontribute-contribution',
     langs: ['React Native', 'Firebase'],
-    media: null,
+    media: [
+      { name: 'icontribute-ss-1', image: null },
+    ],
     links: [
       { website: 'https://icontribute.community/#/' },
       {

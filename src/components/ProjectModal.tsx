@@ -151,14 +151,20 @@ export default function ProjectModal(props: ProjectModalProps) {
             )}
             <div className='w-full border-2 border-gray-200 my-8 rounded-full' />
           </div>
+
+          {/* project Media */}
           {selectedProject.media !== null && (
             <div className='flex flex-col gap-y-16 pb-16'>
               {selectedProject.media.map((media: Media) => (
                 <div>
+                  {/* media Title */}
                   <h1 className='text-gray-900 dark:text-gray-300 font-extrabold uppercase mb-2'>
                     {t(media.name)}
                   </h1>
-                  <Image src={media.image} alt={media.name} />
+                  {/* media image */}
+                  {media.image !== null && (
+                    <Image src={media.image} alt={media.name} />
+                  )}
                 </div>
               ))}
             </div>
