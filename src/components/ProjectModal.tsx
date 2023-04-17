@@ -156,7 +156,7 @@ export default function ProjectModal(props: ProjectModalProps) {
               {selectedProject.media.map((media: Media) => (
                 <div>
                   <h1 className='text-gray-900 dark:text-gray-300 font-extrabold uppercase mb-2'>
-                    {media.name}
+                    {t(media.name)}
                   </h1>
                   <Image src={media.image} alt={media.name} />
                 </div>

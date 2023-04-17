@@ -22,9 +22,9 @@ export const PROJECTS = [
     contribution: null,
     langs: ['React', 'GraphQL', 'Apollo Client', 'Ant Design', 'AntV'],
     media: [
-      { name: "Home", image: covid19api_1 },
-      { name: "Chart", image: covid19api_2 },
-      { name: "Chart Selection", image: covid19api_3 }
+      { name: "covid19app-ss-1", image: covid19api_1 },
+      { name: "covid19app-ss-2", image: covid19api_2 },
+      { name: "covid19app-ss-3", image: covid19api_3 }
     ],
     links: [{ github: 'https://github.com/jonahlouis4/COVID19-Tracker' }],
     className: 'bg-gradient-to-br from-fuchsia-500 to-purple-700',
