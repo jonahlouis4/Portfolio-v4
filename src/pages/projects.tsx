@@ -1,3 +1,4 @@
+import Clickable from '@/components/Clickable';
 import Container from '@/components/Container';
 import ProjectModal from '@/components/ProjectModal';
 import { PROJECTS } from '@/data/projectData';
@@ -7,7 +8,84 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+// ========= Section header component =========
+
+type SectionHeaderProps = {
+  title: string;
+};
+
+const SectionHeader = ({ title }: SectionHeaderProps) => (
+  <motion.h1
+    variants={DF_PAGE_ITEM_VARIANT}
+    className='font-extrabold text-4xl text-gray-900 dark:text-gray-300 drop-shadow-xl pt-16'
+  >
+    {title}
+  </motion.h1>
+);
+
+// ========= Section description component =========
+
+type SectionDescriptionProps = {
+  description: string;
+};
+
+
+const SectionDescription = ({ description }: SectionDescriptionProps) => (
+  <motion.p
+    variants={DF_PAGE_ITEM_VARIANT}
+    className='font-extrabold text-2xl text-gray-500 dark:text-gray-400 drop-shadow-xl mt-1 pb-16 '
+  >
+    {description}
+  </motion.p>
+);
+
+// ========= Project box component =========
+
+type ProjectBoxProps = {
+  projectClassName: string;
+  projectName: string;
+  projectDescription: string;
+  handleProject: () => void;
+};
+
+const ProjectBox = ({
+  projectClassName,
+  projectName,
+  projectDescription,
+  handleProject,
+}: ProjectBoxProps) => (
+  <Clickable>
+    <motion.button
+      variants={DF_PAGE_ITEM_VARIANT}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.2 },
+      }}
+      className={
+        'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
+        projectClassName
+      }
+      onClick={handleProject}
+    >
+      <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
+        {projectName}
+      </h1>
+      <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
+        {projectDescription}
+      </h2>
+    </motion.button>
+  </Clickable>
+);
+
+// ========= Projects page =========
+
 export default function Projects() {
+  const personalProjects = PROJECTS.filter(
+    (project) => project.contribution === null
+  );
+  const contributionProjects = PROJECTS.filter(
+    (project) => project.contribution !== null
+  );
   const [selectedProject, setSelectedProject] = useState<Project>(InitProject);
   const { t } = useTranslation('projects');
 
@@ -17,8 +95,9 @@ export default function Projects() {
       name: props.name,
       description: null,
       longDescription: props.longDescription,
+      contribution: props.contribution,
       langs: props.langs,
-      media: null,
+      media: props.media,
       links: props.links,
       className: null,
     });
@@ -52,31 +131,38 @@ export default function Projects() {
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
-          className='w-full border-2 border-gray-200 my-8'
+          className='w-full border-2 border-gray-200 my-8 rounded-full'
         />
-        <div className='mt-16 grid md:grid-cols-2 gap-20 pb-16'>
-          {PROJECTS.map((project) => (
-            <motion.button
-              variants={DF_PAGE_ITEM_VARIANT}
-              layoutId={project.name}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
-              }}
-              className={
-                'group relative w-full h-72 rounded-3xl bg-gray-50 drop-shadow-xl ' +
-                project.className
-              }
-              onClick={() => handleProject(project)}
+
+        {/* Personal projects */}
+        <SectionHeader title={t('personal-projects')} />
+        <SectionDescription description={t('personal-projects-desc')} />
+
+        <div className='grid md:grid-cols-2 gap-20 pb-32'>
+          {personalProjects.map((project) => (
+            <ProjectBox
               key={project.name}
-            >
-              <h1 className='text-white font-extrabold text-lg drop-shadow-xl'>
-                {project.name}
-              </h1>
-              <h2 className='text-white text-md drop-shadow-xl mx-auto max-w-xs'>
-                {t(project.description)}
-              </h2>
-            </motion.button>
+              projectClassName={project.className}
+              handleProject={() => handleProject(project)}
+              projectName={project.name}
+              projectDescription={t(project.description)}
+            />
+          ))}
+        </div>
+
+        {/* Organization projects */}
+        <SectionHeader title={t('organization-projects')} />
+        <SectionDescription description={t('organization-projects-desc')} />
+
+        <div className='grid md:grid-cols-2 gap-20 pb-40'>
+          {contributionProjects.map((project) => (
+            <ProjectBox
+              key={project.name}
+              projectClassName={project.className}
+              handleProject={() => handleProject(project)}
+              projectName={project.name}
+              projectDescription={t(project.description)}
+            />
           ))}
         </div>
       </Container>

@@ -1,11 +1,12 @@
+import Clickable from '@/components/Clickable';
 import Container from '@/components/Container';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import avatar from '../assets/avatar/jonah_3.jpg';
 import { useTranslation } from 'react-i18next';
+import avatar from '../assets/avatar/jonah_3.jpg';
 
 export default function Home() {
   const router = useRouter();
@@ -51,20 +52,24 @@ export default function Home() {
                     variants={DF_PAGE_ITEM_VARIANT}
                     className='flex justify-center lg:justify-start gap-x-8 mt-10'
                   >
-                    <button
-                      onClick={() => handleActionBtn('/journey')}
-                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
-                    >
-                      <span>{t('journey-btn-text')}</span>
-                      <ArrowLongRightIcon className='h-6 w-6' />
-                    </button>
-                    <button
-                      onClick={() => handleActionBtn('/projects')}
-                      className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
-                    >
-                      <span>{t('project-btn-text')}</span>
-                      <ArrowLongRightIcon className='h-6 w-6' />
-                    </button>
+                    <Clickable>
+                      <button
+                        onClick={() => handleActionBtn('/journey')}
+                        className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
+                      >
+                        <span>{t('journey-btn-text')}</span>
+                        <ArrowLongRightIcon className='h-6 w-6' />
+                      </button>
+                    </Clickable>
+                    <Clickable>
+                      <button
+                        onClick={() => handleActionBtn('/projects')}
+                        className='flex items-center dark:text-gray-300 text-gray-700 font-bold tracking-wide text-lg lg:text-2xl dark:hover:text-gray-400 hover:text-gray-500 transition duration-150'
+                      >
+                        <span>{t('project-btn-text')}</span>
+                        <ArrowLongRightIcon className='h-6 w-6' />
+                      </button>
+                    </Clickable>
                   </motion.div>
                 </div>
 

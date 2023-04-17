@@ -1,3 +1,4 @@
+import Clickable from '@/components/Clickable';
 import Container from '@/components/Container';
 import { SOCIALS } from '@/data/socialData';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
@@ -25,7 +26,7 @@ export default function Contact() {
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
-          className='w-full border-2 border-gray-200 my-8'
+          className='w-full border-2 border-gray-200 my-8 rounded-full'
         />
 
         <div className='flex flex-col gap-y-16 sm:flex-row sm:gap-y-0 justify-between'>
@@ -36,13 +37,15 @@ export default function Contact() {
             >
               {t('email')}
             </motion.h1>
-            <motion.button
-              variants={DF_PAGE_ITEM_VARIANT}
-              className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
-            >
-              <span>jonah_louis@outlook.com</span>
-              <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-            </motion.button>
+            <Clickable>
+              <motion.button
+                variants={DF_PAGE_ITEM_VARIANT}
+                className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
+              >
+                <span>jonah_louis@outlook.com</span>
+                <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+              </motion.button>
+            </Clickable>
           </div>
           <div>
             <motion.h1
@@ -53,17 +56,18 @@ export default function Contact() {
             </motion.h1>
             <div className='flex gap-8'>
               {SOCIALS.map((social) => (
-                <motion.a
-                  key={social.name}
-                  variants={DF_PAGE_ITEM_VARIANT}
-                  className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
-                  href={social.href}
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <span>{social.name}</span>
-                  <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-                </motion.a>
+                <Clickable key={social.name}>
+                  <motion.a
+                    variants={DF_PAGE_ITEM_VARIANT}
+                    className='flex items-center gap-x-1 dark:text-gray-400 text-gray-500 text-lg font-medium transition-colors duration-300 ease-in-out hover:text-gray-400 dark:hover:text-gray-500'
+                    href={social.href}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <span>{social.name}</span>
+                    <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+                  </motion.a>
+                </Clickable>
               ))}
             </div>
           </div>

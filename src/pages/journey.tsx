@@ -1,3 +1,4 @@
+import Clickable from '@/components/Clickable';
 import Container from '@/components/Container';
 import ImageSlideModal from '@/components/ImageSlideModal';
 import { DF_PAGE_ITEM_VARIANT, DF_WRAPPER_VARIANT } from '@/data/variantData';
@@ -38,14 +39,16 @@ type DescLink = {
 };
 
 const DescLink = ({ href, text }: DescLink) => (
-  <a
-    href={href}
-    target='_blank'
-    rel='noreferrer'
-    className='underline hover:text-gray-700 dark:hover:text-gray-400 transition-color duration-300'
-  >
-    {text}
-  </a>
+  <Clickable className='inline'>
+    <a
+      href={href}
+      target='_blank'
+      rel='noreferrer'
+      className='underline hover:text-gray-700 dark:hover:text-gray-400 transition-color duration-300'
+    >
+      {text}
+    </a>
+  </Clickable>
 );
 
 // ========= Experience Info component =========
@@ -84,14 +87,16 @@ const ExperienceInfo = ({
       >
         {startDate} - {endDate}
       </motion.h2>
-      <a
-        href={link}
-        target='_blank'
-        rel='noreferrer'
-        className='text-4xl font-extrabold text-gray-900 dark:text-gray-200 hover:underline hover:text-gray-700 dark:hover:text-gray-400 transition duration-300'
-      >
-        {company}
-      </a>
+      <Clickable>
+        <a
+          href={link}
+          target='_blank'
+          rel='noreferrer'
+          className='text-4xl font-extrabold text-gray-900 dark:text-gray-200 hover:underline hover:text-gray-700 dark:hover:text-gray-400 transition duration-300'
+        >
+          {company}
+        </a>
+      </Clickable>
     </div>
     <motion.div
       variants={DF_PAGE_ITEM_VARIANT}
@@ -103,6 +108,7 @@ const ExperienceInfo = ({
 );
 
 // ========= City Box component =========
+
 type CityBoxProps = {
   flagIcon: string;
   country: string;
@@ -136,13 +142,15 @@ const CityBox = ({
         className='group relative md:w-[100em] md:h-[26em] 3xl:h-[32em] order-1 md:order-2'
         onClick={() => setSelectedCity(city.toLocaleLowerCase())}
       >
-        <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
-          <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
-            <span className='text-3xl font-extrabold text-gray-100 '>
-              {t('view-btn-text')}
-            </span>
+        <Clickable>
+          <div className='bg-black/50 rounded-tl-3xl rounded-tr-3xl md:rounded-tl-none md:rounded-br-3xl opacity-0 group-hover:opacity-100 absolute z-40 top-0 bottom-0 right-0 left-0 flex justify-center items-center transition duration-300'>
+            <div className='w-32 h-32 p-4 border-2 border-gray-100 rounded-full scale-0 group-hover:scale-105 flex items-center justify-center transition duration-300'>
+              <span className='text-3xl font-extrabold text-gray-100 '>
+                {t('view-btn-text')}
+              </span>
+            </div>
           </div>
-        </div>
+        </Clickable>
         <Image
           src={image}
           alt={`Album picture of Jonah's memories for ${country}, ${city}`}
@@ -177,7 +185,7 @@ export default function Journey() {
         </motion.h1>
         <motion.div
           variants={DF_PAGE_ITEM_VARIANT}
-          className='w-full border-2 border-gray-200 mt-8'
+          className='w-full border-2 border-gray-200 mt-8 rounded-full'
         />
 
         <>

@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import LOGO from '../assets/logo/logo_v4.svg';
+import Clickable from './Clickable';
 import Container from './Container';
 
 export default function Navbar() {
@@ -72,15 +73,17 @@ export default function Navbar() {
       <Container narrow={false}>
         <div className='flex gap-x-4 justify-between'>
           <motion.div variants={DF_PAGE_ITEM_VARIANT_2}>
-            <button onClick={handleHome}>
-              <Image
-                src={LOGO}
-                alt="Jonah's portfolio logo"
-                width={48}
-                height={48}
-                className='drop-shadow-xl'
-              />
-            </button>
+            <Clickable>
+              <button onClick={handleHome}>
+                <Image
+                  src={LOGO}
+                  alt="Jonah's portfolio logo"
+                  width={48}
+                  height={48}
+                  className='drop-shadow-xl'
+                />
+              </button>
+            </Clickable>
           </motion.div>
           <div className='flex items-center gap-x-4'>
             {/* LANGUAGE */}
@@ -90,27 +93,29 @@ export default function Navbar() {
               className='dark:text-gray-400 text-gray-500 hover:text-gray-600 transition-colors duration-150 ease-in'
             >
               <AnimatePresence mode='wait'>
-                {language === 'fr' ? (
-                  <motion.div
-                    key='langEn'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    EN
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key='langFr'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    FR
-                  </motion.div>
-                )}
+                <Clickable>
+                  {language === 'fr' ? (
+                    <motion.div
+                      key='langEn'
+                      variants={modeVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      EN
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key='langFr'
+                      variants={modeVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      FR
+                    </motion.div>
+                  )}
+                </Clickable>
               </AnimatePresence>
             </motion.button>
 
@@ -120,27 +125,29 @@ export default function Navbar() {
               onClick={handleMode}
             >
               <AnimatePresence mode='wait'>
-                {mode === 'light' ? (
-                  <motion.div
-                    key='darkMode'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg hover:scale-110 hover:text-blue-500 transition ease-in-out duration-300 ' />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key='lightMode'
-                    variants={modeVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <SunIcon className='h-5 w-5 text-gray-400 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
-                  </motion.div>
-                )}
+                <Clickable>
+                  {mode === 'light' ? (
+                    <motion.div
+                      key='darkMode'
+                      variants={modeVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      <MoonIcon className='h-5 w-5 text-gray-500 group-hover:text-blue-500 drop-shadow-lg hover:scale-110 hover:text-blue-500 transition ease-in-out duration-300 ' />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key='lightMode'
+                      variants={modeVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      <SunIcon className='h-5 w-5 text-gray-400 group-hover:text-yellow-500 drop-shadow-lg hover:scale-110 hover:text-yellow-500 transition ease-in-out duration-300 ' />
+                    </motion.div>
+                  )}
+                </Clickable>
               </AnimatePresence>
             </motion.button>
 
@@ -150,27 +157,29 @@ export default function Navbar() {
               onClick={handleMenu}
             >
               <AnimatePresence mode='wait'>
-                {!menu ? (
-                  <motion.div
-                    key='menuClosed'
-                    variants={menuVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <Bars3Icon className='h-12 w-12 dark:text-gray-400 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key='menuOpen'
-                    variants={menuVariant}
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
-                  >
-                    <XMarkIcon className='h-12 w-12 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
-                  </motion.div>
-                )}
+                <Clickable>
+                  {!menu ? (
+                    <motion.div
+                      key='menuClosed'
+                      variants={menuVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      <Bars3Icon className='h-12 w-12 dark:text-gray-400 text-gray-500 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key='menuOpen'
+                      variants={menuVariant}
+                      initial='hidden'
+                      animate='visible'
+                      exit='exit'
+                    >
+                      <XMarkIcon className='h-12 w-12 text-red-600 drop-shadow-lg hover:scale-110 transition ease-in-out duration-300' />
+                    </motion.div>
+                  )}
+                </Clickable>
               </AnimatePresence>
             </motion.button>
           </div>
