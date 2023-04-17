@@ -13,9 +13,9 @@ type ClickableProps = {
     const onLeave = () => setMouse('default')
   
     return (
-      <div onMouseEnter={onEnter} onMouseLeave={onLeave} {...props}>
+      <span onMouseEnter={onEnter} onMouseLeave={onLeave} {...props}>
         {children}
-      </div>
+      </span>
     );
   }
   
