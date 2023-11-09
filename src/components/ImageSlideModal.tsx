@@ -88,6 +88,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
                 >
                   <div className='h-full flex items-center justify-center rounded-3xl'>
                     <Image
+                      priority={true}
                       src={image}
                       className='object-cover rounded-3xl w-full w-full h-full lg:max-h-[60em]'
                       alt={`memory in ${selectedCity}-${index}`}
