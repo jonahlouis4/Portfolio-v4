@@ -283,7 +283,7 @@ export default function Journey() {
           {language === 'en' ? (
             <ExperienceInfo
               startDate='June 2021'
-              endDate='June 2022'
+              endDate='Present'
               company='NetFore Systems'
               link='https://netfore.com/'
               description={
@@ -317,7 +317,7 @@ export default function Journey() {
           ) : (
             <ExperienceInfo
               startDate='Juin 2021'
-              endDate='Juin 2022'
+              endDate='Actuel'
               company='NetFore Systems'
               link='https://netfore.com/'
               description={

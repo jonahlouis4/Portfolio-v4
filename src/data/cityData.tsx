@@ -18,8 +18,6 @@ import coimbatore_2 from '../assets/gallery/coimbatore/coimbatore_2.jpg';
 import coimbatore_3 from '../assets/gallery/coimbatore/coimbatore_3.jpg';
 import coimbatore_4 from '../assets/gallery/coimbatore/coimbatore_4.jpg';
 import coimbatore_5 from '../assets/gallery/coimbatore/coimbatore_5.jpg';
-import coimbatore_6 from '../assets/gallery/coimbatore/coimbatore_6.jpg';
-import coimbatore_7 from '../assets/gallery/coimbatore/coimbatore_7.jpg';
 
 import amritsar_0 from '../assets/gallery/amritsar/amritsar_0.jpg';
 import amritsar_1 from '../assets/gallery/amritsar/amritsar_1.jpg';
@@ -83,8 +81,6 @@ export const CITIES = [
       coimbatore_3,
       coimbatore_4,
       coimbatore_5,
-      coimbatore_6,
-      coimbatore_7,
     ],
   },
   {

@@ -163,7 +163,7 @@ export default function ProjectModal(props: ProjectModalProps) {
                   </h1>
                   {/* media image */}
                   {media.image !== null && (
-                    <Image src={media.image} alt={media.name} />
+                    <Image src={media.image} alt={media.name} priority={true} />
                   )}
                 </div>
               ))}
