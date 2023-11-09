@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
-import avatar from '../assets/avatar/jonah_3.jpg';
+import avatar from '../assets/avatar/jonah_4.png';
 
 export default function Home() {
   const router = useRouter();
