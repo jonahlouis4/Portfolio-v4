@@ -53,7 +53,7 @@ export default function ImageSlideModal(props: ImageSlideModalProps) {
       initial='hidden'
       animate='visible'
       exit='exit'
-      className='fixed inset-0 flex z-30 py-10 px-2 sm:px-10'
+      className='fixed inset-0 flex z-30 py-10 px-2 sm:px-10 select-none'
       onClick={handleClose}
     >
       <div

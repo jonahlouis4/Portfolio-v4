@@ -8,9 +8,6 @@ import ottawa_7 from '../assets/gallery/ottawa/ottawa_7.jpg';
 import ottawa_8 from '../assets/gallery/ottawa/ottawa_8.jpg';
 import ottawa_9 from '../assets/gallery/ottawa/ottawa_9.jpg';
 import ottawa_10 from '../assets/gallery/ottawa/ottawa_10.jpg';
-import ottawa_11 from '../assets/gallery/ottawa/ottawa_11.jpg';
-import ottawa_12 from '../assets/gallery/ottawa/ottawa_12.jpg';
-import ottawa_13 from '../assets/gallery/ottawa/ottawa_13.jpg';
 
 import coimbatore_0 from '../assets/gallery/coimbatore/coimbatore_0.jpg';
 import coimbatore_1 from '../assets/gallery/coimbatore/coimbatore_1.jpg';
@@ -67,9 +64,6 @@ export const CITIES = [
       ottawa_8,
       ottawa_9,
       ottawa_10,
-      ottawa_11,
-      ottawa_12,
-      ottawa_13,
     ],
   },
   {
