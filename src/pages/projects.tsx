@@ -134,28 +134,12 @@ export default function Projects() {
           className='w-full border-2 border-gray-200 my-8 rounded-full'
         />
 
-        {/* Personal projects */}
-        <SectionHeader title={t('personal-projects')} />
-        <SectionDescription description={t('personal-projects-desc')} />
+        {/* Archived projects */}
+        <SectionHeader title={t('arhived-projects')} />
+        <SectionDescription description={t('arhived-projects-desc')} />
 
         <div className='grid md:grid-cols-2 gap-20 pb-32'>
-          {personalProjects.map((project) => (
-            <ProjectBox
-              key={project.name}
-              projectClassName={project.className}
-              handleProject={() => handleProject(project)}
-              projectName={project.name}
-              projectDescription={t(project.description)}
-            />
-          ))}
-        </div>
-
-        {/* Organization projects */}
-        <SectionHeader title={t('organization-projects')} />
-        <SectionDescription description={t('organization-projects-desc')} />
-
-        <div className='grid md:grid-cols-2 gap-20 pb-40'>
-          {contributionProjects.map((project) => (
+          {PROJECTS.map((project) => (
             <ProjectBox
               key={project.name}
               projectClassName={project.className}

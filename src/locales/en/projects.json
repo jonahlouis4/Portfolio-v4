@@ -40,5 +40,7 @@
   "personal-projects": "Personal",
   "personal-projects-desc": "Projects I built myself",
   "organization-projects": "Organization",
-  "organization-projects-desc": "Projects I contributed to"
+  "organization-projects-desc": "Projects I contributed to",
+  "arhived-projects": "Archived",
+  "arhived-projects-desc": "Projects that got me started"
 }
